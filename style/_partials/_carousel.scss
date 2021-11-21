@@ -1,0 +1,37 @@
+.carousel {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 20em;
+    gap: 1em;
+    align-items: center;
+    margin-top: 5.5em;
+    background: linear-gradient(rgba(254, 197, 187, 0.2), rgba(254, 197, 187, 0.2));
+    &__item {
+        padding: 3em 0;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        align-items: center;
+        max-width: 80em;
+    }
+    &__title {
+        font-weight: 700;
+        color: $white;
+        padding-bottom: 1em;
+    }
+    &__text {
+        font-weight: 400;
+        color: $white;
+        padding: 0 5em;
+        @include breakpoint(mobile) {
+            padding: 0;
+        }
+        @include breakpoint(laptop) {
+            padding: 0;
+        }
+    }
+}
+.fas{
+    color: $salmon;
+    font-size: 3em;
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.offers {
+    background-image: url(../imagenes/offers2.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    margin: 5em 0;
+    &__intro{
+        padding: 1em;
+    }
+    .exp{
+        color: $grey;
+        &__title {
+            font-weight: 400;
+            padding: 1em .5em;
+        }
+        &__subtitle {
+            font-weight: 300;
+            padding: 0 .5em 1em .5em;
+        }
+        &__text {
+            font-weight: 300;
+            padding: 0 .5em 1em .5em;
+        }
+    }
+}

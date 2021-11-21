@@ -5,11 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--  bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- styles -->
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <h1>Eventos</h1>
-    <h2>Cumpleaños - Casamientos - Bautismos</h2>
+    <header class="container-flex header">
+        <nav class="nav d-flex justify-content-around flex-wrap">
+            <div class="nav__logo d-flex justify-content-center align-items-center">
+                <a href="#"class="nav__textLogo d-flex"><img src="./imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="nav__img"><h1>Dreamed Day</h1></a>
+            </div>
+            <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
+                <li class="nav__li"><a href="#">Nosotros</a></li>
+                <li class="nav__li"><a href="#">Servicios</a>
+                    <ul class="subUl">
+                        <li class="subLi"><a href="#">Invitados</a></li>
+                        <li class="subLi"><a href="#">Ubicaciones</a></li>
+                        <li class="subLi"><a href="#">Presupuesto</a></li>
+                        <li class="subLi"><a href="#">Mi sitio</a></li>
+                        <li class="subLi"><a href="#">Pendientes</a></li>
+                    </ul>
+                </li>
+                <li class="nav__li"><a href="#">Mi casamiento</a></li>
+                <li class="nav__li"><a href="#">Registrarse</a></li>
+                <li class="nav__li"><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <section class="carousel container">
+            <div class="carousel__btn">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="carousel__img text-center">
+                <div class="carousel__item carousel__item--show">
+                    <h2 class="carousel__title">Casamientos</h2>
+                    <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius minima blanditiis dolor laboriosam laudantium earum voluptatem eos provident nam officia, consequatur obcaecati accusantium minus soluta nesciunt cupiditate odio, fuga aliquid!</p>
+                </div>
+                <!-- <div class="carousel__item carousel__item--show">
+                    <h2 class="carousel__title">Cumpleaños</h2>
+                    <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius minima blanditiis dolor laboriosam laudantium earum voluptatem eos provident nam officia, consequatur obcaecati accusantium minus soluta nesciunt cupiditate odio, fuga aliquid!</p>
+                </div>
+                <div class="carousel__item carousel__item--show">
+                    <h2 class="carousel__title">Bautismos</h2>
+                    <p class="carousel__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius minima blanditiis dolor laboriosam laudantium earum voluptatem eos provident nam officia, consequatur obcaecati accusantium minus soluta nesciunt cupiditate odio, fuga aliquid!</p>
+                </div> -->
+            </div>
+            <div class="carousel__btn">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </section>      
+    </header>
+    <main class="container">
+        <section class="offers row">
+            <article class="offers__img col-12 col-lg-6">
+            </article>
+            <article class="offers__intro col-12 col-lg-6">
+                <div class="exp">
+                    <h3 class="exp__title text-center">Creá tu sitio web privado para compartir con los que más quieres.</h3>
+                    <h4 class="exp__subtitle text-center text-md-start">De que se trata..</h4>
+                    <p class="exp__text text-center text-md-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse qui, reprehenderit eligendi earum dolor dolorem facere odio! Eius, molestias? Quia a atque inventore rerum magnam expedita tempore laboriosam modi reprehenderit eligendi earum dolor dolorem facere odio! Eius, molestias? Quia a atque inventore rerum magnam expedita tempore laboriosam modi.</p>
+                </div>
+            </article>            
+        </section>
+        <section class="details container">
+            <div class="row d-flex justify-content-around">
+                <article class="details__list col-12 col-md-4 col-lg-2">
+                <i class="fas fa-users d-flex justify-content-center"></i>
+                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
+            </article>
+            <article class="details__budget col-12 col-md-4 col-lg-2">
+                <i class="fas fa-users d-flex justify-content-center"></i>
+                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
+            </article>
+            <article class="details__chores col-12 col-md-4 col-lg-2">
+                <i class="fas fa-users d-flex justify-content-center"></i>
+                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
+            </article>
+            <article class="details__tables col-12 col-md-4 col-lg-2">
+                <i class="fas fa-users d-flex justify-content-center"></i>
+                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
+            </article>
+            <article class="details__guests col-12 col-md-4 col-lg-2">
+                <i class="fas fa-users d-flex justify-content-center"></i>
+                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
+            </article>
+            </div>
+        </section>
+
+    </main>
+    
     <!-- <script src="./js/desafios.js"></script> -->
-    <script src="./js/actividad1.js"></script>
+    <!-- <script src="./js/actividad1.js"></script> -->
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
 </body>
 </html>
