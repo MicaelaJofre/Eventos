@@ -12,12 +12,15 @@
 </head>
 <body>
     <header class="container-flex header">
+        <!-- video -->
+        <video class="video" autoplay loop src="./imagenes/pexels-pavel-danilyuk-8775886 (2).mp4"></video>
+        <!-- nav -->
         <nav class="nav d-flex justify-content-around flex-wrap">
             <div class="nav__logo d-flex justify-content-center align-items-center">
                 <a href="#"class="nav__textLogo d-flex"><img src="./imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="nav__img"><h1>Dreamed Day</h1></a>
             </div>
             <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
-                <li class="nav__li"><a href="#">Nosotros</a></li>
+                <li class="nav__li"><a href="#">Que hacemos</a></li>
                 <li class="nav__li"><a href="#">Servicios</a>
                     <ul class="subUl">
                         <li class="subLi"><a href="#">Invitados</a></li>
@@ -32,6 +35,7 @@
                 <li class="nav__li"><a href="#">Contacto</a></li>
             </ul>
         </nav>
+        <!-- carousel del hero -->
         <section class="carousel container">
             <div class="carousel__btn">
                 <i class="fas fa-chevron-left"></i>
@@ -56,6 +60,7 @@
         </section>      
     </header>
     <main class="container">
+        <!-- que hacemos -->
         <section class="offers row">
             <article class="offers__img col-12 col-lg-6">
             </article>
@@ -67,28 +72,64 @@
                 </div>
             </article>            
         </section>
+        <!-- servicios -->
         <section class="details container">
             <div class="row d-flex justify-content-around">
-                <article class="details__list col-12 col-md-4 col-lg-2">
-                <i class="fas fa-users d-flex justify-content-center"></i>
-                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
-            </article>
-            <article class="details__budget col-12 col-md-4 col-lg-2">
-                <i class="fas fa-users d-flex justify-content-center"></i>
-                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
-            </article>
-            <article class="details__chores col-12 col-md-4 col-lg-2">
-                <i class="fas fa-users d-flex justify-content-center"></i>
-                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
-            </article>
-            <article class="details__tables col-12 col-md-4 col-lg-2">
-                <i class="fas fa-users d-flex justify-content-center"></i>
-                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
-            </article>
-            <article class="details__guests col-12 col-md-4 col-lg-2">
-                <i class="fas fa-users d-flex justify-content-center"></i>
-                <p class="detalails__p text-center">Lorem ipsum dolor sit amet consectetur .</p>
-            </article>
+                <h3 class="details__services text-center">Servicios</h3>
+                <!-- mi sitio web -->
+                <article class="details__web col-12 col-md-6 col-lg-4">
+                    <img src="./imagenes/sitioWeb.png" alt="mi sitioWeb" class="details__img">
+                    <p class="details__subtitle text-center">Mi sitio web</p>
+                    <p class="details__p text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellat sint, libero mollitia a soluta similique quaerat labore alias sunt?</p>
+                    <div class="details__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Saber más</a>
+                    </div>
+                </article>
+                <!-- invitados -->
+                <article class="details__web col-12 col-md-6 col-lg-4">
+                    <img src="./imagenes/invitados.png" alt="Invitados" class="details__img">
+                    <p class="details__subtitle text-center">Invitados</p>
+                    <p class="details__p text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellat sint, libero mollitia a soluta similique quaerat labore alias sunt?</p>
+                    <div class="details__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Saber más</a>
+                    </div>
+                </article>
+                <!-- ubicaciones -->
+                <article class="details__web col-12 col-md-6 col-lg-4">
+                    <img src="./imagenes/ubicaiones.png" alt="Ubicaciones" class="details__img">
+                    <p class="details__subtitle text-center">Ubicaciones</p>
+                    <p class="details__p text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellat sint, libero mollitia a soluta similique quaerat labore alias sunt?</p>
+                    <div class="details__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Saber más</a>
+                    </div>
+                </article>
+                <!-- presupuesto -->
+                <article class="details__web col-12 col-md-6 col-lg-4">
+                    <img src="./imagenes/presupuesto6.png" alt="Presupuesto" class="details__img">
+                    <p class="details__subtitle text-center">Presupuesto</p>
+                    <p class="details__p text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellat sint, libero mollitia a soluta similique quaerat labore alias sunt?</p>
+                    <div class="details__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Saber más</a>
+                    </div>
+                </article>
+                <!-- pendientes -->
+                <article class="details__web col-12 col-md-6 col-lg-4">
+                    <img src="./imagenes/pendientes.png" alt="Pendientes" class="details__img">
+                    <p class="details__subtitle text-center">Pendientes</p>
+                    <p class="details__p text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellat sint, libero mollitia a soluta similique quaerat labore alias sunt?</p>
+                    <div class="details__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Saber más</a>
+                    </div>
+                </article>
+                <!-- lista de tareas -->
+                <article class="details__web col-12 col-md-6 col-lg-4">
+                    <img src="./imagenes/listaDeTareas.png" alt="Lista de tareas" class="details__img">
+                    <p class="details__subtitle text-center">Lista de tareas</p>
+                    <p class="details__p text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellat sint, libero mollitia a soluta similique quaerat labore alias sunt?</p>
+                    <div class="details__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Saber más</a>
+                    </div>
+                </article>
             </div>
         </section>
 
