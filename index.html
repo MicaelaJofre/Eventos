@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--  logo redes -->
+    <link href="https://icons8.com/icon/118497/facebook-nuevo">
     <!--  bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- styles -->
@@ -20,7 +22,6 @@
                 <a href="#"class="nav__textLogo d-flex"><img src="./imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="nav__img"><h1>Dreamed Day</h1></a>
             </div>
             <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
-                <li class="nav__li"><a href="#">Que hacemos</a></li>
                 <li class="nav__li"><a href="#">Servicios</a>
                     <ul class="subUl">
                         <li class="subLi"><a href="#">Invitados</a></li>
@@ -31,6 +32,7 @@
                     </ul>
                 </li>
                 <li class="nav__li"><a href="#">Mi casamiento</a></li>
+                <li class="nav__li"><a href="#">Accedé</a></li>
                 <li class="nav__li"><a href="#">Registrarse</a></li>
                 <li class="nav__li"><a href="#">Contacto</a></li>
             </ul>
@@ -60,14 +62,13 @@
         </section>      
     </header>
     <main class="container">
+
         <!-- que hacemos -->
-        <section class="offers row">
-            <article class="offers__img col-12 col-lg-6">
-            </article>
+        <section class="offers row d-flex align-items-end flex-column">
             <article class="offers__intro col-12 col-lg-6">
                 <div class="exp">
                     <h3 class="exp__title text-center">Creá tu sitio web privado para compartir con los que más quieres.</h3>
-                    <h4 class="exp__subtitle text-center text-md-start">De que se trata..</h4>
+                    <h4 class="exp__subtitle text-center text-lg-start">De que se trata..</h4>
                     <p class="exp__text text-center text-md-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse qui, reprehenderit eligendi earum dolor dolorem facere odio! Eius, molestias? Quia a atque inventore rerum magnam expedita tempore laboriosam modi reprehenderit eligendi earum dolor dolorem facere odio! Eius, molestias? Quia a atque inventore rerum magnam expedita tempore laboriosam modi.</p>
                 </div>
             </article>            
@@ -141,16 +142,96 @@
                 <img src="./imagenes/presupuesto2.png" alt="" class="col-12 col-6 col-4 wedding__img">
                 <img src="./imagenes/presupuesto1.png" alt="" class="col-12 col-6 col-4 wedding__img">
                 <img src="./imagenes/sitioWeb.png" alt="" class="col-12 col-6 col-4 wedding__img">
+                <div class="wedding__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Ver más diseños</a>
+                    </div>
             </article>
         </section>
 
+        <!-- Acceder y Registrarse -->
+        <section class="loginSingUp container">
+            <div class="row">
+                <!-- Acceder -->
+                <article class="col-12 col-md-6 p-3 p-md-5 login">
+                    <h3 class="text-center login__title">Ya tenés una cuenta</h3>
+                    <h4 class="text-center login__subtitle">Continuá aprovechando de los muchos beneficios</h4>
+                    <p class="login__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vitae delectus voluptates sit ut dolorum asperiores nesciunt at sunt eveniet esse omnis assumenda soluta ipsum aliquid dignissimos reiciendis harum, dolor quibusdam? Ab temporibus tempora sequi quibusdam dignissimos autem cumque amet maxime blanditiis ex facilis consequatur fuga, debitis facere nulla fugiat nisi nemo. Harum, eveniet totam at ratione vitae repellat, ducimus laudantium laboriosam eum obcaecati tempore praesentium iure, similique voluptates nobis!</p>
+                    <div class="login__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Accedé</a>
+                    </div>
+                </article>
+                <!-- Registrarse -->
+                <article class="col-12 col-md-6 p-3 p-md-5 singUp">
+                    <h3 class="text-center singUp__title">Registrate y empezá a disfrutar</h3>
+                    <h4 class="text-center singUp__subtitle">No pierdas la oportudidad de compartir y organizar tu gran día.</h4>
+                    <p class="singUp__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vitae delectus voluptates sit ut dolorum asperiores nesciunt at sunt eveniet esse omnis assumenda soluta ipsum aliquid dignissimos reiciendis harum, dolor quibusdam? Ab temporibus tempora sequi quibusdam dignissimos autem cumque amet maxime blanditiis ex facilis consequatur fuga, debitis facere nulla fugiat nisi nemo. Harum, eveniet totam at ratione vitae repellat, ducimus laudantium laboriosam eum obcaecati tempore praesentium iure, similique voluptates nobis!</p>
+                    <div class="singUp__button d-flex justify-content-center">
+                        <a href="#" class="btn text-center">Registrate</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="contact container">
+            <article class="row d-flex align-items-end flex-column ">
+                <!-- Formulario -->
+                <form action="" class="col-12 col-lg-6 form">
+                    <!-- Logo -->
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="./imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="form__img">
+                    <h3 class="form__logo">Dreamed Day</h3>
+                    </div>
+                    <p class="text-center p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ipsum quis? Sapiente atque delectus perferendis tempora aliquam asperiores excepturi labore.</p>
+
+                    <input type="text" name="name" id="name" placeholder="Nombre" required>
+                    <input type="tel" name="tel" id="tel" placeholder="Teléfono" required>
+                    <input type="email" name="email" id="email"
+                    placeholder="Email" required>
+                    <textarea name="message" id="message" placeholder="Escribe aquí tu mensaje"  rows="15"></textarea>
+
+                    <div class="form__btn d-flex justify-content-center" >
+                        <input class="formButton" type="submit" value="Enviar">
+                    </div>
+                </form>
+            </article>
+        </section>
     </main>
+    <footer class="container-fluid footer">
+        <section class="infoNetworksPayments d-flex justify-content-around flex-wrap">
+            <article class="info">
+                <p class="info__p text-center text-md-start">Información</p>
+                <a href="#" class="info__text"><p class="info__ap text-center text-md-start">Política de privacidad</p></a>
+                <a href="#" class="info__text"><p class="info__ap text-center text-md-start">Tarifas</p></a>
+                <a href="#" class="info__text"><p class="info__ap text-center text-md-start">Política de privacidad</p></a>
+                <a href="#" class="info__text"><p class="info__ap text-center text-md-start">Condiciones legales</p></a>
+            </article>
+            <article class="networks text-center">
+                <p class="networks__p">Redes sociales</p>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png"/>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png"/>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png"/>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/>
+            </article>
+            <article class="payments text-center">
+                <p class="payments__p">Formas de pago</p>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png"/>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png"/>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png"/>
+            </article>
+        </section>
+        <section class="footerText d-flex justify-content-center align-items-center">
+            <img src="./imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="footerText__img">
+            <p class="footerText__copy">&copy;2021 Dreamed Day.com</p>
+        </section>
+    </footer>
     <!--  Actividades Extras: -->
-    <!-- <script src="./js/actividadesExtras.js"></script> -->
+    <script src="./js/actividadesExtras.js"></script>
 
     <!--  Entregas de desafios: -->
     <!-- <script src="./js/desafiosEntrega1.js"></script> -->
-    <script src="./js/desafiosEntrega2.js"></script> 
+    <!-- <script src="./js/desafiosEntrega2.js"></script>  -->
+    <!-- <script src="./js/desafiosEntrega3.js"></script>  -->
 
 
     <!--fontawesome-->

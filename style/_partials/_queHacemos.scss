@@ -1,3 +1,4 @@
+@import "../_partials/mixies";
 .offers {
     background-image: url(../imagenes/offers2.jpg);
     background-position: center;
@@ -10,6 +11,15 @@
     }
     .exp{
         color: $grey;
+        @include breakpoint(mobile) {
+            background: linear-gradient(rgba(141, 27, 7, 0.2),rgba(254, 197, 187, 0.7) );
+        }
+        @include breakpoint(laptop) {
+            background: linear-gradient(rgba(141, 27, 7, 0.2), rgba(254, 197, 187, 0.7));
+        }
+        @include breakpoint(desktop) {
+            background: transparent;
+        }
         &__title {
             font-weight: 400;
             padding: 1em .5em;
@@ -19,7 +29,6 @@
             padding: 0 .5em 1em .5em;
         }
         &__text {
-            font-weight: 300;
             padding: 0 .5em 1em .5em;
         }
     }

@@ -33,7 +33,6 @@ body {
 
 .header .nav__img {
   padding-right: .5em;
-  cursor: pointer;
 }
 
 @media screen and (min-width: 320px) {
@@ -50,7 +49,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 994px) {
   .header .nav__img {
     width: 3.5em;
     height: 3em;
@@ -238,6 +237,26 @@ body {
   color: #484A47;
 }
 
+@media screen and (min-width: 320px) {
+  .offers .exp {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(141, 27, 7, 0.2)), to(rgba(254, 197, 187, 0.7)));
+    background: linear-gradient(rgba(141, 27, 7, 0.2), rgba(254, 197, 187, 0.7));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .offers .exp {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(141, 27, 7, 0.2)), to(rgba(254, 197, 187, 0.7)));
+    background: linear-gradient(rgba(141, 27, 7, 0.2), rgba(254, 197, 187, 0.7));
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .offers .exp {
+    background: transparent;
+  }
+}
+
 .offers .exp__title {
   font-weight: 400;
   padding: 1em .5em;
@@ -249,12 +268,11 @@ body {
 }
 
 .offers .exp__text {
-  font-weight: 300;
   padding: 0 .5em 1em .5em;
 }
 
 .details {
-  margin: 0;
+  margin: 5em 0;
 }
 
 .details__services {
@@ -279,7 +297,7 @@ body {
 }
 
 .details__subtitle {
-  font-weight: 600;
+  font-weight: 400;
   padding: 1.5em 0 .5em 0;
   -webkit-text-decoration: underline #E29578;
           text-decoration: underline #E29578;
@@ -292,10 +310,10 @@ body {
 
 .details__button .btn {
   background: #FEC5BB;
-  padding: .5em;
+  padding: .5em .8em;
   border-radius: 3em;
   text-decoration: none;
-  color: #EDF6F9;
+  color: #484A47;
   cursor: pointer;
   -webkit-transition: color 0.25s 0.0833333333s;
   transition: color 0.25s 0.0833333333s;
@@ -347,18 +365,18 @@ body {
 }
 
 .details__button .btn:hover {
-  background: #fff;
+  background: #EDF6F9;
   color: #E29578;
 }
 
 .myWedding {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), url(../imagenes/backMarron.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../imagenes/backMarron.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.7))), url(../imagenes/fondoAcuarelaAzul.jpg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7)), url(../imagenes/fondoAcuarelaAzul.jpg);
   background-size: cover;
 }
 
 .wedding {
-  margin: 2em 0;
+  margin: 5em 0;
 }
 
 .wedding__title {
@@ -377,5 +395,403 @@ body {
   padding: 1em;
   margin: .5em;
   border: 3px solid #006D77;
+}
+
+.wedding__button {
+  margin-top: 2em;
+}
+
+.wedding__button .btn {
+  background: #FEC5BB;
+  padding: .5em 1em;
+  border-radius: 3em;
+  text-decoration: none;
+  color: #484A47;
+  cursor: pointer;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.wedding__button .btn::before, .wedding__button .btn::after {
+  border: 0 solid transparent;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.wedding__button .btn::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-radius: 3em;
+}
+
+.wedding__button .btn::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-radius: 3em;
+}
+
+.wedding__button .btn:hover::before, .wedding__button .btn:hover::after {
+  border-color: #FEC5BB;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.wedding__button .btn:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.wedding__button .btn:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.wedding__button .btn:hover {
+  background: #fff;
+  color: #E29578;
+}
+
+.loginSingUp {
+  margin: 5em 0;
+}
+
+.loginSingUp .login, .loginSingUp .singUp {
+  background: #006D77;
+  color: #EDF6F9;
+}
+
+.loginSingUp .login__title, .loginSingUp .singUp__title {
+  font-family: "Caveat", cursive;
+  font-size: 2.5em;
+  padding: .5em 0;
+  font-weight: 400;
+}
+
+.loginSingUp .login__subtitle, .loginSingUp .singUp__subtitle {
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0 1em 3em 1em;
+}
+
+.loginSingUp .login__text, .loginSingUp .singUp__text {
+  font-weight: 300;
+  font-size: .9em;
+  padding: 0 .5em 1em .5em;
+  line-height: 1.8em;
+}
+
+.loginSingUp .login__button, .loginSingUp .singUp__button {
+  margin: 2em 0;
+}
+
+.loginSingUp .login__button .btn, .loginSingUp .singUp__button .btn {
+  background: #FEC5BB;
+  padding: .5em 1em;
+  border-radius: 3em;
+  text-decoration: none;
+  color: #484A47;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.loginSingUp .login__button .btn::before, .loginSingUp .login__button .btn::after, .loginSingUp .singUp__button .btn::before, .loginSingUp .singUp__button .btn::after {
+  border: 0 solid transparent;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.loginSingUp .login__button .btn::before, .loginSingUp .singUp__button .btn::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-radius: 3em;
+}
+
+.loginSingUp .login__button .btn::after, .loginSingUp .singUp__button .btn::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-radius: 3em;
+}
+
+.loginSingUp .login__button .btn:hover::before, .loginSingUp .login__button .btn:hover::after, .loginSingUp .singUp__button .btn:hover::before, .loginSingUp .singUp__button .btn:hover::after {
+  border-color: #FEC5BB;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.loginSingUp .login__button .btn:hover::before, .loginSingUp .singUp__button .btn:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.loginSingUp .login__button .btn:hover::after, .loginSingUp .singUp__button .btn:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.loginSingUp .login__button .btn:hover, .loginSingUp .singUp__button .btn:hover {
+  background: #006D77;
+  color: #EDF6F9;
+}
+
+.loginSingUp .singUp {
+  background: #FEC5BB;
+  color: #484A47;
+}
+
+.loginSingUp .singUp__subtitle {
+  padding-bottom: 2em;
+}
+
+.loginSingUp .singUp__button .btn {
+  background: #006D77;
+  color: #EDF6F9;
+}
+
+.loginSingUp .singUp__button .btn:hover {
+  background: #006D77;
+  color: #EDF6F9;
+}
+
+.contact {
+  padding: 1em;
+}
+
+@media screen and (min-width: 320px) {
+  .contact {
+    background: #EDF6F9;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact {
+    background: #EDF6F9;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .contact {
+    background-image: url(../imagenes/fondoContacto.png);
+    background-size: cover;
+    background-position: left;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.form {
+  padding: 1em;
+}
+
+.form__img {
+  padding-right: .5em;
+}
+
+@media screen and (min-width: 320px) {
+  .form__img {
+    width: 2.5em;
+    height: 2em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form__img {
+    width: 3.5em;
+    height: 3em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .form__img {
+    width: 3.5em;
+    height: 3em;
+  }
+}
+
+.form__logo {
+  font-family: "Caveat", cursive;
+  font-size: 600;
+  text-decoration: none;
+  color: #484A47;
+}
+
+.form > input, .form textarea {
+  border: none;
+  outline: none;
+  border-radius: .20em;
+  padding: .5em;
+  margin-top: .5em;
+  width: 100%;
+  resize: none;
+}
+
+.form > input::-webkit-input-placeholder, .form textarea::-webkit-input-placeholder {
+  color: #FEC5BB;
+}
+
+.form > input:-ms-input-placeholder, .form textarea:-ms-input-placeholder {
+  color: #FEC5BB;
+}
+
+.form > input::-ms-input-placeholder, .form textarea::-ms-input-placeholder {
+  color: #FEC5BB;
+}
+
+.form > input::placeholder, .form textarea::placeholder {
+  color: #FEC5BB;
+}
+
+.form__btn {
+  margin: 2em 0;
+}
+
+.form__btn .formButton {
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background: #FEC5BB;
+  padding: .5em 3em;
+  border-radius: 3em;
+  color: #484A47;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.form__btn .formButton::before, .form__btn .formButton::after {
+  border: 0 solid transparent;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.form__btn .formButton::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-radius: 3em;
+}
+
+.form__btn .formButton::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-radius: 3em;
+}
+
+.form__btn .formButton:hover::before, .form__btn .formButton:hover::after {
+  border-color: #FEC5BB;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.form__btn .formButton:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.form__btn .formButton:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.form__btn .formButton:hover {
+  background: transparent;
+  color: #EDF6F9;
+}
+
+.footer {
+  background: #e8e8e4;
+  padding: 2em;
+  margin-top: 5em;
+  -webkit-box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+          box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+  box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+  box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+}
+
+.info {
+  margin-bottom: 3em;
+}
+
+.info__text {
+  text-decoration: none;
+  color: #484A47;
+}
+
+.info__ap {
+  font-size: .8em;
+}
+
+.networks, .payments {
+  margin-bottom: 3em;
+}
+
+.networks__img, .payments__img {
+  width: 2em;
+}
+
+.footerText {
+  margin-top: 2em;
+}
+
+.footerText__img {
+  padding-right: .5em;
+}
+
+@media screen and (min-width: 320px) {
+  .footerText__img {
+    width: 2.5em;
+    height: 2em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footerText__img {
+    width: 3.5em;
+    height: 3em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .footerText__img {
+    width: 3.5em;
+    height: 3em;
+  }
+}
+
+.footerText__img {
+  margin-bottom: 1em;
 }
 /*# sourceMappingURL=style.css.map */

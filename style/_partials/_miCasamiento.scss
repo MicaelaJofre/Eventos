@@ -1,36 +1,30 @@
-@import "../_partials/mixies";
-.details {
+.myWedding {
+    background-image:linear-gradient(rgba(255, 255, 255, .5),rgba(255, 255, 255, .7)),
+    url(../imagenes/fondoAcuarelaAzul.jpg);
+    background-size: cover;
+}
+.wedding {
     margin: 5em 0;
-    &__services {
+    &__title {
         margin: 1em 0;
-        padding: 1.5em;
+        padding: 1.5em 0;
         background: $green;
         color: $white;
         font-weight: 400;
     }
-    &__web {
-        padding: 2em;
-    }
     &__img{
-        width: 100%;
-        max-height: 200px;
+        width: 300px;
+        height: 200px;
         object-fit: cover;
         padding: 1em;
-        border: 1px solid $darkSalmon;
+        margin: .5em;
+        border: 3px solid $darkGreen;
     }
-    &__subtitle{
-        font-weight: 400;
-        padding: 1.5em 0 .5em 0;
-        text-decoration: underline $darkSalmon;
-        text-underline-position: under;
-    }
-    &__p {
-        line-height: 1.8em;
-    }
-    &__button {                
+    &__button {
+        margin-top: 2em;
         .btn {
             background: $salmon;
-            padding: .5em .8em;
+            padding: .5em 1em;
             border-radius: 3em;
             text-decoration: none;
             color: $grey;
@@ -39,11 +33,12 @@
             transition: color 0.25s 0.0833333333s;
             position: relative;
             @include btn;
-            &:hover{
-                background: $white;
+
+            &:hover {
+                background: #fff;
                 color: $darkSalmon;
             }
-            
+
         }
     }
 }

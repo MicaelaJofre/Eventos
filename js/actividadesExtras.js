@@ -61,76 +61,157 @@ Luego, efectuar un descuento en porcentajes (20%, 30%, etcétera) sobre los valo
 Si el mismo es igual a otro nombre almacenado en una variable, realizar una salida por alerta con el mensaje “Fui yo”. 
 Caso contrario, la salida será “Yo no fui”. */
 
-let name1 = "Micaela";
-let name2 = prompt("Dime tu nombre: ").toUpperCase();
-if ((name2 != " ") && (name2 === "MICAELA")) {
-    alert("Fui yo");
-} else {
-    alert("Yo no fui");
-}
+// let name1 = "Micaela";
 
-/* Solicitar al usuario una (1) tecla.
-Si se presiona “y” (minúscula), o “Y” (mayúscula), realizar una salida por alerta con el mensaje “Correcto”. 
-Caso contrario, la salida será “Error”. */
+// let name2 = prompt("Dime tu nombre: ").toUpperCase();
 
-let key = prompt("Preciona una tecla.");
-if (key === "Y" || key === "y") {
-    alert("Correcto");
-} else {
-    alert("Error");
-}
+// if ((name2 != " ") && (name2 === "MICAELA")) {
+    
+//     alert("Fui yo");
 
-/* Solicitar al usuario un (1) un número.
-Si el valor está entre 1 y 4, efectuar una de las siguientes salidas según corresponda: 
-“Elegiste a Homero” si es 1.
-“Elegiste a Marge” si es 2.
-“Elegiste a Bart” si es 3.
-“Elegiste a Lisa” si es 4. */
+// } else {
+    
+//     alert("Yo no fui");
+// }
 
-let number = parseInt(prompt("Elige un número del 1 al 4 :"));
+// /* Solicitar al usuario una (1) tecla.
+// Si se presiona “y” (minúscula), o “Y” (mayúscula), realizar una salida por alerta con el mensaje “Correcto”. 
+// Caso contrario, la salida será “Error”. */
 
-if (number === 1) {
-    alert("Elegiste a Homero");
-} else if (number === 2) {
-    alert("Elegiste a Marge");
-} else if (number === 3) {
-    alert("Elegiste a Bart");
-} else if (number === 4) {
-    alert("Elegiste a Lisa");
-} else {
-    alert("La opción no es válida.");
-}
+// let key = prompt("Preciona una tecla.");
 
-/* Solicitar al usuario un (1) número.
-Si el valor está entre dos números, efectuar una de las siguientes salidas, según corresponda: 
-“Presupuesto bajo” si está entre 0 y 1000.
-“Presupuesto medio” si está entre 1001 y 3000.
-“Presupuesto alto” si es  mayor que 3000. */
 
-let budget = parseFloat(prompt("Dime un número: "));
+// if (key === "Y" || key === "y") {
+    
+    
+//     alert("Correcto");
 
-if ((budget >= 0) && (budget <= 1000)) {
-    alert("Presupuesto bajo");
-} else if ((budget >= 1001) && (budget <= 3000)) {
-    alert("Presupuesto medio");
-} else if (budget > 3000) {
-    alert("Presupuesto alto");
-} else {
-    alert("Opción no válida.");
-}
 
-/* Solicitar al usuario cuatro(4) productos de almacén. 
-Si todos los elementos fueron cargados, realizar una única salida compuesta por el listado de productos.
-Caso contrario, la salida será “Error: Es necesario cargar todos los productos”. */
+// } else {
+    
+    
+//     alert("Error");
+// }
 
-let product1 = prompt("DIme el primer producto").toUpperCase();
-let product2 = prompt("DIme el segundo producto").toUpperCase();
-let product3 = prompt("DIme el tercer producto").toUpperCase();
-let product4 = prompt("DIme el cuarto producto").toUpperCase();
+// /* Solicitar al usuario un (1) un número.
+// Si el valor está entre 1 y 4, efectuar una de las siguientes salidas según corresponda: 
+// “Elegiste a Homero” si es 1.
+// “Elegiste a Marge” si es 2.
+// “Elegiste a Bart” si es 3.
+// “Elegiste a Lisa” si es 4. */
 
-if ((product1 != "") && (product2 != "") && (product3 != "") && (product4 != "")) {
-    alert("Tu lista es: " + product1 + " " + product2 + " " + product3 + " " + product4);
-}else {
-    alert("Error: Es necesario cargar todos los productos");
-}
+// let number = parseInt(prompt("Elige un número del 1 al 4 :"));
 
+// if (number === 1) {
+    
+//     alert("Elegiste a Homero");
+
+// } else if (number === 2) {
+    
+//     alert("Elegiste a Marge");
+
+// } else if (number === 3) {
+    
+//     alert("Elegiste a Bart");
+
+// } else if (number === 4) {
+
+    
+    
+//     alert("Elegiste a Lisa");
+
+// } else {
+
+//     alert("La opción no es válida.");
+
+// }
+
+// /* Solicitar al usuario un (1) número.
+// Si el valor está entre dos números, efectuar una de las siguientes salidas, según corresponda: 
+// “Presupuesto bajo” si está entre 0 y 1000.
+// “Presupuesto medio” si está entre 1001 y 3000.
+// “Presupuesto alto” si es  mayor que 3000. */
+
+// let budget = parseFloat(prompt("Dime un número: "));
+
+// if ((budget >= 0) && (budget <= 1000)) {
+
+//     alert("Presupuesto bajo");
+
+// } else if ((budget >= 1001) && (budget <= 3000)) {
+
+//     alert("Presupuesto medio");
+
+// } else if (budget > 3000) {
+    
+//     alert("Presupuesto alto");
+
+// } else {
+
+//     alert("Opción no válida.");
+// }
+
+// /* Solicitar al usuario cuatro(4) productos de almacén. 
+// Si todos los elementos fueron cargados, realizar una única salida compuesta por el listado de productos.
+// Caso contrario, la salida será “Error: Es necesario cargar todos los productos”. */
+
+// let product1 = prompt("DIme el primer producto").toUpperCase();
+// let product2 = prompt("DIme el segundo producto").toUpperCase();
+// let product3 = prompt("DIme el tercer producto").toUpperCase();
+// let product4 = prompt("DIme el cuarto producto").toUpperCase();
+
+// if ((product1 != "") && (product2 != "") && (product3 != "") && (product4 != "")) {
+    
+//     alert("Tu lista es: " + product1 + " " + product2 + " " + product3 + " " + product4);
+
+// } else {
+    
+//     alert("Error: Es necesario cargar todos los productos");
+// }
+
+/* Solicitar al usuario un(1) un número y un(1) texto. 
+Efectuar una salida por alerta con el mensaje ingresado por cada repetición,
+hasta alcanzar el valor señalado por el usuario. */
+
+// let num = parseInt(prompt("dime un número: "));
+
+// let text = prompt("dime un palabra: ");
+
+// for (let i = 1; i <= num; i++) {
+    
+//     alert(text);
+
+// }
+
+/* Solicitar al usuario un(1) un número.Emplear este valor para determinar la cantidad de repeticiones,
+y efectuar una salida por alerta con el mensaje “lado” en cada repetición.
+Pero si se alcanza un número de iteraciones mayor que cuatro(4), cancelar el ciclo. */
+
+// let num1 = parseInt(prompt("dime un número"));
+
+// for (let i = 0; i < num1; i++) {
+    
+//     if (num1 >= 4) {
+    
+//         break;
+//     }
+
+//     alert("lado");
+
+// }
+
+/* Solicitar al usuario la carga de diez (10) alumnos de forma consecutiva.
+Luego realizar un única salida por alerta, con el listado de alumnos registrados. */
+
+// let student = "";
+
+// for (let i = 1; i <= 10; i++){
+
+//     student += prompt("dime un nombre de un alumno: ");
+
+
+// }
+// alert(student);
+
+/* Solicitar al usuario la carga de nombres de forma consecutiva,  hasta que se ingrese “Voldemort”.
+Luego realizar un única salida por alerta, con todos los nombres ingresados. */

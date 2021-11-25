@@ -1,0 +1,33 @@
+@import "../_partials/mixies";
+.footer {
+    background: #e8e8e4;
+    padding: 2em;
+    margin-top: 5em;
+    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+
+}
+.info {    
+    margin-bottom: 3em;       
+    &__text {
+        text-decoration: none;
+        color: $grey; 
+    }
+    &__ap{
+        font-size: .8em;
+    }
+}
+.networks, .payments {
+    margin-bottom: 3em;
+    &__img {
+        width: 2em;
+    }
+}
+.footerText {   
+    margin-top: 2em; 
+    @include logo;
+    &__img {
+        margin-bottom: 1em;
+    }
+}

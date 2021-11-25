@@ -12,7 +12,7 @@
     }
 
     @else if $point==desktop {
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: 994px) {
             @content;
         }
     }
@@ -58,5 +58,25 @@
     &:hover::after {
         transition-delay: 0s, 0.25s, 0s;
         transition-delay: 0s, 0.25s, 0s;
+    }
+}
+@mixin logo {
+    &__img {
+        padding-right: .5em;
+
+        @include breakpoint(mobile) {
+            width: 2.5em;
+            height: 2em;
+        }
+
+        @include breakpoint(laptop) {
+            width: 3.5em;
+            height: 3em;
+        }
+
+        @include breakpoint(desktop) {
+            width: 3.5em;
+            height: 3em;
+        }
     }
 }

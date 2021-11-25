@@ -1,0 +1,66 @@
+.loginSingUp {
+    margin: 5em 0;
+    
+    .login, .singUp {
+        background: $darkGreen;
+        color: $white;
+        &__title {
+            font-family: $fontLogo;
+            font-size: 2.5em;
+            padding: .5em 0;
+            font-weight: 400;
+        }
+        &__subtitle {
+            font-size: 1em;
+            font-weight: 400;
+            padding: 0 1em 3em 1em;
+        }
+
+        &__text {
+            font-weight: 300;
+            font-size: .9em;
+            padding: 0 .5em 1em .5em;
+            line-height: 1.8em;
+        }
+        &__button {
+            margin: 2em 0;
+            .btn {
+                background: $salmon;
+                padding: .5em 1em;
+                border-radius: 3em;
+                text-decoration: none;
+                color: $grey;
+                font-weight: 600;
+                cursor: pointer;
+                transition: color 0.25s 0.0833333333s;
+                transition: color 0.25s 0.0833333333s;
+                position: relative;
+                @include btn;
+
+                &:hover {
+                    background: $darkGreen;
+                    color: $white;
+                }
+
+            }
+        }
+    }
+    .singUp {
+        background: $salmon;
+        color: $grey;
+        &__subtitle {
+            padding-bottom: 2em;
+        }
+        &__button {
+            .btn {
+                background: $darkGreen;
+                color: $white;
+                &:hover {
+                    background: $darkGreen;
+                    color: $white;
+                }
+
+            }
+        }
+    }
+}
