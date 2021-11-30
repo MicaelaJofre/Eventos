@@ -27,13 +27,13 @@
                         <li class="subLi"><a href="#">Invitados</a></li>
                         <li class="subLi"><a href="#">Ubicaciones</a></li>
                         <li class="subLi"><a href="#">Presupuesto</a></li>
-                        <li class="subLi"><a href="#">Mi sitio</a></li>
-                        <li class="subLi"><a href="#">Pendientes</a></li>
+                        <li class="subLi"><a href="#">Mi web</a></li>
+                        <li class="subLi"><a href="#">Prpveedores</a></li>
                     </ul>
                 </li>
                 <li class="nav__li"><a href="#">Mi casamiento</a></li>
-                <li class="nav__li"><a href="#">Accedé</a></li>
-                <li class="nav__li"><a href="#">Registrarse</a></li>
+                <li class="nav__li"><a href="./secciones/login.html">Accedé</a></li>
+                <li class="nav__li"><a href="./secciones/signUp.html">Registrarse</a></li>
                 <li class="nav__li"><a href="#">Contacto</a></li>
             </ul>
         </nav>
@@ -124,8 +124,8 @@
                 </article>
                 <!-- lista de tareas -->
                 <article class="details__web col-12 col-md-6 col-lg-4">
-                    <img src="./imagenes/listaDeTareas.png" alt="Lista de tareas" class="details__img">
-                    <p class="details__subtitle text-center">Lista de tareas</p>
+                    <img src="./imagenes/listaDeTareas.png" alt="Proveedores" class="details__img">
+                    <p class="details__subtitle text-center">Proveedores</p>
                     <p class="details__p text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellat sint, libero mollitia a soluta similique quaerat labore alias sunt?</p>
                     <div class="details__button d-flex justify-content-center">
                         <a href="#" class="btn text-center">Saber más</a>
@@ -157,7 +157,7 @@
                     <h4 class="text-center login__subtitle">Continuá aprovechando de los muchos beneficios</h4>
                     <p class="login__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vitae delectus voluptates sit ut dolorum asperiores nesciunt at sunt eveniet esse omnis assumenda soluta ipsum aliquid dignissimos reiciendis harum, dolor quibusdam? Ab temporibus tempora sequi quibusdam dignissimos autem cumque amet maxime blanditiis ex facilis consequatur fuga, debitis facere nulla fugiat nisi nemo. Harum, eveniet totam at ratione vitae repellat, ducimus laudantium laboriosam eum obcaecati tempore praesentium iure, similique voluptates nobis!</p>
                     <div class="login__button d-flex justify-content-center">
-                        <a href="#" class="btn text-center">Accedé</a>
+                        <a href="./secciones/login.html" class="btn text-center">Accedé</a>
                     </div>
                 </article>
                 <!-- Registrarse -->
@@ -166,7 +166,7 @@
                     <h4 class="text-center singUp__subtitle">No pierdas la oportudidad de compartir y organizar tu gran día.</h4>
                     <p class="singUp__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vitae delectus voluptates sit ut dolorum asperiores nesciunt at sunt eveniet esse omnis assumenda soluta ipsum aliquid dignissimos reiciendis harum, dolor quibusdam? Ab temporibus tempora sequi quibusdam dignissimos autem cumque amet maxime blanditiis ex facilis consequatur fuga, debitis facere nulla fugiat nisi nemo. Harum, eveniet totam at ratione vitae repellat, ducimus laudantium laboriosam eum obcaecati tempore praesentium iure, similique voluptates nobis!</p>
                     <div class="singUp__button d-flex justify-content-center">
-                        <a href="#" class="btn text-center">Registrate</a>
+                        <a href="./secciones/signUp.html" class="btn text-center">Registrate</a>
                     </div>
                 </article>
             </div>
@@ -190,22 +190,25 @@
                     placeholder="Email" required>
                     <textarea name="message" id="message" placeholder="Escribe aquí tu mensaje"  rows="15"></textarea>
 
-                    <div class="form__btn d-flex justify-content-center" >
-                        <input class="formButton" type="submit" value="Enviar">
+                    <div class="form__button d-flex justify-content-center" >
+                        <input class="btn" type="submit" value="Enviar">
                     </div>
                 </form>
             </article>
         </section>
     </main>
+    <!-- footer -->
     <footer class="container-fluid footer">
         <section class="infoNetworksPayments d-flex justify-content-around flex-wrap">
+            <!-- informacion -->
             <article class="info">
                 <p class="info__p text-center text-md-start">Información</p>
-                <a href="#" class="info__text"><p class="info__ap text-center text-md-start">Política de privacidad</p></a>
-                <a href="#" class="info__text"><p class="info__ap text-center text-md-start">Tarifas</p></a>
-                <a href="#" class="info__text"><p class="info__ap text-center text-md-start">Política de privacidad</p></a>
-                <a href="#" class="info__text"><p class="info__ap text-center text-md-start">Condiciones legales</p></a>
+                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
+                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Tarifas</p></a>
+                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
+                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Condiciones legales</p></a>
             </article>
+            <!-- redes -->
             <article class="networks text-center">
                 <p class="networks__p">Redes sociales</p>
                 <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png"/>
@@ -213,6 +216,7 @@
                 <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png"/>
                 <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/>
             </article>
+            <!-- formas de pago -->
             <article class="payments text-center">
                 <p class="payments__p">Formas de pago</p>
                 <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png"/>
@@ -220,13 +224,14 @@
                 <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png"/>
             </article>
         </section>
+        <!-- copy y pie -->
         <section class="footerText d-flex justify-content-center align-items-center">
             <img src="./imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="footerText__img">
             <p class="footerText__copy">&copy;2021 Dreamed Day.com</p>
         </section>
     </footer>
     <!--  Actividades Extras: -->
-    <script src="./js/actividadesExtras.js"></script>
+    <!-- <script src="./js/actividadesExtras.js"></script> -->
 
     <!--  Entregas de desafios: -->
     <!-- <script src="./js/desafiosEntrega1.js"></script> -->

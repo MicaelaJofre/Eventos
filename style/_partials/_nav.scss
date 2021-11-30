@@ -36,7 +36,7 @@
             transition: color 0.25s 0.0833333333s;
             transition: color 0.25s 0.0833333333s;
             position: relative;
-            @include btn;
+            @include btn($z: -1);
             >a {
                 text-decoration: none;
                 color: $white;

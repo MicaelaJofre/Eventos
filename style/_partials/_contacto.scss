@@ -2,11 +2,11 @@
 .contact {    
     padding: 1em;
     @include breakpoint(mobile) {
-        background: $white;
+        background: $greyGreen;
     }
 
     @include breakpoint(laptop) {
-        background: $white;
+        background: $greyGreen;
     }
 
     @include breakpoint(desktop) {
@@ -27,37 +27,36 @@
     }
     > input , textarea {
         border: none;
-        outline: none;
+        outline:none;
         border-radius: .20em;
         padding: .5em;
         margin-top: .5em;
         width: 100%;
         resize: none;
         &::placeholder {
-            color:$salmon;
+            color:$salmon;            
+        }
+        &:focus {
+            outline: solid 2px $salmon;
         }
     }
-    &__btn {
-        margin: 2em 0;
-        .formButton {
-            text-transform: uppercase;
-            border: 1px solid transparent;
-            background: $salmon;
-            padding: .5em 3em;
-            border-radius: 3em;
-            color: $grey;
+    &__button{
+        margin: 2em;
+        background: $salmon;
+        border-radius: 3em;
+        transition: color 0.25s 0.0833333333s;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+        @include btn;
+        &:hover {
+            background: transparent;
+        }
+        .btn {
             font-weight: 600;
-            cursor: pointer;
-            transition: color 0.25s 0.0833333333s;
-            transition: color 0.25s 0.0833333333s;
-            position: relative;
-            @include btn;
-
-            &:hover {
-                background: transparent;
-                color: $white;
-            }
-
+            text-transform: uppercase;
+            padding: .5em 3em;
+            color: $grey;
+            cursor: pointer;            
         }
     }
 }

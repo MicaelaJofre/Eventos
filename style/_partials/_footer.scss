@@ -13,8 +13,11 @@
     &__text {
         text-decoration: none;
         color: $grey; 
+        &:hover {
+            color: $darkGreen;
+        }
     }
-    &__ap{
+    &__link{
         font-size: .8em;
     }
 }
@@ -23,6 +26,9 @@
     &__img {
         width: 2em;
     }
+}
+.networks{
+    cursor: pointer;
 }
 .footerText {   
     margin-top: 2em; 

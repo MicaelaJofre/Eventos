@@ -1,0 +1,45 @@
+@import "../_partials/mixies"; 
+
+.headerSchedule {
+    @include nav;
+}
+.scheduleBar {
+    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+    padding: 1em;
+    margin-bottom: 2em;
+}
+.bar {
+    text-align: center;
+    &__link {
+        text-decoration: none;
+        color: $grey;
+        &:hover {
+            color: $darkGreen;
+        }
+    }
+    &__img {
+        padding: 1em;
+        cursor: pointer;
+    }
+}
+
+// agenda - tabla
+
+.guests {
+    .table {
+        margin: 1em;
+        width: 60vw;
+        >tr {
+            >th{
+                text-align: center;
+                color: red;
+            }
+            >td {
+                outline: solid 2px $salmon;
+            }
+            
+        }
+    }
+}

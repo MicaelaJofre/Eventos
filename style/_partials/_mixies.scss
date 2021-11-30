@@ -1,3 +1,4 @@
+// media query
 @mixin breakpoint($point) {
     @if $point==mobile {
         @media screen and (min-width: 320px) {
@@ -17,7 +18,11 @@
         }
     }
 }
-@mixin btn{
+
+// efecto botones
+
+@mixin btn($z: 0) {
+    
     &::before,
     &::after {
         border: 0 solid transparent;
@@ -27,6 +32,7 @@
         height: 0;
         bottom: 0;
         right: 0;
+        z-index: $z;
     }
 
     &::before {
@@ -77,6 +83,93 @@
         @include breakpoint(desktop) {
             width: 3.5em;
             height: 3em;
+        }
+    }
+}
+
+// navegadores excepto el nav del index
+
+@mixin nav {
+
+    & {
+        width: 100%;
+        height: auto;
+        background: $darkGreen;
+        z-index: 1;
+        .nav {
+            padding: 1em;
+            @include logo;
+
+            &__textLogo {
+                font-family: $fontLogo;
+                font-size: 600;
+                text-decoration: none;
+                color: $white;
+                cursor: pointer;
+
+                &:hover {
+                    color: $salmon;
+                }
+            }
+
+            &__ul {
+                list-style: none;
+                margin: 1em;
+            }
+
+            &__li {
+                padding: .3em;
+                margin: .5em;
+                cursor: pointer;
+                border: 1px solid transparent;
+                transition: color 0.25s 0.0833333333s;
+                transition: color 0.25s 0.0833333333s;
+                position: relative;
+                @include btn($z: -1);
+
+                >a {
+                    text-decoration: none;
+                    color: $white;
+
+                    &:hover {
+                        color: $salmon;
+                    }
+                }
+
+                .subUl {
+                    list-style: none;
+                    position: absolute;
+                    color: $white;
+                    display: none;
+                }
+
+                &:hover>.subUl {
+                    display: block;
+                    padding: .5em;
+                    top: 35px;
+                    left: -20px;
+                    z-index: 10;
+                }
+
+                .subLi {
+                    background: $darkGreen;
+                    padding: 1em;
+                    width: 10em;
+                    z-index: 1000;
+                    >a {
+                        text-decoration: none;
+                        color: $white;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $salmon;
+                        }
+                    }
+                }
+
+            }
+
+
         }
     }
 }

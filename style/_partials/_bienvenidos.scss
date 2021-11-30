@@ -1,0 +1,57 @@
+@import "../_partials/mixies";
+
+.headerWelcome {
+    @include nav;
+}
+
+.welcomeMain {
+    width: 100%;
+    height: auto;
+    background-image: url(../imagenes/fondoAcuarela.jpg);
+    background-size: cover;
+    .title {
+        padding: .5em;
+        padding-bottom: 0;
+        font-weight: 600;
+        font-family: $fontLogo;
+        font-size: 10em;
+    }
+    .novios {
+        font-size: 1.5em;
+        padding-bottom: 1em;
+    } 
+    .text {
+        padding-bottom: 3em;
+    }   
+}
+.welcome {
+    &__img {
+        width: 25em;
+        height: 12em;
+        object-fit: cover;
+        padding: .5em;
+        border: 1px solid $salmon;
+        position: relative;
+    }
+    &__link {
+        margin: 2em 0 5em 1em;
+        font-size: 1.2em;
+        font-weight: 600;
+        text-transform: uppercase;
+        background: $salmon;
+        padding: 1em 2em;
+        border-radius: 3em;
+        text-decoration: none;
+        color: $grey;
+        cursor: pointer;
+        transition: color 0.25s 0.0833333333s;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+        @include btn;
+
+        &:hover {
+            background:transparent;
+            color: $darkSalmon;
+        }
+    }
+}

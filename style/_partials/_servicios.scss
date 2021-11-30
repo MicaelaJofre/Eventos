@@ -40,7 +40,7 @@
             position: relative;
             @include btn;
             &:hover{
-                background: $white;
+                background: #fff;
                 color: $darkSalmon;
             }
             

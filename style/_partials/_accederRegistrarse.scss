@@ -1,9 +1,19 @@
+@import "../_partials/mixies";
+
+.headerLogin {
+    @include nav;
+}
+
+//index
+//acceder - login
 .loginSingUp {
     margin: 5em 0;
     
     .login, .singUp {
         background: $darkGreen;
         color: $white;
+        box-shadow: -1px 9px 86px -34px rgba(0, 0, 0, 0.75);box-shadow: -1px 9px 86px -34px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 9px 86px -34px rgba(0, 0, 0, 0.75);
         &__title {
             font-family: $fontLogo;
             font-size: 2.5em;
@@ -45,6 +55,8 @@
             }
         }
     }
+    //index
+    //registrarse -singUp
     .singUp {
         background: $salmon;
         color: $grey;
@@ -63,4 +75,170 @@
             }
         }
     }
+}
+
+//pagina a parte
+//Acceder - login
+//registrarse -sign Up
+
+.headerSignUp {
+    @include nav;
+}
+
+.signupMain {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../imagenes/regAcc.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+.signup-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 30px 0;
+    .form {
+        color: $grey;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        background: #fff;
+        box-shadow: -1px 9px 40px -10px rgba(0, 0, 0, 0.2);
+        box-shadow: -1px 9px 40px -10px rgba(0, 0, 0, 0.2);
+        box-shadow: -1px 9px 40px -10px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+    }
+
+    .h2 {
+        color: $grey;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .hr {
+        margin: 0 -30px 20px;
+    }
+
+    //img face y google - login
+
+    .imgLogin {
+        text-decoration: none !important;
+        margin: .5em;
+        width: 100%;
+        height: auto;
+        border: 2px solid $white;
+        border-radius: .3em;
+
+        >span {
+            padding-left: 1em;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .img {
+            width: 3.5em;
+            height: auto;
+            cursor: pointer;
+            padding: .5em;
+        }
+    }
+
+    .imgLogin--F {
+        background: #00A3F7;
+    }
+
+    .imgLogin--G {
+        background: #E72837;
+    }
+}
+
+// hr entre los logos de face y google
+.hr {
+    &__o {
+        width: 10em;
+        margin: 0 .5em;
+    }
+}
+
+.form-control {
+    font-size: 15px;
+}
+
+.form-control,
+.form-control:focus,
+.input-group-text {
+    border-color: #e1e1e1;
+    z-index: 1;
+}
+.form-control,
+.btn {
+    border-radius: 3px;    
+}
+
+.signup-form .form-group {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.signup-form label {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.signup-form .form-control {
+    min-height: 38px;
+    box-shadow: none;
+}
+
+.signup-form .input-group-addon {
+    max-width: 42px;
+    text-align: center;
+}
+
+.signup-form .btn,
+.signup-form .btn:active {
+    font-size: 16px;
+    font-weight: bold;
+    background: $green;
+    border: none;
+    min-width: 140px;
+}
+
+.signup-form .btn:hover,
+.signup-form .btn:focus {
+    background: $darkGreen;
+}
+
+.signup-form a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.signup-form a:hover {
+    text-decoration: none;
+}
+
+.signup-form form a {
+    color: $darkGreen;
+    text-decoration: none;
+}
+
+.signup-form form a:hover {
+    text-decoration: underline;
+}
+
+//iconos del singUp
+
+.signup-form .fa {
+    font-size: 30px;
+}
+
+.signup-form .fa-paper-plane {
+    font-size: 28px;
+}
+
+.signup-form .fa-check {
+    color: #fff;
+    left: 17px;
+    top: 18px;
+    font-size: 7px;
+    position: absolute;
 }
