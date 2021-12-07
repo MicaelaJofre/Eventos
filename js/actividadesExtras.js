@@ -215,3 +215,64 @@ Luego realizar un única salida por alerta, con el listado de alumnos registrado
 
 /* Solicitar al usuario la carga de nombres de forma consecutiva,  hasta que se ingrese “Voldemort”.
 Luego realizar un única salida por alerta, con todos los nombres ingresados. */
+
+/* 
+
+let total = "";
+
+let name = prompt("Carga todos los nombres que quieras, cuando desees finalizar escribe VOLDEMORT.");
+
+while (name != 'VOLDEMORT') {
+    
+    total += name + "\n";
+    
+    name = prompt("DIME OTRO NOMBRE");
+    
+
+} 
+
+alert(total);
+ */
+
+/* Solicitar al usuario un (1) número de forma consecutiva, hasta que se ingrese “ESC”. Generar una única salida compuesta por los siguientes productos, según el valor ingresado en cada ciclo:
+“Tomate” si es 1.
+“Papa” si es 2.
+“Carne” si es 3.
+“Pollo” si es 4. */
+
+let prod = "";
+
+let number = parseInt(prompt("Ingrese un número del 1 al 4, cuando desee salir ingrese ESC"));
+
+while (number != "ESC") {
+    
+    switch (number) {
+        
+        case 1 :
+
+            alert("tomate");
+            break;
+        
+        case 2 :
+
+            alert("papa");
+            break;
+        
+        case 3 :
+
+            alert("carne");
+            break;
+        
+        case 4 :
+
+            alert("pollo");
+            break;
+        
+        default:
+            
+            alert("numero ingresado erroneo");
+            break
+        
+    }
+    number = prompt("Ingrese un número del 1 al 4, cuando desee salir ingrese ESC");
+}

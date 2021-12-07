@@ -69,15 +69,13 @@ for (let i = 1; i <= 3; i++) {
 
         console.log(name + " " + final);
 
-    }
-    if (i === 2) {
+    }else if (i === 2) {
         
         final = 100 + 20;
 
         console.log(name + " " + final);
         
-    }
-    if (i === 3) {
+    }else if (i === 3) {
         
         final = 100 + 30;
 
