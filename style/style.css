@@ -619,6 +619,14 @@ body {
   color: #FEC5BB;
 }
 
+.logginCorrecto {
+  background: #83C5BE;
+}
+
+.logginIncorrecto {
+  background: #FEC5BB;
+}
+
 .loginSingUp {
   margin: 5em 0;
 }
