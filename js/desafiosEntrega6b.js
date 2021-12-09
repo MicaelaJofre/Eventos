@@ -7,16 +7,16 @@ class Login {
     validateName(name) {
         
         if ((this.name != "") && (this.name.length > 6)) {
-            document.getElementById("show").textContent  =(`${this.name}, ya quedó guardado tu usuario`);
+            document.getElementById("show").textContent = (`${this.name}, ya quedó guardado tu usuario`);
         } else {
-            document.getElementById("show").textContent  =("El usuario tiene que tener más de 6 caracteres")
+            document.getElementById("show").textContent = ("El usuario tiene que tener más de 6 caracteres")
         }
     }
     validatePassword(password) {
         if ((this.password != "" )&& (this.password.length >8)) {
-            document.getElementById("show2").textContent  =(`Ya quedó guardado tu contraseña`);
+            document.getElementById("show2").textContent = (`Ya quedó guardado tu contraseña`);
         } else {
-            document.getElementById("show2").textContent  =("La contraseña tiene que tener más de 8 caracteres")
+            document.getElementById("show2").textContent = ("La contraseña tiene que tener más de 8 caracteres")
         }
     }
 }
@@ -34,3 +34,4 @@ person1.validatePassword(person1.password);
 
 person2.validateName(person2.name);
 person2.validatePassword(person2.password); */
+

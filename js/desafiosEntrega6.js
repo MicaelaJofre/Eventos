@@ -1,10 +1,19 @@
-class Username {
+let totalBirthday = "15000";
+
+let totalBaptism = "18000";
+
+let totalMarriage = "21000";
+
+let res = 0;
+
+class Options {
+    
     constructor(events, style, colors) {
 
         this.events = events;
         this.style = style;
         this.colors = colors;
-        this.info = `Ya seleccionaste la opción que más te gusta, repasemos: tu evento es un ${this.events}, elegiste el estilo con ${this.style} y el color ${this.colors},si esto es correcto y quieres continuar ingresa "si", en el caso contrario ingresá "no". ` 
+        this.info = `Ya seleccionaste la opción que más te gusta, repasemos: tu evento es un ${this.events}, elegiste el estilo con ${this.style} y el color ${this.colors}\nSi esto es correcto y quieres continuar ingresa "SI", en el caso contrario ingresá "NO". ` 
 
     }
 
@@ -18,14 +27,38 @@ class Username {
 
             alert("Espectacular! Continuemos...");
 
+            //implementamos el método total
+            this.total();
+
         } else if (a === "NO") {
 
             alert("Gracias por tu visita, esperamos verte pronto ;)");
-            
 
         } else {
 
             alert("la opción ingresa es inválida");
+        }
+    }
+    total() {
+        
+        if (this.events == "cumpleaños") {
+            
+            res = parseInt(totalBirthday) + parseInt(totalBirthday * 0.21);
+
+            alert(`El total a pagar con iva es $${res}`);
+
+        } else if (this.events == "boda") {
+            
+            res = parseInt(totalMarriage) + parseInt(totalMarriage * 0.21);
+
+            alert(`El total a pagar con iva es $${res}`);
+
+        }else if (this.events == "bautismo") {parseInt
+            
+            res = parseInt(totalBaptism) + parseInt(totalBaptism * 0.21);
+
+            alert(`El total a pagar con iva es $${res}`);
+
         }
     }
     
@@ -35,9 +68,10 @@ class Username {
 const persons = [];
 
 //sumamos datos al array
-persons.push(new Username("cumpleaños", "flores", "lila"));
-persons.push(new Username("cumpleaños", "animales", "amarillo"));
-persons.push(new Username("bautismo", "flores", "verde"));
+persons.push(new Options("cumpleaños", "flores", "azul"));
+persons.push(new Options("cumpleaños", "animales", "rojo"));
+persons.push(new Options("bautismo", "flores", "azul"));
+
 
 
 for (person of persons) {
