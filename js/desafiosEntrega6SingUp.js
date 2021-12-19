@@ -1,11 +1,20 @@
 class SingUp {
     constructor(name, password) {
 
-        this.name = name;
+        this.name = name ;
         this.password = password;
     }
+
     
+    // ingresamos los datos al local storage
+    save() { 
+    
+        let usuarios =  localStorage.getItem("persona") == null ? [] : JSON.parse(localStorage.getItem("persona"));
+        usuarios.push(this);
+        localStorage.setItem("persona", JSON.stringify(usuarios));
+    }
 }  
+
 
 persons = [];
 
@@ -16,9 +25,8 @@ function validate(username, password) {
             if ((password != "") && (password.length > 8)) {
                 
                 document.getElementById("show").textContent = (`Ya quedaste registrado ${username}`);
-
-                // ingresamos los datos al objeto
                 persons = new SingUp(username, password);
+                persons.save();
             
             } else {
                 

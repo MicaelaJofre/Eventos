@@ -4,9 +4,8 @@
     @include nav;
 }
 .scheduleBar {
-    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
-    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
-    box-shadow: -1px -1px 24px -5px rgba(0, 0, 0, 0.55);
+    background: #fff;
+    box-shadow: 0px 4px 16px -3px rgba(0, 0, 0, 0.5);
     padding: 1em;
     margin-bottom: 2em;
 }
@@ -25,21 +24,216 @@
     }
 }
 
-// agenda - tabla
+// Invitados
 
-.guests {
-    .table {
-        margin: 1em;
-        width: 60vw;
-        >tr {
-            >th{
-                text-align: center;
-                color: red;
-            }
-            >td {
-                outline: solid 2px $salmon;
-            }
-            
+.guests{
+    margin: 3em 0;
+    position: relative;
+    .guestsHr{
+        color: $darkGreen;
+        height: 5px;
+    }
+}
+
+.guestsIntro{
+    
+    &__img{
+        img{
+            width: 10em;
+            margin: 2em 0;
         }
     }
+    &__total{
+        h3{
+            font-size: 1.2em;
+        }
+        p{
+            font-weight: 600;
+            font-size: 1.2em;
+            background: $salmon;
+            color: $grey;
+            padding: .5em 0;
+            border-radius: .25em;
+        }
+    }
+}
+
+
+// boton de agregar invitados y grupos
+.guestsAdd{
+    margin: 3em 0;
+
+    &__btn {
+        margin: 0 2em;
+        background: $darkGreen;
+        padding: .5em 1em;
+        border-radius: 3em;
+        text-decoration: none;
+        color: $white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.25s 0.0833333333s;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+        @include btn;
+
+        &:hover {
+            background: #fff;
+            color: $darkSalmon;
+        }
+
+    }
+    hr{
+        margin-top: 3em;
+    }
+}
+
+
+//seleccionar todos y menu desplegable
+
+.guestsAdd {
+    &__menu {
+        margin-left: .5em;
+    }
+    &__form{
+        input {
+            margin: .3em;
+        }
+    }
+}
+
+// confirmados
+
+.confirmed {
+    h4{
+        background: $green;
+        padding: 1.5em 0;
+        img {
+            width: 1.5em;
+            margin-right: .5em;
+
+        }
+    }
+}
+//pendientes
+
+.slopes{
+    h4{
+        background: $yelow;
+        padding: 1.5em 0;
+
+        img {
+            width: 1.5em;
+            margin-right: .5em;
+
+        }
+    }
+}
+
+//cancelados
+
+.canceled {
+    h4 {
+        background: $red;
+        padding: 1.5em 0;
+
+        img {
+            width: 1.8em;
+            margin-right: .5em;
+
+        }
+    }
+}
+
+
+
+//INVITADOS
+
+.persons {
+    input{
+        margin-right: 1.5em;
+    }
+    &__select{
+        text-align: center;
+        img {
+            width: 1.5em;
+            margin-right: .5em;
+        }
+    }
+    &__delet{
+        img {
+            width: 1.5em;
+            height: 1.5em;
+            text-align: end;
+        }
+        p{
+            text-align: center;
+        }
+    }
+}
+
+///////////////////////////modal/////////////////////////////
+
+.modalGuests{
+    position: absolute;
+    // top: 0;
+    // left: 28%;
+    padding: 2em;
+    width: 45vw;
+    height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid $grey;
+    background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
+    url(../imagenes/fondoAcuarelaAzul.jpg);
+    background-position: center;
+    background-size: cover;
+    // visibility: 0;
+    // display: none;
+    transition: all 0.25s 0.083;
+
+    &__title {
+        padding: 1em;
+        background: $green;
+    }
+    input{
+        width: 15em;
+        margin: 1em 1em 1em 0;
+        border: none;
+        border-bottom: solid 2px $salmon;
+        outline:none;
+        
+        &::placeholder{
+            color: $darkSalmon;
+            padding: 1em;
+        }
+        &:focus{
+            border-radius: .20em;
+            border: none;
+            outline: solid 2px $salmon;
+        }
+    }
+
+    .modalGuestsSections {
+        label {
+            width: 3em;
+            font-weight: 600;
+        }
+
+        &__select {
+            margin: 1em 0 0 1em;
+            width: 11em;
+            color: $darkSalmon;
+            padding: 0 1em;
+            border: solid 1px $salmon;
+        }
+
+    }
+    .pais{
+        width: 15em;
+        margin-right: 1em;
+        color: $darkSalmon;
+        border: solid 1px $salmon;
+    }
+
 }

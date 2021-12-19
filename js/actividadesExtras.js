@@ -75,7 +75,7 @@ Caso contrario, la salida será “Yo no fui”. */
 // }
 
 // /* Solicitar al usuario una (1) tecla.
-// Si se presiona “y” (minúscula), o “Y” (mayúscula), realizar una salida por alerta con el mensaje “Correcto”. 
+// Si se presiona “y” (minúscula), o “Y” (mayúscula), realizar una salida por alerta con el mensaje “Correcto”.
 // Caso contrario, la salida será “Error”. */
 
 // let key = prompt("Preciona una tecla.");
@@ -94,7 +94,7 @@ Caso contrario, la salida será “Yo no fui”. */
 // }
 
 // /* Solicitar al usuario un (1) un número.
-// Si el valor está entre 1 y 4, efectuar una de las siguientes salidas según corresponda: 
+// Si el valor está entre 1 y 4, efectuar una de las siguientes salidas según corresponda:
 // “Elegiste a Homero” si es 1.
 // “Elegiste a Marge” si es 2.
 // “Elegiste a Bart” si es 3.
@@ -127,7 +127,7 @@ Caso contrario, la salida será “Yo no fui”. */
 // }
 
 // /* Solicitar al usuario un (1) número.
-// Si el valor está entre dos números, efectuar una de las siguientes salidas, según corresponda: 
+// Si el valor está entre dos números, efectuar una de las siguientes salidas, según corresponda:
 // “Presupuesto bajo” si está entre 0 y 1000.
 // “Presupuesto medio” si está entre 1001 y 3000.
 // “Presupuesto alto” si es  mayor que 3000. */
@@ -151,7 +151,7 @@ Caso contrario, la salida será “Yo no fui”. */
 //     alert("Opción no válida.");
 // }
 
-// /* Solicitar al usuario cuatro(4) productos de almacén. 
+// /* Solicitar al usuario cuatro(4) productos de almacén.
 // Si todos los elementos fueron cargados, realizar una única salida compuesta por el listado de productos.
 // Caso contrario, la salida será “Error: Es necesario cargar todos los productos”. */
 
@@ -240,39 +240,300 @@ alert(total);
 “Carne” si es 3.
 “Pollo” si es 4. */
 
-let prod = "";
+// let prod = "";
 
-let number = parseInt(prompt("Ingrese un número del 1 al 4, cuando desee salir ingrese ESC"));
+// let number = parseInt(prompt("Ingrese un número del 1 al 4, cuando desee salir ingrese ESC"));
 
-while (number != "ESC") {
+// while (number != "ESC") {
     
-    switch (number) {
+//     switch (number) {
         
-        case 1 :
+//         case 1 :
 
-            alert("tomate");
-            break;
+//             alert("tomate");
+//             break;
         
-        case 2 :
+//         case 2 :
 
-            alert("papa");
-            break;
+//             alert("papa");
+//             break;
         
-        case 3 :
+//         case 3 :
 
-            alert("carne");
-            break;
+//             alert("carne");
+//             break;
         
-        case 4 :
+//         case 4 :
 
-            alert("pollo");
-            break;
+//             alert("pollo");
+//             break;
         
-        default:
+//         default:
             
-            alert("numero ingresado erroneo");
-            break
+//             alert("numero ingresado erroneo");
+//             break
         
+//     }
+//     number = prompt("Ingrese un número del 1 al 4, cuando desee salir ingrese ESC");
+// }
+/* 
+Codificar tres funciones:
+Una función entrada(), la cual solicite un valor al usuario y lo retorne.
+Una función procesamiento(valor), donde se transforme la entrada.
+Una función salida(valor), la cual mostrará el resultado por alerta.
+Luego, invocar las tres funciones. */
+
+
+
+
+// const entrada = (a) => alert(`El número que ingresaste es ${a}`);
+
+// const procesamiento = (valor) => {
+    
+//     num = valor * 2;
+//     return num;
+// };
+
+// const salida = (valor) => alert(`El resultado de la multipicación es: ${num}`);
+
+// let num = prompt("dime un número");
+
+// entrada(num);
+// procesamiento(num);
+// salida(num);
+
+/* Codificar una función que reciba un número decimal por parámetro,
+y lo retorne redondeado al entero más cercano.Para ello, puede emplearse  Math.round.
+Luego invocar la función de forma iterativa cinco (5) veces, solicitando en cada ciclo un número al usuario. */
+
+
+
+// for (let index = 0; index < 5; index++) {
+    
+//     let num = parseFloat(prompt("dime un número decimal"));
+//     alert(`Se redondeó al número más cercano que es: ${Math.round(num)}`);
+    
+// }
+
+/* Codificar una función con la siguiente cabecera: impuesto(precio, porcentaje). 
+En ella, se retorna un valor numérico compuesto por el precio recibido, más la suma del porcentaje ingresado.
+Luego invocar la función de forma iterativa cinco (5) veces, solicitando en cada ciclo un precio y porcentaje al usuario. */
+
+// let precio, porcentaje,res;
+
+// const cabecera = (precio, porcentaje) => {
+
+//     res = precio + ((precio * porcentaje) / 100);
+//     return res;
+// };
+
+// for (let index = 0; index < 5; index++) {
+    
+//     precio = parseFloat(prompt("dime el precio"));
+//     porcentaje = parseFloat(prompt("dime el porcentaje"));
+
+//     alert(cabecera(precio, porcentaje));
+    
+// }
+/* 
+Codificar dos funciones:
+Una función cotizarDolar(pesos), la cual recibe un valor monetario en pesos argentinos, y lo retorna en su equivalente en dólares.
+Una función cotizarPesos(dolar), que recibe un valor monetario en dólares, y lo retorna en su equivalente en pesos argentinos.
+Luego invocar las funciones solicitando  al usuario el valor y el tipo de cotización a realizar. */
+
+// let pesos, dolares;
+
+// const cotizarDolar = (pesos) => {
+//     dolares = pesos / 100;
+//     return dolares;
+// }
+
+// const cotizarPesos = (dolares) => {
+//     pesos = dolares * 100;
+//     return pesos;
+// }
+
+
+// let persona = prompt("que cotización deseas realizar? cambio a dolares o cambio a pesos");
+
+// if (persona == "cambio a dolares") {
+
+//     persona = parseFloat(prompt("dime cuantos pesos deseas cambiar:"));
+//     alert(`el total de tu cambio a dolares es : $${cotizarDolar(persona)} dolares`);
+
+// } else if (persona == "cambio a pesos") {
+
+//     persona = parseFloat(prompt("dime cuantos dolares deseas cambiar:"));
+//     alert(`el total de tu cambio a dolares es : $${cotizarPesos(persona)} pesos`);
+
+// } else {
+//     alert("La opción elegida es incorrecta");
+// }
+
+/* Codificar una función con la siguiente cabecera: validacion(cadena). En ella, se retorna un valor booleano, el cual es true si el parámetro no es un cadena vacía. Caso contrario, se retorna false. Luego invocar la función de forma iterativa, hasta que el usuario tipee “ESC”, solicitando en cada ciclo una cadena a validar. */
+
+// let cadena;
+
+// const validacion = (cadena) => {
+//     if (cadena != "" && cadena != "ESC") {
+//         alert("perfecto! continuemos...")
+//         return true;
+//     } else if (cadena == "ESC") {
+//         return "ESC";
+//     }else {
+//         alert("no ingresaste nada");
+//         return false;
+//     }
+// }
+
+
+// while (cadena != "ESC") {
+
+//     cadena = prompt("escribe algo, en el caso de querer salir tipea ESC");
+//     validacion(cadena);
+
+// }
+
+/* Declarar un clase Tienda que permita registrar:
+Nombre de la tienda.
+Dirección de la tienda.
+Propietario de la tienda.
+Rubro de la tienda.
+Luego invocar al menos tres (3) objetos usando esta clase. */
+
+// class Tienda {
+
+//     constructor(nombre, direccion, propietario, rubro) {
+//         this.nombre = nombre;
+//         this.direccion = direccion;
+//         this.propietario = propietario;
+//         this.rubro = rubro;
+//     }
+// }
+
+// let tienda1 = new Tienda("cuquis", "calle nueva 03", "Hernán Cortez", "venta de comestibles");
+// let tienda2 = new Tienda("todo suelto", "siempre viva", "Ramirez", "venta productos de limpieza");
+// let tienda3 = new Tienda("Crecer", "ozamis 120", "Eduardo Cucharelli", "Libreria");
+
+// console.log(tienda1, tienda2, tienda3);
+
+/* Solicitar al usuario el registro de cinco (5) tiendas.
+Emplear la clase Tienda de la actividad 1, para instanciar los objetos en función de las entradas capturadas. 
+Generar una única salida compuesta por la información de los objetos instanciados. */
+
+// class Tiendas {
+
+//     constructor(nombre, direccion, propietario, rubro) {
+//         this.nombre = nombre;
+//         this.direccion = direccion;
+//         this.propietario = propietario;
+//         this.rubro = rubro;
+//     }
+// }
+// let tienda = [];
+
+// for (let i = 0; i < 5; i++) {
+    
+//     tienda[i] = new Tiendas(prompt("nombre"), prompt("direccion"), prompt("propietario"), prompt("rubro"));
+    
+    
+// }
+// console.log(tienda);
+
+/* Declarar un método para la clase Tienda con la siguiente cabecera estaAbierto(hora). Este retorna true si la hora enviada está entre las 08 y 12, o entre las 15 y 19. Caso contrario, se retorna false.
+Luego invocar al menos un (1) objeto usando esta clase, y solicitar al usuario tres (3) horas. Informar por alerta si la tienda está abierta, en función de la hora ingresada. */
+
+
+
+// class Tienda {
+
+//     constructor(nombre, direccion, propietario, rubro) {
+//         this.nombre = nombre;
+//         this.direccion = direccion;
+//         this.propietario = propietario;
+//         this.rubro = rubro;
+//     }
+//     abierto(hora) {
+//         if (hora === "8" || hora === "9" || hora === "10" || hora === "11" || hora === "12" || hora === "15" || hora === "16" || hora === "17" || hora === "18" || hora === "19") {
+
+//             return true;
+//         } else {
+
+//             return false;
+//         }
+//     }
+// }
+
+// let tienda1 = new Tienda("cuquis", "calle nueva 03", "Hernán Cortez", "venta de comestibles");
+
+// let usuario = prompt("dime un horario");
+
+
+
+// if (tienda1.abierto(usuario) === true) {
+//     alert(`La tienda ${tienda1.nombre} está abierta`);
+// } else {
+//     alert(`La tienda ${tienda1.nombre} está cerrada`);
+// }
+
+
+/* Declarar un método para la clase Tienda con la siguiente cabecera esPropietario(nombre). Se retorna true si el nombre enviado corresponde al propietario de la tienda.Caso contrario, se retorna false.
+Luego, invocar al menos tres(3) objetos usando esta clase y solicitar al usuario cinco(5) nombres. Informar por alerta si los nombres pertenecen a algún dueño de tienda. */
+
+
+
+class Tienda {
+
+    constructor(nombre, direccion, propietario, rubro) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.propietario = propietario;
+        this.rubro = rubro;
     }
-    number = prompt("Ingrese un número del 1 al 4, cuando desee salir ingrese ESC");
+    esPropietario(nombre) { 
+        let maping = this.nombre(x=> x.nombre) // array de strings 
+        return new Set(maping).has(x) //hay dentro de esta lista el valor x?
+    }
+    read(consulta = null){
+            if(consulta == null){
+                this.nombre.forEach(
+                    elemento => console.log(elemento)
+                )
+            }
+    
+            else{
+                if(!this.nombre.esPropietario(nombre))//aca voy a mandar solo nombres
+                {
+                    return console.log("no existe ese valor")
+                }
+    
+                return console.log(this.nombre.find(elemento => elemento.nombre == nombre))
+            }
+    
+        }
 }
+
+
+
+const tiendas = [
+    {
+        nombre: "cuquis",
+        direccion: "calle nueva 03",
+        propietario: "Hernán Cortez",
+        rubro: "venta de comestibles"
+    },
+    {
+        nombre: "todo suelto",
+        direccion: "siempre viva",
+        propietario: "Ramirez",
+        rubro: "venta productos de limpieza"
+    },
+    {
+        nombre: "Crecer",
+        direccion: "ozamis 120",
+        propietario: "Eduardo Cucharelli",
+        rubro: "Libreria"
+    }
+]
+
+let nombre = (tiendas.esPropietario(prompt("dime el nombre del negocio")));
