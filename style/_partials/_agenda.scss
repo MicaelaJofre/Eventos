@@ -235,5 +235,24 @@
         color: $darkSalmon;
         border: solid 1px $salmon;
     }
+    .modalGuestsBtn {
+        width: 7em;
+        background: $darkGreen;
+        padding: .5em 1em;
+        border-radius: 3em;
+        text-decoration: none;
+        color: $white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.25s 0.0833333333s;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+        @include btn;
 
+        &:hover {
+            background: #fff;
+            color: $darkSalmon;
+        }
+
+    }
 }

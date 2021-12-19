@@ -1,30 +1,24 @@
 class Persons { 
-    constructor(name, lastName, address, location, postcard) { 
+    constructor(name) { 
         this.name = name;
-        this.lastName = lastName;
-        this.address = address;
-        this.location = location;
-        this.postcard = postcard;
     }
     
     
 }
 let persons = [];
 let modalGuests = document.getElementById("modalGuests");
-let guestsAddBtn = document.getElementById("guestsAdd__btn");
+modalGuests.addEventListener("submit",openModal);
 
 
 
-function openModal() {
-        let guestsName = document.getElementById("guestsName");
-        guestsName.addEventListener("input",validate).value;
-        persons.validate(guestsName);
+function openModal(e) {
+    e.preventDefault();
+    let guestsName = document.getElementById("guestsName").value;
+    if ((guestsName != "") && (typeof value != Number)) {
+        persons.push(guestsName);
+        console.log(persons);
+    } else { 
+        console.log("error");
+    }   
 }
-function validate(guestsName) {
-        if ((guestsName != "") && (typeof value != Number)) { 
-            persons.push(guestsName);
-            console.log(persons);
-        }
-    }    
-
-window.addEventListener("load", openModal)
+    
