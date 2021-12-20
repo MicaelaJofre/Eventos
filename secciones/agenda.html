@@ -82,8 +82,7 @@
                 </div>
 
                 <div class="guestsIntro__total col-12 col-md-4 col-lg-3 ">
-                    <!-- <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-woman-avatar-and-emotion-justicon-lineal-color-justicon-1.png"/><!-- mujer 
-                    <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-man-avatar-and-emotion-justicon-lineal-color-justicon-1.png"/><!-- hombre -->
+                    
                     <h3>Total de invitados</h3>
                     <P>3</P>
                 </div>
@@ -134,34 +133,25 @@
 
 
                     <!-- INVITADO -->
-                    <div class="persons row">
+                    <div class="personsGuests row" id="personsGuests">
 
-                        <!-- nombre invitado -->
-                        <div class="persons__checkbox col-12 col-md-4">
-                            <input form="guestsList__form" type="checkbox">
-                            <label class="persons__name">MICAELA JOFRE</label>
-                        </div>
-
-                        <!-- opciones  -->
-                        <div class="persons__select col-12 col-md-4">
-                            <img src="https://img.icons8.com/material-outlined/48/000000/checked--v3.png"/><!-- ok -->
-                            <!--<img src="https://img.icons8.com/ios-glyphs/30/000000/iphone-spinner--v1.png"/> pendiente -->
-                            <!-- <img src="https://img.icons8.com/windows/32/000000/xbox-x.png"/>cancelado -->
-                            <select class="cpersons__menu" name="select">
+                        
+                        <div class="persons">
+                            <input class="persons" form="guestsList__form" type="checkbox">
+                            <label class="persons">Nombre</label>
+                            
+                            <span class="material-icons persons__ok">done_outline</span>
+                            <select class="persons" name="select">
                                 <option value="value1" selected>Confirmado</option>
                                 <option value="value2">Pendiente</option>
                                 <option value="value3">Cancelado</option>
                             </select>
+                            <span class="material-icons persons">edit</span>
+
+                            <span class="material-icons persons">delete</span>
                         </div>
 
-                        <!-- eliminar y editar -->
-                        <div class="persons__delet col-12 col-md-4">
-                            <div class="row d-flex justify-content-around">
-                                <p class="col-12 col-md-6"><img src="https://img.icons8.com/wired/64/000000/edit.png"/>Editar</p>
-
-                                <p class="col-12 col-md-6"><img src="https://img.icons8.com/glyph-neue/30/000000/trash.png"/>Eliminar</p>
-                            </div>
-                        </div>
+                        
                     </div>
 
                 </div>

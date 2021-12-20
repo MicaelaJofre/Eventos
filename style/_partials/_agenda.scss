@@ -149,25 +149,19 @@
 
 //INVITADOS
 
-.persons {
-    input{
-        margin-right: 1.5em;
-    }
-    &__select{
-        text-align: center;
-        img {
-            width: 1.5em;
-            margin-right: .5em;
-        }
-    }
-    &__delet{
-        img {
-            width: 1.5em;
-            height: 1.5em;
-            text-align: end;
-        }
-        p{
-            text-align: center;
+
+.personsGuests {
+
+    display: flex;
+    flex-direction: column;
+    .persons {
+        padding:0 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &__ok{
+            color: chartreuse;
         }
     }
 }

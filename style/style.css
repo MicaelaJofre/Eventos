@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 * {
   margin: 0;
   padding: 0;
@@ -1835,27 +1836,32 @@ body {
   margin-right: .5em;
 }
 
-.persons input {
-  margin-right: 1.5em;
+.personsGuests {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.persons__select {
-  text-align: center;
+.personsGuests .persons {
+  padding: 0 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.persons__select img {
-  width: 1.5em;
-  margin-right: .5em;
-}
-
-.persons__delet img {
-  width: 1.5em;
-  height: 1.5em;
-  text-align: end;
-}
-
-.persons__delet p {
-  text-align: center;
+.personsGuests .persons__ok {
+  color: chartreuse;
 }
 
 .modalGuests {
