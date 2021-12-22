@@ -1806,9 +1806,14 @@ body {
   margin: .3em;
 }
 
+.textNoGuests {
+  padding: .5em 1em;
+  background: rgba(0, 0, 0, 0.08);
+}
+
 .confirmed h4 {
   background: #83C5BE;
-  padding: 1.5em 0;
+  padding: .5em 0;
 }
 
 .confirmed h4 img {
@@ -1818,7 +1823,7 @@ body {
 
 .slopes h4 {
   background: #FFD7BA;
-  padding: 1.5em 0;
+  padding: .5em 0;
 }
 
 .slopes h4 img {
@@ -1828,7 +1833,7 @@ body {
 
 .canceled h4 {
   background: #FD765E;
-  padding: 1.5em 0;
+  padding: .5em 0;
 }
 
 .canceled h4 img {
@@ -1858,10 +1863,17 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .personsGuests .persons__ok {
   color: chartreuse;
+}
+
+.personsGuests .pb {
+  cursor: pointer;
 }
 
 .modalGuests {
@@ -1881,7 +1893,7 @@ body {
 }
 
 .modalGuests__title {
-  padding: 1em;
+  padding: .5em;
   background: #83C5BE;
 }
 

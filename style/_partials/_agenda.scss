@@ -24,7 +24,7 @@
     }
 }
 
-// Invitados
+// Invitados container
 
 .guests{
     margin: 3em 0;
@@ -102,12 +102,18 @@
     }
 }
 
+// texto que aparece cuando no hay invitados
+.textNoGuests {
+    padding: .5em 1em;
+    background: $shadowGrey2;
+}
+
 // confirmados
 
 .confirmed {
     h4{
         background: $green;
-        padding: 1.5em 0;
+        padding: .5em 0;
         img {
             width: 1.5em;
             margin-right: .5em;
@@ -120,7 +126,7 @@
 .slopes{
     h4{
         background: $yelow;
-        padding: 1.5em 0;
+        padding: .5em 0;
 
         img {
             width: 1.5em;
@@ -135,7 +141,7 @@
 .canceled {
     h4 {
         background: $red;
-        padding: 1.5em 0;
+        padding: .5em 0;
 
         img {
             width: 1.8em;
@@ -147,8 +153,7 @@
 
 
 
-//INVITADOS
-
+//INVITADOS (carga de invitados por js) 
 
 .personsGuests {
 
@@ -159,12 +164,19 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         
         &__ok{
             color: chartreuse;
         }
     }
+    .pb{
+        cursor: pointer;
+    }
+    
 }
+
+
 
 ///////////////////////////modal/////////////////////////////
 
@@ -187,7 +199,7 @@
     transition: all 0.25s 0.083;
 
     &__title {
-        padding: 1em;
+        padding: .5em;
         background: $green;
     }
     input{
