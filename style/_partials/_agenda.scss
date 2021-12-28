@@ -64,9 +64,9 @@
     margin: 3em 0;
 
     &__btn {
-        margin: 0 2em;
+        
+        margin: 1em 2em;
         background: $darkGreen;
-        padding: .5em 1em;
         border-radius: 3em;
         text-decoration: none;
         color: $white;
@@ -76,6 +76,23 @@
         transition: color 0.25s 0.0833333333s;
         position: relative;
         @include btn;
+        @include breakpoint(mobile) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: .2em .5em;
+        }
+
+        @include breakpoint(laptop) {
+            display: inline-block;
+            padding: .5em 1em;
+        }
+
+        @include breakpoint(desktop) {
+            display: inline-block;
+            padding: .5em 1em;
+            
+        }
 
         &:hover {
             background: #fff;
@@ -103,7 +120,9 @@
 }
 
 // texto que aparece cuando no hay invitados
-.textNoGuests {
+.textNoGuestsCanceled,
+.textNoGuestsSlopes,
+.textNoGuestsConfirmed {
     padding: .5em 1em;
     background: $shadowGrey2;
 }
@@ -159,15 +178,40 @@
 
     display: flex;
     flex-direction: column;
+    
     .persons {
+        flex-wrap: wrap;
         padding:0 1em;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         
+        @include breakpoint(mobile) {
+            margin: 1.5em 0;
+        }
+
+        @include breakpoint(laptop) {
+            margin: 1.5em 0;
+        }
+
+        @include breakpoint(desktop) {
+            margin: 0;
+        }
+        
         &__ok{
             color: chartreuse;
+            @include breakpoint(mobile) {
+                display: none;
+            }
+
+            @include breakpoint(laptop) {
+                display: none;
+            }
+
+            @include breakpoint(desktop) {
+                display: block;
+            }
         }
     }
     .pb{
@@ -184,9 +228,6 @@
     position: absolute;
     // top: 0;
     // left: 28%;
-    padding: 2em;
-    width: 45vw;
-    height: 80vh;
     overflow-y: scroll;
     overflow-x: hidden;
     border: 1px solid $grey;
@@ -197,17 +238,45 @@
     // visibility: 0;
     // display: none;
     transition: all 0.25s 0.083;
+    @include breakpoint(mobile) {
+        width: 90%;
+        height: 80vh;
+        padding: 1em;
+        
+    }
+
+    @include breakpoint(laptop) {
+        width: 90%;
+        height: 80vh;
+        padding: 1em;
+    }
+
+    @include breakpoint(desktop) {
+        width: 48vw;
+        height: 80vh;
+        padding: 2em;
+    }
 
     &__title {
         padding: .5em;
         background: $green;
     }
     input{
-        width: 15em;
         margin: 1em 1em 1em 0;
         border: none;
         border-bottom: solid 2px $salmon;
         outline:none;
+        @include breakpoint(mobile) {
+            width: 90%;
+        }
+
+        @include breakpoint(laptop) {
+            width: 90%;
+        }
+
+        @include breakpoint(desktop) {
+            width: 15em;
+        }
         
         &::placeholder{
             color: $darkSalmon;
@@ -219,19 +288,46 @@
             outline: solid 2px $salmon;
         }
     }
-
+    
+    
     .modalGuestsSections {
         label {
-            width: 3em;
+            width: 5em;
             font-weight: 600;
+            @include breakpoint(mobile) {
+                margin: 1em;
+                width: 3em;
+            }
+
+            @include breakpoint(laptop) {
+                margin: 1em;
+                width: 5em;
+            }
+
+            @include breakpoint(desktop) {
+                width: 5em;
+            }
         }
 
         &__select {
-            margin: 1em 0 0 1em;
-            width: 11em;
             color: $darkSalmon;
             padding: 0 1em;
+            outline: none;
             border: solid 1px $salmon;
+            @include breakpoint(mobile) {
+                margin: .5em 0 0 .5em;
+                width: 6em;
+            }
+
+            @include breakpoint(laptop) {
+                margin: .5em 0 0 .5em;
+                width: 6em;
+            }
+
+            @include breakpoint(desktop) {
+                margin: 1em 0 0 1em;
+                width: 10em;
+            }
         }
 
     }
@@ -239,7 +335,19 @@
         width: 15em;
         margin-right: 1em;
         color: $darkSalmon;
+        outline: none;
         border: solid 1px $salmon;
+        @include breakpoint(mobile) {
+            margin-top: .5em;
+        }
+
+        @include breakpoint(laptop) {
+            margin-top: .5em;
+        }
+
+        @include breakpoint(desktop) {
+            margin-top: 0;
+        }
     }
     .modalGuestsBtn {
         width: 7em;
@@ -261,4 +369,14 @@
         }
 
     }
+}
+#errorLastname,
+#errorName,
+#errorTel,
+#errorEmail,
+#errorPostcard {
+    font-size: .7em;
+    display: inline-block;
+    margin: .5em;
+    color: $red;
 }

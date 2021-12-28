@@ -740,6 +740,10 @@ body {
 }
 
 .headerSignUp {
+  overflow: hidden;
+}
+
+.headerSignUp {
   width: 100%;
   height: auto;
   background: #006D77;
@@ -902,7 +906,26 @@ body {
   padding: 30px 0;
 }
 
-.signup-form .form {
+@media screen and (min-width: 320px) {
+  .signup-form {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .signup-form {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .signup-form {
+    width: 400px;
+  }
+}
+
+.signup-form .formLogin,
+.signup-form .formSingUP {
   color: #484A47;
   border-radius: 3px;
   margin-bottom: 15px;
@@ -912,6 +935,7 @@ body {
   box-shadow: -1px 9px 40px -10px rgba(0, 0, 0, 0.2);
   box-shadow: -1px 9px 40px -10px rgba(0, 0, 0, 0.2);
   padding: 30px;
+  color: #484A47;
 }
 
 .signup-form .h2 {
@@ -939,11 +963,47 @@ body {
   font-weight: 400;
 }
 
+@media screen and (min-width: 320px) {
+  .signup-form .imgLogin > span {
+    font-size: .8em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .signup-form .imgLogin > span {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .signup-form .imgLogin > span {
+    font-size: 1em;
+  }
+}
+
 .signup-form .imgLogin .img {
   width: 3.5em;
   height: auto;
   cursor: pointer;
   padding: .5em;
+}
+
+@media screen and (min-width: 320px) {
+  .signup-form .imgLogin .img {
+    width: 2.5;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .signup-form .imgLogin .img {
+    width: 3.5;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .signup-form .imgLogin .img {
+    width: 3.5;
+  }
 }
 
 .signup-form .imgLogin--F {
@@ -952,6 +1012,10 @@ body {
 
 .signup-form .imgLogin--G {
   background: #E72837;
+}
+
+.show, .show2 {
+  color: #FD765E;
 }
 
 .hr__o {
@@ -1731,9 +1795,8 @@ body {
 }
 
 .guestsAdd__btn {
-  margin: 0 2em;
+  margin: 1em 2em;
   background: #006D77;
-  padding: .5em 1em;
   border-radius: 3em;
   text-decoration: none;
   color: #EDF6F9;
@@ -1789,6 +1852,34 @@ body {
   transition-delay: 0s, 0.25s, 0s;
 }
 
+@media screen and (min-width: 320px) {
+  .guestsAdd__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: .2em .5em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .guestsAdd__btn {
+    display: inline-block;
+    padding: .5em 1em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .guestsAdd__btn {
+    display: inline-block;
+    padding: .5em 1em;
+  }
+}
+
 .guestsAdd__btn:hover {
   background: #fff;
   color: #E29578;
@@ -1806,7 +1897,9 @@ body {
   margin: .3em;
 }
 
-.textNoGuests {
+.textNoGuestsCanceled,
+.textNoGuestsSlopes,
+.textNoGuestsConfirmed {
   padding: .5em 1em;
   background: rgba(0, 0, 0, 0.08);
 }
@@ -1852,6 +1945,8 @@ body {
 }
 
 .personsGuests .persons {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1868,8 +1963,44 @@ body {
           align-items: center;
 }
 
+@media screen and (min-width: 320px) {
+  .personsGuests .persons {
+    margin: 1.5em 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .personsGuests .persons {
+    margin: 1.5em 0;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .personsGuests .persons {
+    margin: 0;
+  }
+}
+
 .personsGuests .persons__ok {
   color: chartreuse;
+}
+
+@media screen and (min-width: 320px) {
+  .personsGuests .persons__ok {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .personsGuests .persons__ok {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .personsGuests .persons__ok {
+    display: block;
+  }
 }
 
 .personsGuests .pb {
@@ -1878,9 +2009,6 @@ body {
 
 .modalGuests {
   position: absolute;
-  padding: 2em;
-  width: 45vw;
-  height: 80vh;
   overflow-y: scroll;
   overflow-x: hidden;
   border: 1px solid #484A47;
@@ -1892,17 +2020,58 @@ body {
   transition: all 0.25s 0.083;
 }
 
+@media screen and (min-width: 320px) {
+  .modalGuests {
+    width: 90%;
+    height: 80vh;
+    padding: 1em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalGuests {
+    width: 90%;
+    height: 80vh;
+    padding: 1em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .modalGuests {
+    width: 48vw;
+    height: 80vh;
+    padding: 2em;
+  }
+}
+
 .modalGuests__title {
   padding: .5em;
   background: #83C5BE;
 }
 
 .modalGuests input {
-  width: 15em;
   margin: 1em 1em 1em 0;
   border: none;
   border-bottom: solid 2px #FEC5BB;
   outline: none;
+}
+
+@media screen and (min-width: 320px) {
+  .modalGuests input {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalGuests input {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .modalGuests input {
+    width: 15em;
+  }
 }
 
 .modalGuests input::-webkit-input-placeholder {
@@ -1932,23 +2101,82 @@ body {
 }
 
 .modalGuests .modalGuestsSections label {
-  width: 3em;
+  width: 5em;
   font-weight: 600;
 }
 
+@media screen and (min-width: 320px) {
+  .modalGuests .modalGuestsSections label {
+    margin: 1em;
+    width: 3em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalGuests .modalGuestsSections label {
+    margin: 1em;
+    width: 5em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .modalGuests .modalGuestsSections label {
+    width: 5em;
+  }
+}
+
 .modalGuests .modalGuestsSections__select {
-  margin: 1em 0 0 1em;
-  width: 11em;
   color: #E29578;
   padding: 0 1em;
+  outline: none;
   border: solid 1px #FEC5BB;
+}
+
+@media screen and (min-width: 320px) {
+  .modalGuests .modalGuestsSections__select {
+    margin: .5em 0 0 .5em;
+    width: 6em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalGuests .modalGuestsSections__select {
+    margin: .5em 0 0 .5em;
+    width: 6em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .modalGuests .modalGuestsSections__select {
+    margin: 1em 0 0 1em;
+    width: 10em;
+  }
 }
 
 .modalGuests .pais {
   width: 15em;
   margin-right: 1em;
   color: #E29578;
+  outline: none;
   border: solid 1px #FEC5BB;
+}
+
+@media screen and (min-width: 320px) {
+  .modalGuests .pais {
+    margin-top: .5em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalGuests .pais {
+    margin-top: .5em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .modalGuests .pais {
+    margin-top: 0;
+  }
 }
 
 .modalGuests .modalGuestsBtn {
@@ -2013,6 +2241,17 @@ body {
 .modalGuests .modalGuestsBtn:hover {
   background: #fff;
   color: #E29578;
+}
+
+#errorLastname,
+#errorName,
+#errorTel,
+#errorEmail,
+#errorPostcard {
+  font-size: .7em;
+  display: inline-block;
+  margin: .5em;
+  color: #FD765E;
 }
 
 .miWebMain {

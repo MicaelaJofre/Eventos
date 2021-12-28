@@ -32,16 +32,18 @@
                 <li class="nav__li"><a href="#">Mi casamiento</a></li>
                 <li class="nav__li"><a href="../secciones/login.html">Accedé</a></li>
                 <li class="nav__li"><a href="#">Registrarse</a></li>
-                <li class="nav__li"><a href="#">Contacto</a></li>
+                <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
             </ul>
         </nav>              
     </header>
     <main class="signupMain">
         <!-- formulario -->
         <section class="signup-form container">
-            <form class="form" action="/user/signup" method="POST">
+            <form id="formSingUP" class="formSingUP" action="/user/signup" method="POST">
                 <h2>Registrate</h2>
                 <hr>
+                <!-- show js -->
+                <p class="show" id="show"></p>
                 <!-- input -->
                 <article class="form-group">
                     <div class="input-group">
@@ -72,7 +74,7 @@
                                 <i class="fa fa-lock"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" id="password" name="password" placeholder="Contraseña"
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"
                             required="required">
                     </div>
                 </article>
@@ -84,7 +86,7 @@
                                 <i class="fa fa-check"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" name="confirm_password" placeholder="Confirmar contraseña"
+                        <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña"
                             required="required">
                     </div>
                 </article>
@@ -95,10 +97,9 @@
                 </article>
                 <!-- boton -->
                 <article class="form-group">
-                    <button type="submit" id="btn" class="btn btn-primary btn-lg">Registrate</button>
+                    <button type="submit" id="btnSingUP" class="btn btn-primary btn-lg">Registrate</button>
                 </article>
-                <!-- boton js -->
-                <p id="show"></p>
+                
             </form>
         </section>
     </main>
@@ -136,7 +137,7 @@
         </section>
     </footer>
     <!--  Entregas de desafios: -->
-    <script src="../js/desafiosEntrega6SingUp.js"></script>
+    <script src="../js/singUp.js"></script>
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
 </body>

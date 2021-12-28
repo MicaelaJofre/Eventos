@@ -23,7 +23,7 @@
                 <li class="nav__li"><a href="#">Servicios</a>
                     <ul class="subUl">
                         <li class="subLi"><a href="#">Invitados</a></li>
-                        <li class="subLi"><a href="#">Ubicaciones</a></li>
+                        <!-- <li class="subLi"><a href="#">Ubicaciones</a></li> -->
                         <li class="subLi"><a href="#">Presupuesto</a></li>
                         <li class="subLi"><a href="#">Mi web</a></li>
                         <li class="subLi"><a href="#">Proveedores</a></li>
@@ -32,7 +32,7 @@
                 <li class="nav__li"><a href="#">Mi casamiento</a></li>
                 <li class="nav__li"><a href="#">Accedé</a></li>
                 <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
-                <li class="nav__li"><a href="#">Contacto</a></li>
+                <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
             </ul>
         </nav>              
     </header>
@@ -40,7 +40,7 @@
     <main class="signupMain">
         <section class="signup-form container">
             <!-- formulario -->
-            <form class="form" action="/user/signup" method="POST">
+            <form class="formLogin"id="formLogin" action="/user/signup" method="POST">
                 <h2>Accedé</h2>
                 <hr>
                 <p class="text-center">Ingresá por</p>
@@ -58,7 +58,8 @@
                 <div class="d-flex justify-content-center align-items-center m-3 mb-4 hr">
                     <p class="text-center"><hr class="hr__o"> ó <hr class="hr__o"></p>
                 </div>
-
+                <!-- show js -->
+                <p class="show2" id="show2"></p>
                 <!-- input -->
                 <article class="form-group">
                     <div class="input-group">
@@ -78,7 +79,7 @@
                                 <i class="fa fa-lock"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" id="password" name="password" placeholder="Contraseña"
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"
                             required="required">
                     </div>
                 </article>
@@ -91,8 +92,6 @@
                 <article class="form-group">
                     <button type="submit" id="button" class="btn btn-primary btn-lg">Accedé</button>
                 </article>
-                <!-- boton js -->
-                <p id="show2"></p>
                 
                 <!-- olvido su contraseña -->
                 <a class="form-group fw-light" href="#">Olvidaste tu contraseña</a>
@@ -133,7 +132,7 @@
         </section>
     </footer>
     <!--  Entregas de desafios: -->
-    <!-- <script src="../js/desafiosEntrega6Login.js"></script> -->
+    <script src="../js/login.js"></script>
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
 </body>

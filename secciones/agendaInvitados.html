@@ -32,7 +32,7 @@
                 <li class="nav__li"><a href="#">Mi casamiento</a></li>
                 <li class="nav__li"><a href="../secciones/login.html">Accedé</a></li>
                 <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
-                <li class="nav__li"><a href="#">Contacto</a></li>
+                <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
             </ul>
         </nav> 
         
@@ -75,7 +75,7 @@
         <section class="container guests row">
             <hr class="guestsHr">
             <h2 class="guests__title">Invitados</h2>
-            
+
             <!-- contador de invitados -->
             <article class="row text-center d-flex align-items-center guestsIntro">
                 <div class="guestsIntro__img col-12 col-md-4 col-lg-3 ">
@@ -85,17 +85,17 @@
                 <div class="guestsIntro__total col-12 col-md-4 col-lg-3 ">
                     
                     <h3>Total de invitados</h3>
-                    <P>3</P>
+                    <P id="totalGuest"></P>
                 </div>
 
                 <div class="guestsIntro__total col-12 col-md-4 col-lg-3 ">
                     <h3>Confirmados</h3>
-                    <p>1</p>
+                    <p id="totalConfirmed"></p>
                 </div>
 
                 <div class="guestsIntro__total col-12 col-md-4 col-lg-3 ">
                     <h3>Invitados ubicados</h3>
-                    <p>2</p>
+                    <p>0</p>
                 </div>                
             </article>
             <hr class="guestsHr">
@@ -131,28 +131,34 @@
                     <h4 class="confirmad__title text-center"><img src="https://img.icons8.com/material-outlined/48/000000/checked--v3.png"/>Confirmados</h4>
                     <hr>
 
-                    <!-- INVITADO -->
-                    <div class="personsGuests row" id="personsGuests">
+                    <div class="personsGuests row" id="personsGuestsConfirmed">
                         <!--///////// acá se agregan los invitados //////////////-->
                     </div>
-                    <p class="textNoGuests">No hay invitados</p>
+                    <p class="textNoGuestsConfirmed">No hay invitados</p>
                 </div>
 
 
                 
                 <!-- Pendientes -->
                 <div class="slopes">
-                    <hr>
                     <h4 class="slopes__title text-center"><img src="https://img.icons8.com/ios-glyphs/30/000000/iphone-spinner--v1.png"/>Pendiente</h4>
                     <hr>
-                    <p class="textNoGuests">No hay invitados</p>
+
+                    <div class="personsGuests row" id="personsGuestsSlopes">
+                        <!--///////// acá se agregan los invitados //////////////-->
+                    </div>
+                    <p class="textNoGuestsSlopes">No hay invitados</p>
                 </div>
 
                 <!-- Cancelados -->
                 <div class="canceled">
                     <h4 class="canceled__title text-center"><img src="https://img.icons8.com/windows/32/000000/xbox-x.png"/>Cancelados</h4>
                     <hr>
-                    <p class="textNoGuests">No hay invitados</p>
+
+                    <div class="personsGuests row" id="personsGuestsCanceled">
+                        <!--///////// acá se agregan los invitados //////////////-->
+                    </div>
+                    <p class="textNoGuestsCanceled">No hay invitados</p>
                 </div>
             </article>
         </section>
@@ -167,47 +173,60 @@
                 <!-- datos del invitado -->
 
                 <input type="text" name="guestsName" id="guestsName" placeholder="Nombre" required>
+                
+
                 <input type="text" name="guestsLastname" id="guestsLastname" placeholder="Apellido" required>
+                <p id="errorName"></p><p id="errorLastname"></p>
                 <hr>
                 <div class="row modalGuestsSections">
                     <div class="col-6">
                         <label for="">Edad</label>
-                        <select class="modalGuestsSections__select" name="modalGuestsAge">
-                            <option value="value1" selected>Adulto</option>
-                            <option value="value2">Niño</option>
-                            <option value="value3">Bebé</option>
+                        <select class="modalGuestsSections__select" name="modalGuestsAge" id="modalGuestsAge">
+                            <option value="Adulto" selected>Adulto</option>
+                            <option value="Niño">Niño</option>
+                            <option value="Bebé">Bebé</option>
                         </select>
                     </div>
                 
                     <div class="col-6">
                         <label for="">Menú</label>
-                        <select class="modalGuestsSections__select" name="modalGuestsMenu">
-                            <option value="value1" selected>Adulto</option>
-                            <option value="value2">Niño</option>
-                            <option value="value3">Vegetariano</option>
+                        <select class="modalGuestsSections__select" name="modalGuestsMenu" id="modalGuestsMenu">
+                            <option value="Adulto" selected>Adulto</option>
+                            <option value="Niño">Niño</option>
+                            <option value="Vegetariano">Vegetariano</option>
                         </select>
                     </div>
                     
-                    <div class="col-12">
+                    <div class="col-6">
                         <label for="">Group</label>
-                        <select class="modalGuestsSections__select"name="modalGuestsGroup">
-                            <option value="value1" selected>Novios</option>
-                            <option value="value2">Familia de los novios</option>
-                            <option value="value3">Amigos</option>
-                            <option value="value3">Compañeros de trabajo</option>
+                        <select class="modalGuestsSections__select"name="modalGuestsGroup" id="modalGuestsGroup">
+                            <option value="Novios" selected>Novios</option>
+                            <option value="Familia de los novios">Familia de los novios</option>
+                            <option value="Amigos">Amigos</option>
+                            <option value="Compañeros de trabajo">Compañeros de trabajo</option>
                         </select>
-                </div>
                     </div>
+                    <div class="col-6">
+                        <label for="">Asistencia</label>
+                        <select class="modalGuestsSections__select" name="modalGuestsAssistance" id="modalGuestsAssistance">
+                            <option value="Confirmado" selected>Confirmado</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Cancelado">Cancelado</option>
+                        </select>
+                    </div>
+                </div>
 
                 <hr>
                 <!-- información del invitado -->
                 <h4 class="modalGuests__title">Información del invitado</h4>
 
                 <input type="tel" name="modalGuestsTel" id="modalGuestsTel" placeholder="Teléfono" required>
+                <p id="errorTel"></p>
                 <input type="email" name="modalGuestsEmail" id="modalGuestsEmail" placeholder="Email" required>
+                <p id="errorEmail"></p>
                 <input type="text" name="modalGuestsAddress" id="modalGuestsAddress" placeholder="Dirección" required>
                 <input type="text" name="modalGuestslocation" id="modalGuestslocation"placeholder="Localidad" required>
-                <select name="pais" class="pais">
+                <select name="pais" class="pais" id="modalGuestsCountry">
                     <option value="AF">Afganistán</option>
                     <option value="AL">Albania</option>
                     <option value="DE">Alemania</option>
@@ -444,7 +463,9 @@
                     <option value="ZW">Zimbabue</option>
                 </select>
                 <input type="text" name="modalGuestsPostcard" id="modalGuestsPostcard"placeholder="Código Postal" required>
+                <p id="errorPostcard"></p>
                 <input type="submit" class="modalGuestsBtn" value="Guardar">
+                <p id="error"></p>
             </form>
         </section>
     </main>
@@ -452,3 +473,5 @@
     <script src="../js/agendaInvitados.js"></script>
 </body>
 </html>    
+
+    
