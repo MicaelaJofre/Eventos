@@ -108,11 +108,11 @@
 
                 <!-- menu para ordenar y seleccionar todos-->
                 <form class="guestsAdd__form row" action="">
-                    <div class="col-6 d-flex justify-content-start">
+                    <div class="col-12 col-md-6 mt-5 d-flex justify-content-center justify-content-md-start">
                         <input type="checkbox">
                         <label for="">Seleccionar todos</label>
                     </div>
-                    <div class="col-6 d-flex justify-content-end">
+                    <div class="col-12 col-md-6 mt-5 d-flex justify-content-center justify-content-md-end">
                         <label for="">Ordenar por: </label>
                         <select class="guestsAdd__menu" name="select">
                             <option value="value1" selected>Asistencia</option>
@@ -131,9 +131,12 @@
                     <h4 class="confirmad__title text-center"><img src="https://img.icons8.com/material-outlined/48/000000/checked--v3.png"/>Confirmados</h4>
                     <hr>
 
-                    <div class="personsGuests row" id="personsGuestsConfirmed">
-                        <!--///////// acá se agregan los invitados //////////////-->
-                    </div>
+                    <table class="personsGuests row" id="personsGuestsConfirmed">
+                        <tbody class="persons">
+                            
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
                     <p class="textNoGuestsConfirmed">No hay invitados</p>
                 </div>
 
@@ -144,9 +147,12 @@
                     <h4 class="slopes__title text-center"><img src="https://img.icons8.com/ios-glyphs/30/000000/iphone-spinner--v1.png"/>Pendiente</h4>
                     <hr>
 
-                    <div class="personsGuests row" id="personsGuestsSlopes">
-                        <!--///////// acá se agregan los invitados //////////////-->
-                    </div>
+                    <table class="personsGuests row" id="personsGuestsSlopes">
+                        <tbody>
+                            
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
                     <p class="textNoGuestsSlopes">No hay invitados</p>
                 </div>
 
@@ -155,9 +161,12 @@
                     <h4 class="canceled__title text-center"><img src="https://img.icons8.com/windows/32/000000/xbox-x.png"/>Cancelados</h4>
                     <hr>
 
-                    <div class="personsGuests row" id="personsGuestsCanceled">
-                        <!--///////// acá se agregan los invitados //////////////-->
-                    </div>
+                    <table class="personsGuests row" id="personsGuestsCanceled">
+                        <tbody>
+
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
                     <p class="textNoGuestsCanceled">No hay invitados</p>
                 </div>
             </article>

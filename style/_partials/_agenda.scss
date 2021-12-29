@@ -109,13 +109,13 @@
 //seleccionar todos y menu desplegable
 
 .guestsAdd {
-    &__menu {
-        margin-left: .5em;
-    }
     &__form{
         input {
             margin: .3em;
         }
+    }
+    &__menu {
+        margin-left: .5em;
     }
 }
 
@@ -175,50 +175,55 @@
 //INVITADOS (carga de invitados por js) 
 
 .personsGuests {
+    margin: 2px;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    white-space: nowrap;
+    @include breakpoint(mobile) {
+        overflow-y: hidden;
+        overflow-x: scroll;
 
-    display: flex;
-    flex-direction: column;
-    
-    .persons {
-        flex-wrap: wrap;
-        padding:0 1em;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        
-        @include breakpoint(mobile) {
-            margin: 1.5em 0;
-        }
-
-        @include breakpoint(laptop) {
-            margin: 1.5em 0;
-        }
-
-        @include breakpoint(desktop) {
-            margin: 0;
-        }
-        
-        &__ok{
-            color: chartreuse;
-            @include breakpoint(mobile) {
-                display: none;
-            }
-
-            @include breakpoint(laptop) {
-                display: none;
-            }
-
-            @include breakpoint(desktop) {
-                display: block;
-            }
-        }
     }
-    .pb{
+
+    @include breakpoint(laptop) {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    @include breakpoint(desktop) {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
+    
+    td:nth-child(1) {
+        width: 3em;
+        padding-right: 20px;
+        
+    }
+    td:nth-child(2) {
+        width: 25em;
+        padding-right: 20px;
+    }
+
+    td:nth-child(3) {
+        width: 30em;
+        padding-right: 20px;
+    }
+
+    td:nth-child(4) {
+        width: 3em;
+        padding-right: 20px;
         cursor: pointer;
     }
-    
-}
+
+    td:nth-child(5) {
+        width: 3em;
+        padding:17px 20px 0 20px;
+        cursor: pointer;
+    }
+
 
 
 

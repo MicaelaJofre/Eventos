@@ -1,9 +1,9 @@
 /**
  * @challenge: "Crea un algoritmo simple con js".
  * 
- * @version: v1.8.0
+ * @version: v1.10.0
  * @author: Micaela Jofré.
- * @fecha: 21/12/2021
+ * @fecha: 28/12/2021
  *
  * History:
  *  - v1.0.0 – Primera entrega.
@@ -13,5 +13,6 @@
  *  - v1.5.0 - Quinta entrega.
  *  - v1.6.0 - Sexta entrega.
  *  - v1.8.0 - Octava entrega.
+ *  - v1.10.0 - Décima entrega.
  */
 // Código de aquí en adelante

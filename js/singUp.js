@@ -7,13 +7,13 @@ class SingUp {
     }
     // ingresamos los datos al local storage
     save() { 
-    
-        let usuarios =  localStorage.getItem("persona") == null ? [] : JSON.parse(localStorage.getItem("persona"));
         usuarios.push(this);
         return localStorage.setItem("persona", JSON.stringify(usuarios));
     }
 }  
 
+// Guardamos los datos en una variable en el caso de estar vacio crea un array vacio.
+let usuarios =  localStorage.getItem("persona") == null ? [] : JSON.parse(localStorage.getItem("persona"));
 
 persons = [];
 
@@ -44,9 +44,15 @@ formSingUP.addEventListener("submit", (e) => {
 
 // confirmamos que el email no se repita   
 function repeated(username,email, password,confirmPassword) { 
-    let person = new Set(username,email, password, confirmPassword);
-    if (person.has(email) != true) {
-        confirmPass(username,email, password, confirmPassword);
+    if (usuarios.find(usuario => usuario.email == email) == undefined) {
+        
+        if (usuarios.find(usuario => usuario.username == username) == undefined) {
+            confirmPass(username, email, password, confirmPassword);
+            
+        } else { 
+            show.textContent = ("El usuario ya fue registrado");
+        return false;
+        }
     } else {
         show.textContent = ("El email ya fue registrado");
         return false;

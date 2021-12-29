@@ -1108,6 +1108,157 @@ body {
   position: absolute;
 }
 
+.modalLoginForm {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid #484A47;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7))), url(../imagenes/fondoAcuarelaAzul.jpg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(../imagenes/fondoAcuarelaAzul.jpg);
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all 0.25s 0.083;
+  transition: all 0.25s 0.083;
+}
+
+@media screen and (min-width: 320px) {
+  .modalLoginForm {
+    width: 90%;
+    height: 80vh;
+    padding: 1em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalLoginForm {
+    width: 90%;
+    height: 80vh;
+    padding: 1em;
+  }
+}
+
+@media screen and (min-width: 994px) {
+  .modalLoginForm {
+    width: 30vw;
+    height: 90vh;
+    padding: 2em;
+  }
+}
+
+.modalLoginForm__title {
+  font-size: 1.2em;
+  padding: .5em;
+  background: #83C5BE;
+  text-align: center;
+}
+
+.modalLoginForm__subtitle {
+  text-align: center;
+  font-weight: 600;
+}
+
+.modalLoginForm label {
+  margin-left: 2px;
+  font-weight: 600;
+}
+
+.modalLoginForm input {
+  margin: 1em .5em 2em 0;
+  border: none;
+  border-bottom: solid 2px #FEC5BB;
+  outline: none;
+  width: 90%;
+}
+
+.modalLoginForm input::-webkit-input-placeholder {
+  color: #E29578;
+  padding: 1em;
+}
+
+.modalLoginForm input:-ms-input-placeholder {
+  color: #E29578;
+  padding: 1em;
+}
+
+.modalLoginForm input::-ms-input-placeholder {
+  color: #E29578;
+  padding: 1em;
+}
+
+.modalLoginForm input::placeholder {
+  color: #E29578;
+  padding: 1em;
+}
+
+.modalLoginForm input:focus {
+  border-radius: .20em;
+  border: none;
+  outline: solid 2px #FEC5BB;
+}
+
+.modalLoginForm .weddingButton {
+  width: 7em;
+  background: #006D77;
+  padding: .5em 1em;
+  border-radius: 3em;
+  text-decoration: none;
+  color: #EDF6F9;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.modalLoginForm .weddingButton::before, .modalLoginForm .weddingButton::after {
+  border: 0 solid transparent;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.modalLoginForm .weddingButton::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-radius: 3em;
+}
+
+.modalLoginForm .weddingButton::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-radius: 3em;
+}
+
+.modalLoginForm .weddingButton:hover::before, .modalLoginForm .weddingButton:hover::after {
+  border-color: #FEC5BB;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.modalLoginForm .weddingButton:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+          transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.modalLoginForm .weddingButton:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+          transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.modalLoginForm .weddingButton:hover {
+  background: #fff;
+  color: #E29578;
+}
+
 .contact {
   padding: 1em;
 }
@@ -1889,12 +2040,12 @@ body {
   margin-top: 3em;
 }
 
-.guestsAdd__menu {
-  margin-left: .5em;
-}
-
 .guestsAdd__form input {
   margin: .3em;
+}
+
+.guestsAdd__menu {
+  margin-left: .5em;
 }
 
 .textNoGuestsCanceled,
@@ -1935,75 +2086,58 @@ body {
 }
 
 .personsGuests {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.personsGuests .persons {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: 0 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin: 2px;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  white-space: nowrap;
 }
 
 @media screen and (min-width: 320px) {
-  .personsGuests .persons {
-    margin: 1.5em 0;
+  .personsGuests {
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .personsGuests .persons {
-    margin: 1.5em 0;
+  .personsGuests {
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 }
 
 @media screen and (min-width: 994px) {
-  .personsGuests .persons {
-    margin: 0;
+  .personsGuests {
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 }
 
-.personsGuests .persons__ok {
-  color: chartreuse;
+td:nth-child(1) {
+  width: 3em;
+  padding-right: 20px;
 }
 
-@media screen and (min-width: 320px) {
-  .personsGuests .persons__ok {
-    display: none;
-  }
+td:nth-child(2) {
+  width: 25em;
+  padding-right: 20px;
 }
 
-@media screen and (min-width: 768px) {
-  .personsGuests .persons__ok {
-    display: none;
-  }
+td:nth-child(3) {
+  width: 30em;
+  padding-right: 20px;
 }
 
-@media screen and (min-width: 994px) {
-  .personsGuests .persons__ok {
-    display: block;
-  }
+td:nth-child(4) {
+  width: 3em;
+  padding-right: 20px;
+  cursor: pointer;
 }
 
-.personsGuests .pb {
+td:nth-child(5) {
+  width: 3em;
+  padding: 17px 20px 0 20px;
   cursor: pointer;
 }
 

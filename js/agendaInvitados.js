@@ -161,19 +161,29 @@ function list() {
     personsGuestsCanceled.innerHTML = ``;
     for (let guest of guests) {
 
-        let rowGuest = document.createElement("div");
+        let rowGuest = document.createElement("tr");
         rowGuest.className = "persons";
         rowGuest.innerHTML = ` 
-            <input class="persons pb" form="guestsList__form" type="checkbox">
-            <label class="persons">${guest.name} ${guest.lastname}</label>
-            <span class="material-icons pb persons__ok">done_outline</span>   
-            <select class="persons pb" name="select">
+            <td>
+            <input form="guestsList__form" type="checkbox">
+            </td>
+            <td>
+            <span>${guest.name} ${guest.lastname}</apan>
+            </td>
+            <td>
+            <span class="material-icons persons__icon">done_outline</span>
+            <select name="select">
                 <option value="value1" selected>Confirmado</option>
                 <option value="value2">Pendiente</option>
                 <option value="value3">Cancelado</option>
             </select>
-            <span class="material-icons pb persons">edit</span>
-            <span class="material-icons pb persons" onClick="deleteGuests(${guest.id})">delete</span><br><br>`;
+            </td>
+            <td>
+            <span class="material-icons">edit</span>
+            </td>
+            <td>
+            <span class="material-icons" onClick="deleteGuests(${guest.id})">delete</span><br><br>
+            </td>`;
         
             
         if (guest.assistance === 'Confirmado') {

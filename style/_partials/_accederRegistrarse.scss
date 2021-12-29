@@ -283,3 +283,93 @@
     font-size: 7px;
     position: absolute;
 }
+
+
+//////////////////////MODAL INICIO DE USUARIO///////////////////
+
+.modalLoginForm {
+    position: absolute;
+    // top: 0;
+    // left: 28%;
+    overflow: hidden;
+    border: 1px solid $grey;
+    background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
+        url(../imagenes/fondoAcuarelaAzul.jpg);
+    background-position: center;
+    background-size: cover;
+    // visibility: 0;
+    // display: none;
+    transition: all 0.25s 0.083;
+
+    @include breakpoint(mobile) {
+        width: 90%;
+        height: 80vh;
+        padding: 1em;
+
+    }
+
+    @include breakpoint(laptop) {
+        width: 90%;
+        height: 80vh;
+        padding: 1em;
+    }
+
+    @include breakpoint(desktop) {
+        width: 30vw;
+        height: 90vh;
+        padding: 2em;
+    }
+
+    &__title {
+        font-size: 1.2em;
+        padding: .5em;
+        background: $green;
+        text-align: center;
+    }
+    &__subtitle {
+        text-align: center;
+        font-weight: 600;
+    }
+    label {
+        margin-left: 2px;
+        font-weight: 600;
+    }
+    input {
+        margin: 1em .5em 2em 0;
+        border: none;
+        border-bottom: solid 2px $salmon;
+        outline: none;
+        width: 90%;
+
+        &::placeholder {
+            color: $darkSalmon;
+            padding: 1em;
+        }
+
+        &:focus {
+            border-radius: .20em;
+            border: none;
+            outline: solid 2px $salmon;
+        }
+    }
+    .weddingButton {
+        width: 7em;
+        background: $darkGreen;
+        padding: .5em 1em;
+        border-radius: 3em;
+        text-decoration: none;
+        color: $white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.25s 0.0833333333s;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+        @include btn;
+
+        &:hover {
+            background: #fff;
+            color: $darkSalmon;
+        }
+
+    }
+}
