@@ -57,13 +57,13 @@
 
             <article class="col-12 col-md-4 col-lg-2 bar">
 
-                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/dotty/50/000000/dating-website.png"/>     <p class="bar__text">Mi web</p></a>
+                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/dotty/50/000000/dating-website.png"/><p class="bar__text">Mi web</p></a>
                 
             </article>
 
             <article class="col-12 col-md-4 col-lg-2 bar">
 
-                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/supplier.png"/><p class="bar__text">Proveedores</p></a>
+                <a href="../secciones/agendaProveedores.html" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/supplier.png"/><p class="bar__text">Proveedores</p></a>
                 
             </article>
         </section>
@@ -102,30 +102,30 @@
 
             <!-- btn agregar invitados -->
             <article class="guestsAdd text-center">
-                <a href="#modalGuests" id="guestsAdd__btn" class="guestsAdd__btn">Agregar invitado</a>
-                <a href="" id="" class="guestsAdd__btn">Agregar grupo</a>
+                <a id="guestsAdd__btn" class="guestsAdd__btn guestAdd">Agregar invitado</a>
+                <a href="#" id="" class="guestsAdd__btn">Agregar grupo</a>
                 <hr>
 
                 <!-- menu para ordenar y seleccionar todos-->
-                <form class="guestsAdd__form row" action="">
+                <form class="guestsAdd__form row" id="formGuestSelectTotal" action="">
                     <div class="col-12 col-md-6 mt-5 d-flex justify-content-center justify-content-md-start">
-                        <input type="checkbox">
+                        <input id="checkboxSelectionTotalGuest" type="checkbox" >
                         <label for="">Seleccionar todos</label>
+                        <input for="" type="submit" value="Eliminar" class="checkboxDelet" id="openCheckbox"></input>
                     </div>
                     <div class="col-12 col-md-6 mt-5 d-flex justify-content-center justify-content-md-end">
                         <label for="">Ordenar por: </label>
-                        <select class="guestsAdd__menu" name="select">
-                            <option value="value1" selected>Asistencia</option>
-                            <option value="value2">Menú</option>
-                            <option value="value3">Ubicaciones</option>
-                            <option value="value2">Grupo</option>
+                        <select class="guestsAdd__menu" id="guestsAdd__menu" name="select">
+                            <option value="Asistencia" selected>Asistencia</option>
+                            <option value="Menú">Menú</option>
+                            <option value="Grupo">Grupo</option>
                         </select>
                     </div>
                 </form>
             </article>
 
-            <!-- listado de invitados -->
-            
+            <!-- listado de invitados ASISTENCIA-->
+            <article class="row containerAssistance visible" id="containerAssistance">
                 <!-- confirmados -->
                 <div class="confirmed">
                     <h4 class="confirmad__title text-center"><img src="https://img.icons8.com/material-outlined/48/000000/checked--v3.png"/>Confirmados</h4>
@@ -170,13 +170,126 @@
                     <p class="textNoGuestsCanceled">No hay invitados</p>
                 </div>
             </article>
+
+            <!-- listado de invitados MENU-->
+
+            <article class="row containerMenu hidden" id="containerMenu">
+                <!-- adultos -->
+                <div class="adults">
+                    <h4 class="adults__title text-center"><img src="https://img.icons8.com/cute-clipart/64/000000/arms-up.png"/>Adultos</h4>
+                    <hr>
+
+                    <table class="personsGuests row" id="personsGuestsAdults">
+                        <tbody class="persons">
+                            
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
+                    <p class="textNoGuestsAdults">No hay invitados</p>
+                </div>
+
+
+                
+                <!-- niños -->
+                <div class="kids">
+                    <h4 class="kids__title text-center"><img src="https://img.icons8.com/cute-clipart/64/000000/baby.png"/>Niños</h4>
+                    <hr>
+
+                    <table class="personsGuests row" id="personsGuestsKids">
+                        <tbody>
+                            
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
+                    <p class="textNoGuestsKids">No hay invitados</p>
+                </div>
+
+                <!-- vegetariano -->
+                <div class="vegetarian">
+                    <h4 class="vegetarian__title text-center"><img src="https://img.icons8.com/cute-clipart/64/000000/avocado.png"/>Vegetariano</h4>
+                    <hr>
+
+                    <table class="personsGuests row" id="personsGuestsVegetarian">
+                        <tbody>
+
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
+                    <p class="textNoGuestsVegetarian">No hay invitados</p>
+                </div>
+            </article>
+
+            <!-- listado de invitados GRUPO-->
+
+            <article class="row containerGroup hidden" id="containerGroup">
+                <!-- novios -->
+                <div class="boyfriends">
+                    <h4 class="boyfriends__title text-center"><img src="https://img.icons8.com/cute-clipart/64/000000/date-woman-woman.png"/>Novios</h4>
+                    <hr>
+
+                    <table class="personsGuests row" id="personsGuestsBoyfriends">
+                        <tbody class="persons">
+                            
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
+                    <p class="textNoGuestsBoyfriends">No hay invitados</p>
+                </div>
+
+
+                
+                <!-- Familia -->
+                <div class="family">
+                    <h4 class="Family__title text-center"><img src="https://img.icons8.com/cute-clipart/64/000000/compare-heights.png"/>Familia</h4>
+                    <hr>
+
+                    <table class="personsGuests row" id="personsGuestsFamily">
+                        <tbody>
+                            
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
+                    <p class="textNoGuestsFamily">No hay invitados</p>
+                </div>
+
+                <!-- amigos -->
+                <div class="friends">
+                    <h4 class="friends__title text-center"><img src="https://img.icons8.com/cute-clipart/64/000000/granny-lesbian.png"/>Amigos</h4>
+                    <hr>
+
+                    <table class="personsGuests row" id="personsGuestsFriends">
+                        <tbody>
+
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
+                    <p class="textNoGuestsFriends">No hay invitados</p>
+                </div>
+
+                <!-- compañeros de trabajo -->
+                <div class="coworkers">
+                    <h4 class="coworkers__title text-center"><img src="https://img.icons8.com/cute-clipart/64/000000/office.png"/>Compañeros de trabajo</h4>
+                    <hr>
+
+                    <table class="personsGuests row" id="personsGuestsCoworkers">
+                        <tbody>
+
+                            <!--///////// acá se agregan los invitados //////////////-->
+                        </tbody>
+                    </table>
+                    <p class="textNoGuestsCoworkers">No hay invitados</p>
+                </div>
+            </article>
+
+
         </section>
 
 
         <!---------------------------------------- MODAL INVITADOS  ----------------------------------------------------------------->
 
-        <section  class="modalGuests container">
+        <section  class="modalGuestsSection">
             <form id="modalGuests" action="" class="modalGuests__form">
+                <img class="imgClose" src="https://img.icons8.com/ios-glyphs/30/000000/macos-close.png"/>
                 <h4 class="modalGuests__title">Agregar Invitados</h4>
                 <hr>
                 <!-- datos del invitado -->
@@ -199,7 +312,7 @@
                 
                     <div class="col-6">
                         <label for="">Menú</label>
-                        <select class="modalGuestsSections__select" name="modalGuestsMenu" id="modalGuestsMenu">
+                        <select class="modalGuestsSections__select " name="modalGuestsMenu " id="modalGuestsMenu">
                             <option value="Adulto" selected>Adulto</option>
                             <option value="Niño">Niño</option>
                             <option value="Vegetariano">Vegetariano</option>
@@ -208,7 +321,7 @@
                     
                     <div class="col-6">
                         <label for="">Group</label>
-                        <select class="modalGuestsSections__select"name="modalGuestsGroup" id="modalGuestsGroup">
+                        <select class="modalGuestsSections__select "name="modalGuestsGroup" id="modalGuestsGroup">
                             <option value="Novios" selected>Novios</option>
                             <option value="Familia de los novios">Familia de los novios</option>
                             <option value="Amigos">Amigos</option>
@@ -217,7 +330,7 @@
                     </div>
                     <div class="col-6">
                         <label for="">Asistencia</label>
-                        <select class="modalGuestsSections__select" name="modalGuestsAssistance" id="modalGuestsAssistance">
+                        <select class="modalGuestsSections__select " name="modalGuestsAssistance" id="modalGuestsAssistance">
                             <option value="Confirmado" selected>Confirmado</option>
                             <option value="Pendiente">Pendiente</option>
                             <option value="Cancelado">Cancelado</option>
@@ -478,7 +591,41 @@
             </form>
         </section>
     </main>
-
+    <!-- footer -->
+    <footer class="container-fluid mt-0 footer">
+        <section class="infoNetworksPayments d-flex justify-content-around flex-wrap">
+            <!-- informacion -->
+            <article class="info">
+                <p class="info__p text-center text-md-start">Información</p>
+                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
+                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Tarifas</p></a>
+                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
+                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Condiciones legales</p></a>
+            </article>
+            <!-- redes -->
+            <article class="networks text-center">
+                <p class="networks__p">Redes sociales</p>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png"/>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png"/>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png"/>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/>
+            </article>
+            <!-- formas de pago -->
+            <article class="payments text-center">
+                <p class="payments__p">Formas de pago</p>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png"/>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png"/>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png"/>
+            </article>
+        </section>
+        <!-- copy y pie -->
+        <section class="footerText d-flex justify-content-center align-items-center">
+            <img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="footerText__img">
+            <p class="footerText__copy">&copy;2021 Dreamed Day.com</p>
+        </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/animaciones.js"></script>
     <script src="../js/agendaInvitados.js"></script>
 </body>
 </html>    

@@ -19,8 +19,8 @@
         }
     }
     &__img {
-        padding: 1em;
         cursor: pointer;
+        padding: 1em;
     }
 }
 
@@ -30,8 +30,7 @@
     margin: 3em 0;
     position: relative;
     .guestsHr{
-        color: $darkGreen;
-        height: 5px;
+        @include hr;
     }
 }
 
@@ -48,12 +47,7 @@
             font-size: 1.2em;
         }
         p{
-            font-weight: 600;
-            font-size: 1.2em;
-            background: $salmon;
-            color: $grey;
-            padding: .5em 0;
-            border-radius: .25em;
+            @include pAcconuntant;
         }
     }
 }
@@ -105,6 +99,14 @@
     }
 }
 
+// checkbox seleccionar a todos - pestaña desplegable para eliminar
+
+.checkboxDelet {
+    background: #fff;
+    padding: 2px 1em;
+    border: $salmon solid 1px;
+    @include btn;
+}
 
 //seleccionar todos y menu desplegable
 
@@ -112,6 +114,9 @@
     &__form{
         input {
             margin: .3em;
+        }
+        label {
+            margin-right: 2em;
         }
     }
     &__menu {
@@ -122,10 +127,19 @@
 // texto que aparece cuando no hay invitados
 .textNoGuestsCanceled,
 .textNoGuestsSlopes,
-.textNoGuestsConfirmed {
+.textNoGuestsConfirmed,
+.textNoGuestsAdults,
+.textNoGuestsKids,
+.textNoGuestsVegetarian,
+.textNoGuestsFriends,
+.textNoGuestsBoyfriends,
+.textNoGuestsFamily,
+.textNoGuestsCoworkers {
     padding: .5em 1em;
     background: $shadowGrey2;
 }
+
+// ASISTENCIA
 
 // confirmados
 
@@ -170,33 +184,54 @@
     }
 }
 
+// MENU
 
+//adulto // kids // vegetariano
+.adults, .kids, .vegetarian {
+    h4 {
+        background: $white;
+        padding: .5em 0;
+
+        img {
+            width: 2em;
+            margin-right: .5em;
+
+        }
+    }
+}
+
+// novios // amigos // compañeros de trabajo // familia
+.boyfriends,
+.family,
+.friends,
+.coworkers {
+    h4 {
+        background: $greyGreen;
+        padding: .5em 0;
+
+        img {
+            width: 2em;
+            margin-right: .5em;
+
+        }
+    }
+}
+
+
+// ocultar / mostrar secciones ASISTENCIA, GRUPO, MENU
+
+.visible {
+    display: block;
+}
+.hidden {
+    display: none;
+} 
 
 //INVITADOS (carga de invitados por js) 
 
 .personsGuests {
-    margin: 2px;
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: separate;
-    white-space: nowrap;
-    @include breakpoint(mobile) {
-        overflow-y: hidden;
-        overflow-x: scroll;
+    @include table;
 
-    }
-
-    @include breakpoint(laptop) {
-        overflow-y: hidden;
-        overflow-x: hidden;
-    }
-
-    @include breakpoint(desktop) {
-        overflow-y: hidden;
-        overflow-x: hidden;
-    }
-}
-    
     td:nth-child(1) {
         width: 3em;
         padding-right: 20px;
@@ -206,175 +241,211 @@
         width: 25em;
         padding-right: 20px;
     }
-
+    
     td:nth-child(3) {
         width: 30em;
         padding-right: 20px;
     }
-
+    
     td:nth-child(4) {
         width: 3em;
         padding-right: 20px;
         cursor: pointer;
     }
-
+    
     td:nth-child(5) {
         width: 3em;
         padding:17px 20px 0 20px;
         cursor: pointer;
     }
+}
+    
 
 
 
 
 ///////////////////////////modal/////////////////////////////
-
-.modalGuests{
-    position: absolute;
-    // top: 0;
-    // left: 28%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+.modalGuestsSection{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
     border: 1px solid $grey;
-    background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
-    url(../imagenes/fondoAcuarelaAzul.jpg);
-    background-position: center;
-    background-size: cover;
-    // visibility: 0;
-    // display: none;
-    transition: all 0.25s 0.083;
-    @include breakpoint(mobile) {
-        width: 90%;
-        height: 80vh;
-        padding: 1em;
-        
-    }
+    background: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease .5s;
 
-    @include breakpoint(laptop) {
-        width: 90%;
-        height: 80vh;
-        padding: 1em;
-    }
+    .modalGuests__form {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
+            url(../imagenes/fondoAcuarelaAzul.jpg);
+        background-position: center;
+        background-size: cover;
+        transition: transform 1s;
 
-    @include breakpoint(desktop) {
-        width: 48vw;
-        height: 80vh;
-        padding: 2em;
-    }
-
-    &__title {
-        padding: .5em;
-        background: $green;
-    }
-    input{
-        margin: 1em 1em 1em 0;
-        border: none;
-        border-bottom: solid 2px $salmon;
-        outline:none;
         @include breakpoint(mobile) {
             width: 90%;
+            height: 80vh;
+            padding: 1em;
+
         }
 
         @include breakpoint(laptop) {
             width: 90%;
-        }
-
-        @include breakpoint(desktop) {
-            width: 15em;
-        }
-        
-        &::placeholder{
-            color: $darkSalmon;
+            height: 80vh;
             padding: 1em;
         }
-        &:focus{
-            border-radius: .20em;
-            border: none;
-            outline: solid 2px $salmon;
-        }
-    }
-    
-    
-    .modalGuestsSections {
-        label {
-            width: 5em;
-            font-weight: 600;
-            @include breakpoint(mobile) {
-                margin: 1em;
-                width: 3em;
-            }
-
-            @include breakpoint(laptop) {
-                margin: 1em;
-                width: 5em;
-            }
-
-            @include breakpoint(desktop) {
-                width: 5em;
-            }
-        }
-
-        &__select {
-            color: $darkSalmon;
-            padding: 0 1em;
-            outline: none;
-            border: solid 1px $salmon;
-            @include breakpoint(mobile) {
-                margin: .5em 0 0 .5em;
-                width: 6em;
-            }
-
-            @include breakpoint(laptop) {
-                margin: .5em 0 0 .5em;
-                width: 6em;
-            }
-
-            @include breakpoint(desktop) {
-                margin: 1em 0 0 1em;
-                width: 10em;
-            }
-        }
-
-    }
-    .pais{
-        width: 15em;
-        margin-right: 1em;
-        color: $darkSalmon;
-        outline: none;
-        border: solid 1px $salmon;
-        @include breakpoint(mobile) {
-            margin-top: .5em;
-        }
-
-        @include breakpoint(laptop) {
-            margin-top: .5em;
-        }
 
         @include breakpoint(desktop) {
-            margin-top: 0;
+            width: 48vw;
+            height: 80vh;
+            padding: 2em;
         }
-    }
-    .modalGuestsBtn {
-        width: 7em;
-        background: $darkGreen;
-        padding: .5em 1em;
-        border-radius: 3em;
-        text-decoration: none;
-        color: $white;
-        font-weight: 600;
-        cursor: pointer;
-        transition: color 0.25s 0.0833333333s;
-        transition: color 0.25s 0.0833333333s;
-        position: relative;
-        @include btn;
 
-        &:hover {
-            background: #fff;
+        .modalGuests__title {
+            padding: .5em;
+            background: $green;
+        }
+
+        // cerrar modal
+        .modalClose {
+            transform: translateY(-200%);
+        }
+
+        .modalOpen {
+            transform: translateY(0%);
+        }
+
+        .imgClose {
+            margin-left: 95%;
+            cursor: pointer;
+        }
+
+
+        input {
+            margin: 1em 1em 1em 0;
+            border: none;
+            border-bottom: solid 2px $salmon;
+            outline: none;
+
+            @include breakpoint(mobile) {
+                width: 90%;
+            }
+
+            @include breakpoint(laptop) {
+                width: 90%;
+            }
+
+            @include breakpoint(desktop) {
+                width: 15em;
+            }
+
+            &::placeholder {
+                color: $darkSalmon;
+                padding: 1em;
+            }
+
+            &:focus {
+                border-radius: .20em;
+                border: none;
+                outline: solid 2px $salmon;
+            }
+        }
+
+
+        .modalGuestsSections {
+            label {
+                width: 5em;
+                font-weight: 600;
+
+                @include breakpoint(mobile) {
+                    margin: 1em;
+                    width: 3em;
+                }
+
+                @include breakpoint(laptop) {
+                    margin: 1em;
+                    width: 5em;
+                }
+
+                @include breakpoint(desktop) {
+                    width: 5em;
+                }
+            }
+
+            &__select {
+                color: $darkSalmon;
+                padding: 0 1em;
+                outline: none;
+                border: solid 1px $salmon;
+
+                @include breakpoint(mobile) {
+                    margin: .5em 0 0 .5em;
+                    width: 6em;
+                }
+
+                @include breakpoint(laptop) {
+                    margin: .5em 0 0 .5em;
+                    width: 6em;
+                }
+
+                @include breakpoint(desktop) {
+                    margin: 1em 0 0 1em;
+                    width: 10em;
+                }
+            }
+
+        }
+
+        .pais {
+            width: 15em;
+            margin-right: 1em;
             color: $darkSalmon;
+            outline: none;
+            border: solid 1px $salmon;
+
+            @include breakpoint(mobile) {
+                margin-top: .5em;
+            }
+
+            @include breakpoint(laptop) {
+                margin-top: .5em;
+            }
+
+            @include breakpoint(desktop) {
+                margin-top: 0;
+            }
         }
 
+        .modalGuestsBtn {
+            width: 7em;
+            background: $darkGreen;
+            padding: .5em 1em;
+            border-radius: 3em;
+            text-decoration: none;
+            color: $white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.25s 0.0833333333s;
+            transition: color 0.25s 0.0833333333s;
+            position: relative;
+            @include btn;
+
+            &:hover {
+                background: #fff;
+                color: $darkSalmon;
+            }
+
+        }
     }
 }
+
 #errorLastname,
 #errorName,
 #errorTel,

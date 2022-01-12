@@ -14,5 +14,7 @@
  *  - v1.6.0 - Sexta entrega.
  *  - v1.8.0 - Octava entrega.
  *  - v1.10.0 - Décima entrega.
+ *  - v1.12.0 - Decimosegunda entrega.
+ *  - v1.13.0 - Decimotercera entrega.
  */
 // Código de aquí en adelante

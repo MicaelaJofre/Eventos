@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  logo redes -->
+    <link href="https://icons8.com/icon/118497/facebook-nuevo">
+    <!--  bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- styles -->
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header class="container-fluid headerSchedule">
+        <!-- nav -->
+        <nav class="nav d-flex justify-content-around flex-wrap">
+            <div class="nav__logo d-flex justify-content-center align-items-center">
+                <a href="../index.html"class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="nav__img"><h1>Dreamed Day</h1></a>
+            </div>
+            <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
+                <li class="nav__li"><a href="#">Servicios</a>
+                    <ul class="subUl">
+                        <li class="subLi"><a href="#">Invitados</a></li>
+                        <li class="subLi"><a href="#">Ubicaciones</a></li>
+                        <li class="subLi"><a href="#">Presupuesto</a></li>
+                        <li class="subLi"><a href="#">Mi web</a></li>
+                        <li class="subLi"><a href="#">Proveedores</a></li>
+                    </ul>
+                </li>
+                <li class="nav__li"><a href="#">Mi casamiento</a></li>
+                <li class="nav__li"><a href="../secciones/login.html">Accedé</a></li>
+                <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
+                <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
+            </ul>
+        </nav> 
+        
+        <!-- bar -->
+        <section class="row light d-flex justify-content-center align-items-end scheduleBar">
+
+            <article class="col-12 col-md-4 col-lg-2 bar">
+
+                <a href="../secciones/agendaInvitados.html" class="bar__link"><img class="bar__img" src="https://img.icons8.com/wired/50/000000/family.png"/><p class="bar__text">Invitados</p></a>
+            </article>
+
+            <article class="col-12 col-md-4 col-lg-2 bar">
+
+                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/restaurant-table.png"/>     <p class="bar__text">Ubicaciones</p></a>
+            </article>
+
+            <article class="col-12 col-md-4 col-lg-2 bar">
+
+                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/cost.png"/><p class="bar__text">Presupuesto</p></a>
+                
+            </article>
+
+            <article class="col-12 col-md-4 col-lg-2 bar">
+
+                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/dotty/50/000000/dating-website.png"/><p class="bar__text">Mi web</p></a>
+                
+            </article>
+
+            <article class="col-12 col-md-4 col-lg-2 bar">
+
+                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/supplier.png"/><p class="bar__text">Proveedores</p></a>
+                
+            </article>
+        </section>
+    </header>
+
+    <main class="scheduleVendors container">
+
+        <!-- contador de proveedores -->
+        <section class="providersAccountant text-center row">
+            <article class="col-12 col-md-4">
+                <div  class="accountant">
+                    <h3>Contratados</h3>
+                    <p id="totalHired"></p>
+                </div>
+            </article>
+            <article class="col-12 col-md-4">
+                <div  class="accountant">
+                    <h3>Presupuesto solicitado</h3>
+                    <p id="totalBudget"></p>
+                </div>
+            </article>
+            <article class="col-12 col-md-4">
+                <div class="accountant">
+                    <h3>Presupuesto pendiente</h3>
+                    <p id="totalSlopes"></p>
+                </div>
+            </article>
+        </section>
+
+        <!-- botón agregar proveedores -->
+        <section class="providersAddBtn text-center row">
+            <hr class="providersHr">
+            <a class="providersAdd">Agregar Proveedor</a>
+            <hr class="providersHr">
+        </section>
+
+        <!-- tabla de proveedores -->
+        <section class="providersTable">
+            <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Nombre</th>
+                        <th>Email o sitio web</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Presupuesto</th>
+                        <th>Contratado</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--///////// Aquí agregamos los proveedores  /////////-->
+                </tbody>
+            </table>
+        </section>
+
+         <!---------------------------------------- MODAL INVITADOS  ----------------------------------------------------------------->
+
+        <section  class="modalProvidersSection">
+            <form id="modalProviders" action="" class="modalProviders">
+                <img class="imgClose" src="https://img.icons8.com/ios-glyphs/30/000000/macos-close.png"/>
+                <h4 class="modalProviders__title">Agregar Proveedores</h4>
+                <hr>
+                <!-- datos del proveedor -->
+
+                <input type="text" name="providersName" id="providersName" placeholder="Nombre del proveedor" required>
+                <p class="errorName"></p>
+
+                <input type="text" name="providersEmail" id="providersEmail" placeholder="Email o sitio web" required>
+                
+                <input type="tel" name="providersTel" id="providersTel" placeholder="Teléfono" required>
+                <p class="errorTel"></p>
+
+                <input type="text" name="providersAddress" id="providersAddress" placeholder="Dirección" required>
+                
+                <div class="row modalProvidersDiv Sections">
+                    <label for="">Categoría</label>
+                    <select class="modalProvidersDiv__select" name="modalProviders Category" id="modalProvidersCategory">
+                        <option value="Recepción" selected>Recepción</option>
+                        <option value="Fotografía">Fotografía</option>
+                        <option value="Cátering">Cátering</option>
+                        <option value="Música">Música</option>
+                        <option value="Video">Video</option>
+                        <option value="Souvenirs">Souvenirs</option>
+                        <option value="Auto de boda">Auto de boda</option>
+                        <option value="Decoración">Decoración</option>
+                        <option value="Invitaciones">Invitaciones</option>
+                        <option value="Entretenimiento">Entretenimiento</option>
+                        <option value="Wedding planner">Wedding planner</option>
+                        <option value="Torta">Torta</option>
+                        <option value="Accesorios y vestimenta de los novios">Accesorios y vestimenta de los novios</option>
+                        <option value="Belleza y salud">Belleza y salud</option>
+                        <option value="Luna de mierl">Luna de mierl</option>
+                    </select>
+                    <div class="modalProvidersDiv__radio">
+                        <div class="col-12 col-md-6">
+                            <p>Solicitaste presupuesto</p>
+                            <label><input type="radio" class="radioBudget" name="providersRadio" value="Sí">Sí</label> 
+                            <label><input type="radio" class="radioBudget" name="providersRadio" value="No">Aún no</label>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p>Contrataste el servicio</p>
+                            <label><input type="radio" class="radioContract" name="providersRadioContract" value="Sí">Sí</label> 
+                            <label><input type="radio" class="radioContract" name="providersRadioContract" value="No">Aún no</label>
+                        </div>
+                    </div>
+                </div>    
+                <input type="submit" class="providersBtnModal" value="Guardar">
+                <hr>
+            </form>
+            
+        </main>
+
+            <!-- footer -->
+        <footer class="container-fluid mt-0 footer">
+            <section class="infoNetworksPayments d-flex justify-content-around flex-wrap">
+                <!-- informacion -->
+                <article class="info">
+                    <p class="info__p text-center text-md-start">Información</p>
+                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
+                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Tarifas</p></a>
+                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
+                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Condiciones legales</p></a>
+                </article>
+                <!-- redes -->
+                <article class="networks text-center">
+                    <p class="networks__p">Redes sociales</p>
+                    <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png"/>
+                    <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png"/>
+                    <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png"/>
+                    <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/>
+                </article>
+                <!-- formas de pago -->
+                <article class="payments text-center">
+                    <p class="payments__p">Formas de pago</p>
+                    <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png"/>
+                    <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png"/>
+                    <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png"/>
+                </article>
+            </section>
+            <!-- copy y pie -->
+            <section class="footerText d-flex justify-content-center align-items-center">
+                <img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="footerText__img">
+                <p class="footerText__copy">&copy;2021 Dreamed Day.com</p>
+            </section>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="../js/agendaProveedores.js"></script>
+        <script src="../js/animaciones.js"></script>
+    </body>
+</html>    
+
+    

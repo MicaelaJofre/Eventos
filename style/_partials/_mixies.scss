@@ -173,3 +173,40 @@
         }
     }
 }
+
+@mixin hr {
+    color: $darkGreen;
+    height: 5px;
+}
+
+@mixin pAcconuntant {
+    font-weight: 600;
+    font-size: 1.2em;
+    background-color: $salmon;
+    color: $grey;
+    padding: .5em 0;
+    border-radius: .25em;
+}
+
+@mixin table {
+    margin: 2px;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    white-space: nowrap;
+
+    @include breakpoint(mobile) {
+        overflow-y: hidden;
+        overflow-x: scroll !important;
+    }
+
+    @include breakpoint(laptop) {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    @include breakpoint(desktop) {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
