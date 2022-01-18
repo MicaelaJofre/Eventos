@@ -1,0 +1,26 @@
+.cardTarif {
+    padding: 3em;
+
+    &--promo{
+        background: rgb(254, 197, 187);
+        background: radial-gradient(circle, rgba(254, 197, 187, 1) 30%, rgba(255, 255, 255, 1) 98%, rgba(255, 255, 255, 1) 100%);
+    }
+    img{
+        height: 10em;
+        object-fit: cover;
+    }
+    button{
+        width: 70%;
+        color: $grey;
+        font-weight: 600;
+        margin-top: 2em;
+        background: #fff;
+        outline: solid 2px $salmon;
+        border: none;
+        border-radius: .25em;
+        &:hover {
+            background: $salmon;
+            color: #fff;
+        }
+    }
+}

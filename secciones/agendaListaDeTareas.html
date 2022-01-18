@@ -57,7 +57,7 @@
 
             <article class="col-12 col-md-4 col-lg-2 bar">
 
-                <a href="../secciones/agendaListaDeTareas.html" class="bar__link"><img class="bar__img" src="https://img.icons8.com/dotty/50/000000/dating-website.png"/><p class="bar__text">Tareas</p></a>
+                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/dotty/50/000000/dating-website.png"/><p class="bar__text">Tareas</p></a>
                 
             </article>
 
@@ -69,112 +69,68 @@
         </section>
     </header>
 
-    <main class="scheduleVendors container">
+    <main class="listTasksContainer container">
 
-        <!-- contador de proveedores -->
-        <section class="providersAccountant text-center row">
-            <article class="col-12 col-md-4">
-                <div  class="accountant">
-                    <h3>Contratados</h3>
-                    <p id="totalHired"></p>
+        <!-- contador de tareas pendientes y concretadas -->
+        <section class="tasksAccountant text-center row">
+            <article class="col-12 col-md-6">
+                <div  class="tasksAccountant">
+                    <h3>Tareas completadas</h3>
+                    <p id="totalcomplete"></p>
                 </div>
             </article>
-            <article class="col-12 col-md-4">
-                <div  class="accountant">
-                    <h3>Presupuesto solicitado</h3>
-                    <p id="totalBudget"></p>
-                </div>
-            </article>
-            <article class="col-12 col-md-4">
-                <div class="accountant">
-                    <h3>Presupuesto pendiente</h3>
+            <article class="col-12 col-md-6">
+                <div class="tasksAccountant">
+                    <h3>Tareas pendiente</h3>
                     <p id="totalSlopes"></p>
                 </div>
             </article>
         </section>
 
-        <!-- botón agregar proveedores -->
-        <section class="providersAddBtn text-center row">
-            <hr class="providersHr">
-            <a class="providersAdd">Agregar Proveedor</a>
-            <hr class="providersHr">
+        <!-- botón agregar tareas -->
+        <section class="tasksAddBtn text-center row">
+            <hr class="tasksHr">
+            <a class="tasksAdd">Agregar Tareas</a>
+
+            <!-- formulario a completar -->
+            <form action="" id="taskAddInfo" class="taskAddInfo">
+                <input type="text" class="taskName" placeholder="Título de la tarea" required>
+                <input type="date" class="taskDate" required>
+                <textarea class="taskObservations" name="taskObservations" id="taskObservations"rows="10" placeholder="Coloca aquí las observaciones"></textarea>
+                <input type="submit" value="Guardar" class="btntask">
+            </form>
+            <hr class="tasksHr">
         </section>
 
-        <!-- tabla de proveedores -->
-        <section class="providersTable">
-            <table class="table" id="table">
-                <thead>
-                    <tr>
-                        <th>Categoría</th>
-                        <th>Nombre</th>
-                        <th>Email o sitio web</th>
-                        <th>Teléfono</th>
-                        <th>Dirección</th>
-                        <th>Presupuesto</th>
-                        <th>Contratado</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--///////// Aquí agregamos los proveedores  /////////-->
-                </tbody>
-            </table>
-        </section>
-
-         <!---------------------------------------- MODAL INVITADOS  ----------------------------------------------------------------->
-
-        <section  class="modalProvidersSection">
-            <form id="modalProviders" action="" class="modalProviders">
-                <img class="imgClose" src="https://img.icons8.com/ios-glyphs/30/000000/macos-close.png"/>
-                <h4 class="modalProviders__title">Agregar Proveedores</h4>
-                <hr>
-                <!-- datos del proveedor -->
-
-                <input type="text" name="providersName" id="providersName" placeholder="Nombre del proveedor" required>
-                <p class="errorName"></p>
-
-                <input type="text" name="providersEmail" id="providersEmail" placeholder="Email o sitio web" required>
-                
-                <input type="tel" name="providersTel" id="providersTel" placeholder="Teléfono" required>
-                <p class="errorTel"></p>
-
-                <input type="text" name="providersAddress" id="providersAddress" placeholder="Dirección" required>
-                
-                <div class="row modalProvidersDiv Sections">
-                    <label for="">Categoría</label>
-                    <select class="modalProvidersDiv__select" name="modalProviders Category" id="modalProvidersCategory">
-                        <option value="Recepción" selected>Recepción</option>
-                        <option value="Fotografía">Fotografía</option>
-                        <option value="Cátering">Cátering</option>
-                        <option value="Música">Música</option>
-                        <option value="Video">Video</option>
-                        <option value="Souvenirs">Souvenirs</option>
-                        <option value="Auto de boda">Auto de boda</option>
-                        <option value="Decoración">Decoración</option>
-                        <option value="Invitaciones">Invitaciones</option>
-                        <option value="Entretenimiento">Entretenimiento</option>
-                        <option value="Wedding planner">Wedding planner</option>
-                        <option value="Torta">Torta</option>
-                        <option value="Accesorios y vestimenta de los novios">Accesorios y vestimenta de los novios</option>
-                        <option value="Belleza y salud">Belleza y salud</option>
-                        <option value="Luna de mierl">Luna de mierl</option>
-                    </select>
-                    <div class="modalProvidersDiv__radio">
-                        <div class="col-12 col-md-6">
-                            <p>Solicitaste presupuesto</p>
-                            <label><input type="radio" class="radioBudget" name="providersRadio" value="Sí">Sí</label> 
-                            <label><input type="radio" class="radioBudget" name="providersRadio" value="No">Aún no</label>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <p>Contrataste el servicio</p>
-                            <label><input type="radio" class="radioContract" name="providersRadioContract" value="Sí">Sí</label> 
-                            <label><input type="radio" class="radioContract" name="providersRadioContract" value="No">Aún no</label>
+        <!-- tabla de lista de tareas -->
+        <section class="table container">
+            <article class="taskListTable row">
+                <table class="tableTask col-12 col-md-6" id="tableTask">            
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Fecha</th>
+                            <th>observaciones</th>
+                            <th>Estado</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--///////// Aquí agregamos las tareas pendientes /////////-->
+                    </tbody>
+                </table>
+                <aside class="taskSlopesDate col-12 col-md-5">
+                    <div class="card taskSlopes" style="width: 18rem;">
+                        
+                        <div class="card-body">
+                            <h4 class="taskSlopes__title">Próxima tarea a vencer!</h4>
+                            <p class="card-text taskSlopes__text">gfdsgsd</p>
                         </div>
                     </div>
-                </div>    
-                <input type="submit" class="providersBtnModal" value="Guardar">
-                <hr>
-            </form>
+                </aside>
+                
+            </article>
+        </section>
             
         </main>
 
@@ -212,7 +168,7 @@
             </section>
         </footer>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="../js/agendaProveedores.js"></script>
+        <script src="../js/agendaListaDeTareas.js"></script>
         <script src="../js/animaciones.js"></script>
     </body>
 </html>    

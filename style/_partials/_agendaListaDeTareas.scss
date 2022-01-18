@@ -1,0 +1,229 @@
+@import "../_partials/mixies";
+
+// contador
+.tasksAccountant {
+    h3 {
+        font-size: 1.2em;
+    }
+
+    p {
+        @include pAcconuntant;
+    }
+
+}
+
+// boton de agregar tareas
+
+.tasksAddBtn {
+    display: flex;
+    justify-content: center;
+    
+
+    .tasksAdd,
+    .btntask {
+        margin-top: 2em;
+        text-align: center;
+        width: auto;
+        border-radius: 0.25em;
+        text-decoration: none;
+        color: $shadowGrey;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.25s 0.0833333333s;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+        background: #fec5bb57;
+        @include btn;
+
+        @include breakpoint(mobile) {
+            width: 100%;
+            padding: .2em .5em;
+        }
+
+        @include breakpoint(laptop) {
+            width: 100%;
+            padding: .5em 1em;
+        }
+
+        @include breakpoint(desktop) {
+            width: 100%;
+            padding: .5em 1em;
+        }
+
+        &:hover {
+            background: #fff;
+            color: $darkSalmon;
+        }
+    }
+
+    .tasksHr {
+        margin-top: 2em;
+        @include hr;
+    }
+}
+
+// formulario para agregar tareas
+
+.taskAddInfo {
+    display: none;
+    margin-top: 3em;
+    input{
+        padding-left: .5em;
+        width: 30%;
+        margin-bottom: 1.5em;
+        border-radius: .25em;
+        border: none ;
+        outline: solid 2px $shadowGrey;
+        &:focus {
+            border: none;
+            outline: solid 2px $salmon;
+        }
+    }
+    .btntask {
+        background: #fff;
+        outline: solid 2px $green;
+        width: 20em;
+        margin-top: 1.5em;
+        padding: .5em 2em;
+        &:hover{
+            outline: solid 2px $darkSalmon;
+        }
+        
+    }
+    textarea{
+        padding-left: .5em;
+        width: 80%;
+        height: 20vh;
+        border-radius: .25em;
+        resize: none;
+        outline: solid 2px $shadowGrey;
+        &:focus {
+            border: none;
+            outline: solid 2px $salmon;
+        }
+    }
+}
+
+
+// tabla
+
+.taskListTable {
+    margin-bottom: 5em;
+    display: flex;
+    justify-content: space-around;
+    margin: 2px;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    white-space: nowrap;
+
+    .taskListTAble__title{
+        font-size: 1.2em;
+        width: 3em;
+    }
+
+    th {
+        font-size: .8em;
+        text-align: center;
+    }
+
+    td {
+        font-size: .7em;
+        text-align: center;
+    }
+
+
+    //th 
+    th:nth-child(1) {
+        width: 20%;
+        padding: 0;
+    }
+
+    th:nth-child(2) {
+        width: 20%;
+        padding-right: 20px;
+    }
+    th:nth-child(3) {
+        width: 25%;
+        padding-right: 20px;
+
+    }
+    th:nth-child(4) {
+        width: 15%;
+        padding-right: 20px;
+    }
+
+    th:nth-child(5) {
+        width: 20%;
+        padding-right: 10px;
+    }
+
+    //td
+    td:nth-child(1) {
+        width: 20%;
+    }
+
+    td:nth-child(2) {
+        width: 20%;
+        padding-right: 20px;
+    }
+
+    td:nth-child(3) {
+        width: 25%;
+        padding-right: 20px;
+
+    }
+
+    td:nth-child(5) {
+        width: 15%;
+    }
+
+    td:nth-child(4) {
+        width: 10%;
+    }
+
+    .tableTask {
+        border: solid 1px $salmon;
+        
+    }
+}
+
+// aside date
+
+.taskSlopesDate{
+    display: flex;
+    justify-content: center;
+    background-image: url(../imagenes/listaDeTareas.png);
+    background-size: cover;
+
+    .taskSlopes {
+        background: rgba(255, 255, 255, 0.705);
+        margin: 1em;
+    }
+    .taskSlopes {
+        width: 20em;
+        height: 15em;
+        border: 2px solid $grey;
+        &__title{
+            font-weight: 600;
+            font-size: .9em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            background: $green;
+        }
+        &__text{
+            text-align: center;
+            padding-top: 2em;
+        }
+    }
+}
+
+// btn de eliminar
+
+.deleteTask{
+    padding-top: 1.5em;
+    .material-icons{
+        text-align: center;
+        cursor: pointer;
+    }
+}

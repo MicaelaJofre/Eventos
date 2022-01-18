@@ -14,13 +14,16 @@
     &__link {
         text-decoration: none;
         color: $grey;
-        &:hover {
+        &:hover{
             color: $darkGreen;
         }
     }
     &__img {
         cursor: pointer;
         padding: 1em;
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
 

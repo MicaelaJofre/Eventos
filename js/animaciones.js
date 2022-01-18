@@ -69,3 +69,17 @@ function modalHiddenGuest() {
     });
     $('#modalGuests').toggleClass("closeModal");
 };  
+
+
+
+////////////animación en la seccion lista de tereas//////////////
+
+//abrir formulario
+$('.tasksAdd').click(function () {
+    $('.taskAddInfo').toggle(1000);
+});
+
+//cerrar formulario
+$('.btntask').click(function () {
+    $('.taskAddInfo').toggle(1000);
+});
