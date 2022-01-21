@@ -1,20 +1,20 @@
 // Cargamos si están en el localStorage, de lo contrario creamos un array vacío
 let listTask = localStorage.getItem("listaTareas") == null ? [] : JSON.parse(localStorage.getItem("listaTareas"));
 
-
+let listSlopes = [];
 
 $(document).ready(() => {
 
     list(listTask);
     
         // guardamos los elementos insertados en el form
-    $('#taskAddInfo').on('submit', function (e) {
+        $('#taskAddInfo').on('submit', function (e) {
         e.preventDefault();
         
 
-        let taskId = Math.random(1, 100);
+        let taskId = Date.now();
         let taskName = $('.taskName').val();
-        let taskDate = $('.taskDate').val();
+        let taskDate = $('.taskDate').val().split("/");
         let taskObservations = $('.taskObservations').val();
         let taskCondition = $('.taskCondition').val();
         
@@ -28,17 +28,20 @@ $(document).ready(() => {
         if ((taskName === "") || !(/^[a-zA-ZÀ-ÿ\s]{1,20}$/.test(taskName))) {
             validate = false;
 
-            $("<p>El nombre solo puede contener letras</p>").insertAfter('.taskDate');
+            $("<p>El nombre no puede contener más de 20 letras y no puden contener números o simbolos.</p>").insertAfter('.taskDate');
             $('.taskName').css("border-color", "red");
         } else {
             $('.taskName').css("border-color", "");
         }
 
+        
         //fecha
-        if (taskDate === "") {
+        
+        let date = Date.now();
+        if (taskDate > date) {
             validate = false;
 
-            $("<p>Elije una fecha</p>").insertAfter('.taskDate');
+            $("<p>Elije una fecha mayor a la fecha actual</p>").insertAfter('.taskDate');
             $('.taskDate').css("border-color", "red");
         } else {
             $('.taskDate').css("border-color", "");
@@ -48,7 +51,7 @@ $(document).ready(() => {
         if ((taskObservations === "") || !(/^[a-zA-ZÀ-ÿ\s]{1,30}$/.test(taskObservations))) {
             validate = false;
 
-            $("<p>Ingresa alguna observación</p>").insertAfter('.taskObservations');
+            $("<p>Ingresa alguna observación de no más de 30 letras</p>").insertAfter('.taskObservations');
             $('.taskObservations').css("border-color", "red");
         } else {
             $('.taskObservations').css("border-color", "");
@@ -63,10 +66,14 @@ $(document).ready(() => {
                 taskCondition: "Pendiente",
                 taskId: taskId
             });
+            
+            // guardamos los datos en el localStorage
             localStorage.setItem("listaTareas", JSON.stringify(listTask));
             list(listTask);
             $('#taskAddInfo').trigger("reset");
         }
+        // funcion para cerrar el modal
+        closeForm(validate);
     });
 
     
@@ -80,21 +87,30 @@ $(document).ready(() => {
 function list(listTask) {
 
     $('.tableTask tbody').empty();
+/* 
+    //llamamos a la función para sacar la fecha más próxima a vencer
+    if (listTask.length != 0) {
+        dateNext()
+        
+    } else {
+        $('.taskSlopes__text').empty();
+    }  */
 
+    // creamos la tabla que se insertará en el html
     if (listTask.length != 0) {
         
         for (let task of listTask) {
             
             $('.tableTask tbody').append(`
 
-                <tr>
+                <tr id="${task.taskId}">
                     <td>${task.taskName}</td>
                     <td>${task.taskDate}</td>
                     <td>${task.taskObservations}</td>
                     <td>
-                        <select class="taskCondition" name="select" id="selectOption">
-                        <option value="Pendiente" ${ task.taskCondition == "Pendiente" ? "selected" : ""}>Pendiente</option>
-                        <option value="Completado" ${task.taskCondition == "Completado" ? "selected" : ""}>Completado</option>
+                        <select class="taskCondition" id= "selectTask" name="select">
+                        <option value="Pendiente" ${ task.taskCondition == "Pendiente" ? "selected" : ""} >Pendiente</option>
+                        <option value="Completado" ${ task.taskCondition == "Completado" ? "selected" : ""} >Completado</option>
                     </td>
                     <td class = "deleteTask">
                         <span class="material-icons" onClick="deleteTask(${task.taskId})">delete</span><br><br>
@@ -109,7 +125,6 @@ function list(listTask) {
     } 
     
     // Mostramos la cantidad de tareas pendientes y completadas - contador
-    
 
     $('#totalSlopes').empty();
     let slopes = listTask.filter(totals => totals.taskCondition === 'Pendiente');
@@ -118,40 +133,73 @@ function list(listTask) {
     $('#totalcomplete').empty();
     let total = listTask.filter(totals => totals.taskCondition === 'Completado');
     $('#totalcomplete').append(total.length);
+
     
-    dateNext();
 
 }
 
 // función para eliminar
 function deleteTask(id) {
-    console.log(this.event.target.id)
     listTask = listTask.filter((x) => {
         if (x.taskId != id) {
             return x;
         }
     });
-    console.log(listTask)
     localStorage.setItem("listaTareas", JSON.stringify(listTask));
     list(listTask);
 }
 
-// función para obtener las tareas proximas a vecer
+// función para obtener las tareas proximas a vencer
 function dateNext() {
-    let newOrder = listTask.filter((x) => {
-        return x.taskDate;
-    })
-    console.log(newOrder)
-   /*  console.log(newOrder.sort((a, b) => new Date(a.fechas).getTime() > new Date(b.fechas).getTime())); */
+    listTask.sort(function (a, b) {
+        a = new Date(a.taskDate);
+        b = new Date(b.taskDate);
+        return a > b ? -1 : a < b ? 1 : 0;
+    });
+
+    let last = listTask[listTask.length - 1].taskName;
+
+    //mostramos el resultado en el aside
+    for (let list of listTask) {
+        if (list.taskCondition === "Pendiente") {
+        $('.taskSlopes__text').empty();
+            $('.taskSlopes__text').append(`${last}`);
+            localStorage.setItem("listaTareas", JSON.stringify(listTask));
+        }
+    }
+    
+    
+    
 }
 
 
+// función para cambiar la selección del selest en Pendiente o Completado
+$(document).ready(() => {
+    $('.taskCondition').on("change", (e) => {
 
+        let id = this.event.target.parentElement.parentElement.id;
+        console.log(id)
+        listTask = listTask.map(x => {
+            if (x.taskId == id) {
+                x.taskCondition = e.target.value;
+            }
+            return x;
+        });
+        localStorage.setItem('listaTareas', JSON.stringify(listTask));
+    });
 
-
-/* 
-$('#selectOption').on('change', function() {
-  $("#selectOption option:selected" ) 
     
-    console.log("hola")
-    }) */
+});
+/* //llamamos a la función para sacar la fecha más próxima a vencer
+if (listTask.length != 0) {
+
+    listTask = listTask.map((x) => {
+        if (x.taskCondition === "Pendiente") {
+            return x;
+        }
+    }); 
+    dateNext()
+    
+} else {
+    $('.taskSlopes__text').empty();
+} */

@@ -1,8 +1,10 @@
-let pay = document.getElementsByClassName("payBtn");
+let payBtn = document.getElementsByClassName('payBtn');
 
-payBtn.addEventListener("click", (e) => {
-    pay();
-});
+for( btn of payBtn) {
+    btn.addEventListener("click", (e) => {
+        pay();
+    });
+}
 
 const listOptions = [
     {
@@ -10,7 +12,7 @@ const listOptions = [
         "descripcion": "servicio",
         "img": "../imagenes/fondoAnillos.jpg",
         "id": 1,
-        "cantidad": "1",
+        "cantidad": 1,
         "precio": 3000
     },
     {
@@ -18,13 +20,14 @@ const listOptions = [
         "descripcion": "servicio",
         "img": "../imagenes/ubicaiones.png",
         "id": 2,
-        "cantidad": "1",
+        "cantidad": 1,
         "precio": 5000
     }
 ];
 
 const pay = () => {
-    const weddingWebsite = listOptions.map((element) => {
+    let weddingWebsite = listOptions.filter(x => x.nombre == this.event.target.id);
+    weddingWebsite = weddingWebsite.map((element) => {
             let newweddingWebsite = {
                 title: element.nombre,
                 description: element.descripcion,
@@ -34,18 +37,18 @@ const pay = () => {
                 currency_id: "ARS",
                 unit_price: element.precio,
             };
-            return weddingWebsite;
+            return newweddingWebsite;
     });
     
     $.ajax({
         method: "POST",
         url: "https://api.mercadopago.com/checkout/preferences",
-        data: JSON.stringify(productosToMp),
+        data: JSON.stringify(weddingWebsite),
         headers: {
-            Authorization: "Bearer TEST-680675151110839-052307-64069089337ab3707ea2f547622a1b6a-60191006",
+            Authorization: "Bearer TEST-3680632491483123-011919-fbddd0288ce644f52e2248756ebf243b-127703779",
         },
         data: JSON.stringify({
-            items: productosToMp,
+            items: weddingWebsite,
         }),
         success: function (response) {
             const data = response;

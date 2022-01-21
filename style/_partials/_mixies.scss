@@ -38,13 +38,13 @@
     &::before {
         border-bottom-width: 2px;
         border-left-width: 2px;
-        border-radius: 3em;
+        border-radius: .25em;
     }
 
     &::after {
         border-top-width: 2px;
         border-right-width: 2px;
-        border-radius: 3em;
+        border-radius: .25em;
     }
 
     &:hover::before,
@@ -90,88 +90,187 @@
 // navegadores excepto el nav del index
 
 @mixin nav {
+    background: $grey;
 
-    & {
+    @include breakpoint(mobile) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
         width: 100%;
-        height: auto;
-        background: $darkGreen;
-        z-index: 1;
-        .nav {
-            padding: 1em;
-            @include logo;
+        text-align: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
 
-            &__textLogo {
-                font-family: $fontLogo;
-                font-size: 600;
-                text-decoration: none;
-                color: $white;
-                cursor: pointer;
+    }
 
-                &:hover {
-                    color: $salmon;
-                }
-            }
+    @include breakpoint(laptop) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
 
-            &__ul {
-                list-style: none;
-                margin: 1em;
-            }
+    }
 
-            &__li {
-                padding: .3em;
-                margin: .5em;
-                cursor: pointer;
-                border: 1px solid transparent;
-                transition: color 0.25s 0.0833333333s;
-                transition: color 0.25s 0.0833333333s;
-                position: relative;
-                @include btn($z: -1);
+    @include breakpoint(desktop) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
 
-                >a {
-                    text-decoration: none;
-                    color: $white;
-
-                    &:hover {
-                        color: $salmon;
-                    }
-                }
-
-                .subUl {
-                    list-style: none;
-                    position: absolute;
-                    color: $white;
-                    display: none;
-                }
-
-                &:hover>.subUl {
-                    display: block;
-                    padding: .5em;
-                    top: 35px;
-                    left: -20px;
-                    z-index: 10;
-                }
-
-                .subLi {
-                    background: $darkGreen;
-                    padding: 1em;
-                    width: 10em;
-                    z-index: 1000;
-                    >a {
-                        text-decoration: none;
-                        color: $white;
-                        cursor: pointer;
-
-                        &:hover {
-                            color: $salmon;
-                        }
-                    }
-                }
-
-            }
+    }
 
 
+    &__img {
+        padding-right: .5em;
+
+        @include breakpoint(mobile) {
+            width: 2.5em;
+            height: 2em;
+        }
+
+        @include breakpoint(laptop) {
+            width: 3.5em;
+            height: 3em;
+        }
+
+        @include breakpoint(desktop) {
+            width: 3.5em;
+            height: 3em;
         }
     }
+
+    &__textLogo {
+        font-family: "Caveat", cursive;
+        font-size: 600;
+        text-decoration: none;
+        color: #EDF6F9;
+        cursor: pointer;
+
+        @include breakpoint(mobile) {
+            padding: 1em 0;
+        }
+
+        @include breakpoint(laptop) {
+            padding: 0;
+        }
+
+        @include breakpoint(desktop) {
+            padding: 0;
+        }
+
+        &:hover {
+            color: #FEC5BB;
+        }
+    }
+
+    &__ul {
+        list-style: none;
+
+        @include breakpoint(mobile) {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        @include breakpoint(laptop) {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            margin: 1em;
+        }
+
+        @include breakpoint(desktop) {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            margin: 1em;
+        }
+    }
+
+    &__li {
+        transition: all ease .5s;
+        cursor: pointer;
+        border: 1px solid transparent;
+        -webkit-transition: color 0.25s 0.0833333333s;
+        transition: color 0.25s 0.0833333333s;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+        @include btn($z: 0);
+
+        @include breakpoint(mobile) {
+            line-height: 80px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            display: none;
+        }
+
+        @include breakpoint(laptop) {
+            line-height: 2.5em;
+            padding: .3em;
+            margin: .5em;
+            width: auto;
+            display: block;
+        }
+
+        @include breakpoint(desktop) {
+            line-height: 2.5em;
+            padding: .3em;
+            margin: .5em;
+            width: auto;
+            display: block;
+        }
+
+        >a {
+            text-decoration: none;
+            color: #EDF6F9;
+
+            &:hover {
+                color: #FEC5BB;
+            }
+        }
+
+    }
+
+    .activado {
+        display: block;
+    }
+
+    #icon i {
+        color: $salmon;
+        font-size: 1.5em;
+        line-height: 80px;
+        cursor: pointer;
+
+        @include breakpoint(mobile) {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+        }
+
+        @include breakpoint(laptop) {
+            display: none;
+        }
+
+        @include breakpoint(desktop) {
+            display: none;
+        }
+    }
+
 }
 
 @mixin hr {

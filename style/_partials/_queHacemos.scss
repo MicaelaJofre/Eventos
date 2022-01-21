@@ -8,6 +8,19 @@
     margin: 5em 0;
     box-shadow: -1px 14px 58px -17px rgba(0, 0, 0, 0.75);box-shadow: -1px 14px 58px -17px rgba(0, 0, 0, 0.75);
     box-shadow: -1px 14px 58px -17px rgba(0, 0, 0, 0.75);
+
+    @include breakpoint(mobile) {
+        position: relative;
+        z-index: -1000;
+    }
+
+    @include breakpoint(laptop) {
+        z-index: 0;
+    }
+
+    @include breakpoint(desktop) {
+        z-index: 0;
+    }
     &__intro{
         padding: 1em;
     }

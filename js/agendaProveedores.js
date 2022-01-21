@@ -139,7 +139,7 @@ $(document).ready(() => {
             );
             localStorage.setItem("proveedores", JSON.stringify(providers));
             list(providers);
-            modalHidden();
+            modalHidden(validate);
             $('#modalProviders').trigger("reset");
         }
     });

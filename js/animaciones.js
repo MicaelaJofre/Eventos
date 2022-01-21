@@ -74,12 +74,25 @@ function modalHiddenGuest() {
 
 ////////////animación en la seccion lista de tereas//////////////
 
-//abrir formulario
-$('.tasksAdd').click(function () {
-    $('.taskAddInfo').toggle(1000);
+
+
+$(document).ready(function(){
+    
+    //abrir formulario
+    $('.taskAddInfo').hide();
+
+    $('.tasksAdd').click(function () {
+
+        $('.taskAddInfo').slideToggle(600);
+    });
+    
 });
 
+
 //cerrar formulario
-$('.btntask').click(function () {
-    $('.taskAddInfo').toggle(1000);
-});
+function closeForm(validate) {
+        
+    if (validate) {
+        $('.taskAddInfo').slideToggle(600);
+    }
+}

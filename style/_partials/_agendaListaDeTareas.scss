@@ -62,17 +62,16 @@
     }
 }
 
-// formulario para agregar tareas
+// formulario para agregar tareas - modal
 
 .taskAddInfo {
-    display: none;
     margin-top: 3em;
     input{
         padding-left: .5em;
         width: 30%;
         margin-bottom: 1.5em;
         border-radius: .25em;
-        border: none ;
+        border: 1px solid transparent;
         outline: solid 2px $shadowGrey;
         &:focus {
             border: none;
@@ -117,6 +116,11 @@
     border-collapse: separate;
     white-space: nowrap;
 
+    .tableTask {
+        align-self: start;
+        max-height: 50%;
+    }
+    
     .taskListTAble__title{
         font-size: 1.2em;
         width: 3em;
@@ -195,6 +199,7 @@
     justify-content: center;
     background-image: url(../imagenes/listaDeTareas.png);
     background-size: cover;
+    max-height: 22em;
 
     .taskSlopes {
         background: rgba(255, 255, 255, 0.705);
@@ -202,7 +207,7 @@
     }
     .taskSlopes {
         width: 20em;
-        height: 15em;
+        height: 16em;
         border: 2px solid $grey;
         &__title{
             font-weight: 600;

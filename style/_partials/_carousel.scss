@@ -1,38 +1,20 @@
 .carousel {
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    grid-template-rows: 20em;
-    gap: 1em;
-    align-items: center;
-    margin-top: 5.5em;
-    background: linear-gradient(rgba(254, 197, 187, 0.2), rgba(254, 197, 187, 0.2));     
-    
-    &__item {
-        padding: 3em 0;
-        grid-column: 2/3;
-        grid-row: 1/2;
-        align-items: center;
-        max-width: 80em;
+    @include breakpoint(mobile) {
+        display: none;
     }
-    &__title {
-        font-weight: 700;
-        color: $white;
-        padding-bottom: 1em;
+
+    @include breakpoint(laptop) {
+        display: block;
     }
-    &__text {
-        font-weight: 400;
-        color: $white;
-        padding: 0 5em;
-        @include breakpoint(mobile) {
-            padding: 0;
-        }
-        @include breakpoint(laptop) {
-            padding: 0;
-        }
+
+    @include breakpoint(desktop) {
+        display: block;
     }
 }
-.fas{
-    color: $salmon;
-    font-size: 3em;
-    cursor: pointer;
+.carousel-item{
+    background: #fec5bb98;
+    height: 50vh;
+    width: 100%;
+    margin-top: 5em;
+
 }

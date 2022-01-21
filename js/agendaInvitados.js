@@ -29,64 +29,6 @@ window.addEventListener("load", () => {
 
 let checkSelected = [];
 
-//llamamos a los elementos del html
-let guests = [];
-const modalGuests = document.getElementById("modalGuests");
-
-/* contador de invitados */
-const totalConfirmed = document.getElementById("totalConfirmed");
-const totalGuest = document.getElementById("totalGuest");
-
-/* selector para ordenar las listas de invitados */
-const guestsAddMenu = document.getElementById("guestsAdd__menu");
-
-/* ubicacion asistencia */
-const personsGuestsConfirmed = document.getElementById("personsGuestsConfirmed");
-const personsGuestsSlopes = document.getElementById("personsGuestsSlopes");
-const personsGuestsCanceled = document.getElementById("personsGuestsCanceled");
-
-/* ubicacion menu */
-const personsGuestsAdults = document.getElementById("personsGuestsAdults");
-const personsGuestsKids = document.getElementById("personsGuestsKids");
-const personsGuestsVegetarian = document.getElementById("personsGuestsVegetarian");
-
-/* ubicacion grupo */
-const personsGuestsBoyfriends = document.getElementById("personsGuestsBoyfriends");
-const personsGuestsFamily = document.getElementById("personsGuestsFamily");
-const personsGuestsFriends = document.getElementById("personsGuestsFriends");
-const personsGuestsCoworkers = document.getElementById("personsGuestsCoworkers");
-
-/* mensaje de no hay invitados en asistencia */
-const textNoGuestsConfirmed = document.querySelector(".textNoGuestsConfirmed");
-const textNoGuestsSlopes = document.querySelector(".textNoGuestsSlopes");
-const textNoGuestsCanceled = document.querySelector(".textNoGuestsCanceled");
-
-/* mensaje de no hay invitados en menu */
-const textNoGuestsAdults = document.querySelector(".textNoGuestsAdults");
-const textNoGuestsKids = document.querySelector(".textNoGuestsKids");
-const textNoGuestsVegetarian = document.querySelector(".textNoGuestsVegetarian");
-
-/* mensaje de no hay invitados en grupo */
-const textNoGuestsBoyfriends = document.querySelector(".textNoGuestsBoyfriends");
-const textNoGuestsFamily = document.querySelector(".textNoGuestsFamily");
-const textNoGuestsFriends = document.querySelector(".textNoGuestsFriends");
-const textNoGuestsCoworkers = document.querySelector(".textNoGuestsCoworkers");
-
-
-/* mensajes de error del modal */
-const error = document.getElementById("error");
-const errorName = document.getElementById("errorName");
-const errorLastname = document.getElementById("errorLastname");
-const errorTel = document.getElementById("errorTel");
-const errorEmail = document.getElementById("errorEmail");
-const errorPostcard = document.getElementById("errorPostcard");
-
-/* checkbox */
-const formGuestSelectTotal = document.getElementById("formGuestSelectTotal");
-const openCheckbox = document.getElementById("openCheckbox");
-const checkboxSelectionTotalGuest = document.getElementById("checkboxSelectionTotalGuest");
-
-
 //oculto el botón de eliminar todos - seleccionar todos
 openCheckbox.style.display = "none";
 
@@ -206,6 +148,7 @@ function openModal(e) {
 
 // creamos la ficha de cada uno de los invitados
 function list() {
+    
     // Cargo en la variable guest los invitados guardados en el local storage
     guests = localStorage.getItem("invitado") == null ? [] : JSON.parse(localStorage.getItem("invitado"));
 
@@ -251,6 +194,7 @@ function list() {
         switch (guestsAddMenu.value) {
     
             case "Asistencia":
+                localStorage.setItem("invitado", JSON.stringify(guests));
                 // ubicación confirmado, pendiente y cancelado    
                 if (guest.assistance === 'Confirmado') {
                     personsGuestsConfirmed.appendChild(rowGuest);
@@ -267,6 +211,7 @@ function list() {
                 break;
         
             case "Menú":
+                localStorage.setItem("invitado", JSON.stringify(guests));
                 // ubicación adulto, niño y vegetariano    
                 if (guest.menu === 'Adulto') {
                     personsGuestsAdults.appendChild(rowGuest);
@@ -283,6 +228,7 @@ function list() {
                 break;
         
             case "Grupo":
+                localStorage.setItem("invitado", JSON.stringify(guests));
                 // ubicación novios, familia, amigos, compañeros de trabajo    
                 if (guest.group === 'Novios') {
                     personsGuestsBoyfriends.appendChild(rowGuest);
@@ -314,11 +260,23 @@ function list() {
 
 // creamos funcion para borrar elementos del html y del local storage
 function deleteGuests(id) { 
+    
     guests = guests.filter((element) => {
         if (element.id != id) {
             return element;
         }
     });
+    
+    // borramos de las otras dos secciones
+    switch (guestsAddMenu.value) {
+        
+        case "Menú":
+            this.event.target.parentElement.parentElement.remove();
+        
+        case "Grupo":
+            this.event.target.parentElement.parentElement.remove();
+    }
+
     localStorage.setItem("invitado", JSON.stringify(guests));
     list();
 }

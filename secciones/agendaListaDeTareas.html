@@ -19,16 +19,11 @@
             <div class="nav__logo d-flex justify-content-center align-items-center">
                 <a href="../index.html"class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="nav__img"><h1>Dreamed Day</h1></a>
             </div>
+            <label id="icon" class="icon">
+                <i class="fas fa-bars"></i>
+            </label>
             <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
-                <li class="nav__li"><a href="#">Servicios</a>
-                    <ul class="subUl">
-                        <li class="subLi"><a href="#">Invitados</a></li>
-                        <li class="subLi"><a href="#">Ubicaciones</a></li>
-                        <li class="subLi"><a href="#">Presupuesto</a></li>
-                        <li class="subLi"><a href="#">Mi web</a></li>
-                        <li class="subLi"><a href="#">Proveedores</a></li>
-                    </ul>
-                </li>
+                <li class="nav__li"><a href="#">Servicios</a></li>
                 <li class="nav__li"><a href="#">Mi casamiento</a></li>
                 <li class="nav__li"><a href="../secciones/login.html">Accedé</a></li>
                 <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
@@ -63,7 +58,7 @@
 
             <article class="col-12 col-md-4 col-lg-2 bar">
 
-                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/supplier.png"/><p class="bar__text">Proveedores</p></a>
+                <a href="./agendaProveedores.html" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/supplier.png"/><p class="bar__text">Proveedores</p></a>
                 
             </article>
         </section>
@@ -105,7 +100,7 @@
         <!-- tabla de lista de tareas -->
         <section class="table container">
             <article class="taskListTable row">
-                <table class="tableTask col-12 col-md-6" id="tableTask">            
+                <table class="tableTask col-12 col-md-7" id="tableTask">            
                     <thead>
                         <tr>
                             <th>Título</th>
@@ -115,16 +110,18 @@
                             <th>Eliminar</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="taskBody">
                         <!--///////// Aquí agregamos las tareas pendientes /////////-->
                     </tbody>
                 </table>
-                <aside class="taskSlopesDate col-12 col-md-5">
+
+                <!-- aside con la tarea más próxima a vencer -->
+                <aside class="taskSlopesDate col-12 col-md-4">
                     <div class="card taskSlopes" style="width: 18rem;">
                         
                         <div class="card-body">
                             <h4 class="taskSlopes__title">Próxima tarea a vencer!</h4>
-                            <p class="card-text taskSlopes__text">gfdsgsd</p>
+                            <p class="card-text taskSlopes__text"></p>
                         </div>
                     </div>
                 </aside>
@@ -141,8 +138,8 @@
                 <article class="info">
                     <p class="info__p text-center text-md-start">Información</p>
                     <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
-                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Tarifas</p></a>
-                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
+                    <a href="../secciones/tarifas.html" class="info__text"><p class="info__link text-center text-md-start">Tarifas</p></a>
+                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de cookies</p></a>
                     <a href="#" class="info__text"><p class="info__link text-center text-md-start">Condiciones legales</p></a>
                 </article>
                 <!-- redes -->
@@ -167,9 +164,14 @@
                 <p class="footerText__copy">&copy;2021 Dreamed Day.com</p>
             </section>
         </footer>
+        <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
+    
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="../js/navegador.js"></script>
         <script src="../js/agendaListaDeTareas.js"></script>
         <script src="../js/animaciones.js"></script>
+        
     </body>
 </html>    
 
