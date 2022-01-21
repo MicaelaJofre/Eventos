@@ -68,14 +68,33 @@ const list = (listOfProviders) => {
 // función para eliminar 
 const deleteProvider = (id) => {
 
-    providers = providers.filter((x) => {
-        if (x.id != id) {
-            return x;
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminarlo!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Borrado!',
+                'Su archivo ha sido eliminado',
+                'success'
+            )
+            providers = providers.filter((x) => {
+                if (x.id != id) {
+                    return x;
+                }
+            });
+
+            localStorage.setItem("proveedores", JSON.stringify(providers));
+            list(providers);
         }
     });
 
-    localStorage.setItem("proveedores", JSON.stringify(providers));
-    list(providers);
+    
 }
 
 $(document).ready(() => {
