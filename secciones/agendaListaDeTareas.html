@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,73 +9,91 @@
     <!--  logo redes -->
     <link href="https://icons8.com/icon/118497/facebook-nuevo">
     <!--  bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- styles -->
     <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
     <header class="container-fluid headerSchedule">
         <!-- nav -->
         <nav class="nav d-flex justify-content-around flex-wrap">
             <div class="nav__logo d-flex justify-content-center align-items-center">
-                <a href="../index.html"class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="nav__img"><h1>Dreamed Day</h1></a>
+                <a href="../index.html" class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png"
+                        alt="logo Dreamed Day" class="nav__img">
+                    <h1>Dreamed Day</h1>
+                </a>
             </div>
             <label id="icon" class="icon">
                 <i class="fas fa-bars"></i>
             </label>
             <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
-                <li class="nav__li"><a href="#">Servicios</a></li>
-                <li class="nav__li"><a href="#">Mi casamiento</a></li>
+                <li class="nav__li"><a href="../index.html#detailsSections">Servicios</a></li>
+                <li class="nav__li"><a href="../index.html#myWeddingSections">Mi casamiento</a></li>
                 <li class="nav__li"><a href="../secciones/login.html">Accedé</a></li>
                 <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
                 <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
             </ul>
-        </nav> 
-        
+        </nav>
+
         <!-- bar -->
         <section class="row light d-flex justify-content-center align-items-end scheduleBar">
 
-            <article class="col-12 col-md-4 col-lg-2 bar">
+            <article class="col-12 col-md-3 bar">
 
-                <a href="../secciones/agendaInvitados.html" class="bar__link"><img class="bar__img" src="https://img.icons8.com/wired/50/000000/family.png"/><p class="bar__text">Invitados</p></a>
+                <a href="../secciones/agendaInvitados.html" class="bar__link"><img class="bar__img"
+                        src="https://img.icons8.com/wired/50/000000/family.png" />
+                    <p class="bar__text">Invitados</p>
+                </a>
             </article>
 
-            <article class="col-12 col-md-4 col-lg-2 bar">
+            <article class="col-12 col-md-3 bar">
 
-                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/restaurant-table.png"/>     <p class="bar__text">Ubicaciones</p></a>
+                <a href="./agendaPresupuesto.html" class="bar__link"><img class="bar__img"
+                        src="https://img.icons8.com/ios/50/000000/cost.png" />
+                    <p class="bar__text">Presupuesto</p>
+                </a>
+
             </article>
 
-            <article class="col-12 col-md-4 col-lg-2 bar">
+            <article class="col-12 col-md-3 bar">
 
-                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/cost.png"/><p class="bar__text">Presupuesto</p></a>
-                
+                <a href="#" class="bar__link"><img class="bar__img"
+                        src="https://img.icons8.com/dotty/50/000000/dating-website.png" />
+                    <p class="bar__text">Tareas</p>
+                </a>
+
             </article>
 
-            <article class="col-12 col-md-4 col-lg-2 bar">
+            <article class="col-12 col-md-3 bar">
 
-                <a href="#" class="bar__link"><img class="bar__img" src="https://img.icons8.com/dotty/50/000000/dating-website.png"/><p class="bar__text">Tareas</p></a>
-                
-            </article>
+                <a href="./agendaProveedores.html" class="bar__link"><img class="bar__img"
+                        src="https://img.icons8.com/ios/50/000000/supplier.png" />
+                    <p class="bar__text">Proveedores</p>
+                </a>
 
-            <article class="col-12 col-md-4 col-lg-2 bar">
-
-                <a href="./agendaProveedores.html" class="bar__link"><img class="bar__img" src="https://img.icons8.com/ios/50/000000/supplier.png"/><p class="bar__text">Proveedores</p></a>
-                
             </article>
         </section>
     </header>
 
     <main class="listTasksContainer container">
-
+        <hr class="tasksHr1">
+        <h2 class="task__title">Lista de Tareas</h2>
         <!-- contador de tareas pendientes y concretadas -->
-        <section class="tasksAccountant text-center row">
-            <article class="col-12 col-md-6">
-                <div  class="tasksAccountant">
+        <section class="tasksAccountant text-center d-flex align-items-center row">
+            <article class=" col-12 col-md-4">
+                <div class="tasksAccountant">
+                    <img src="../imagenes/stickerTareas2.jpg" />
+                </div>
+            </article>
+            <article class="col-12 col-md-4">
+                <div class="tasksAccountant">
                     <h3>Tareas completadas</h3>
                     <p id="totalcomplete"></p>
                 </div>
             </article>
-            <article class="col-12 col-md-6">
+            <article class="col-12 col-md-4">
                 <div class="tasksAccountant">
                     <h3>Tareas pendiente</h3>
                     <p id="totalSlopes"></p>
@@ -91,16 +110,17 @@
             <form action="" id="taskAddInfo" class="taskAddInfo">
                 <input type="text" class="taskName" placeholder="Título de la tarea" required>
                 <input type="date" class="taskDate" required>
-                <textarea class="taskObservations" name="taskObservations" id="taskObservations"rows="10" placeholder="Coloca aquí las observaciones"></textarea>
+                <textarea class="taskObservations" name="taskObservations" id="taskObservations" rows="10"
+                    placeholder="Coloca aquí las observaciones"></textarea>
                 <input type="submit" value="Guardar" class="btntask">
             </form>
             <hr class="tasksHr">
         </section>
 
         <!-- tabla de lista de tareas -->
-        <section class="table container">
+        <section class="tableContainer mt-5 container">
             <article class="taskListTable row">
-                <table class="tableTask col-12 col-md-7" id="tableTask">            
+                <table class="tableTask col-12 col-md-7 " id="tableTask">
                     <thead>
                         <tr>
                             <th>Título</th>
@@ -114,67 +134,73 @@
                         <!--///////// Aquí agregamos las tareas pendientes /////////-->
                     </tbody>
                 </table>
-
                 <!-- aside con la tarea más próxima a vencer -->
                 <aside class="taskSlopesDate col-12 col-md-4">
                     <div class="card taskSlopes" style="width: 18rem;">
-                        
+
                         <div class="card-body">
                             <h4 class="taskSlopes__title">Próxima tarea a vencer!</h4>
                             <p class="card-text taskSlopes__text"></p>
                         </div>
                     </div>
                 </aside>
-                
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="container-fluid mt-5 footer">
+        <section class="infoNetworksPayments d-flex justify-content-around flex-wrap">
+            <!-- informacion -->
+            <article class="info">
+                <p class="info__p text-center text-md-start">Información</p>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Política de privacidad</p>
+                </a>
+                <a href="../secciones/tarifas.html" class="info__text">
+                    <p class="info__link text-center text-md-start">Tarifas</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Política de cookies</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Condiciones legales</p>
+                </a>
+            </article>
+            <!-- redes -->
+            <article class="networks text-center">
+                <p class="networks__p">Redes sociales</p>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" />
+            </article>
+            <!-- formas de pago -->
+            <article class="payments text-center">
+                <p class="payments__p">Formas de pago</p>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png" />
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png" />
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png" />
             </article>
         </section>
-            
-        </main>
-
-            <!-- footer -->
-        <footer class="container-fluid mt-0 footer">
-            <section class="infoNetworksPayments d-flex justify-content-around flex-wrap">
-                <!-- informacion -->
-                <article class="info">
-                    <p class="info__p text-center text-md-start">Información</p>
-                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
-                    <a href="../secciones/tarifas.html" class="info__text"><p class="info__link text-center text-md-start">Tarifas</p></a>
-                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de cookies</p></a>
-                    <a href="#" class="info__text"><p class="info__link text-center text-md-start">Condiciones legales</p></a>
-                </article>
-                <!-- redes -->
-                <article class="networks text-center">
-                    <p class="networks__p">Redes sociales</p>
-                    <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png"/>
-                    <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png"/>
-                    <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png"/>
-                    <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/>
-                </article>
-                <!-- formas de pago -->
-                <article class="payments text-center">
-                    <p class="payments__p">Formas de pago</p>
-                    <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png"/>
-                    <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png"/>
-                    <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png"/>
-                </article>
-            </section>
-            <!-- copy y pie -->
-            <section class="footerText d-flex justify-content-center align-items-center">
-                <img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="footerText__img">
-                <p class="footerText__copy">&copy;2021 Dreamed Day.com</p>
-            </section>
-        </footer>
-        <!--fontawesome-->
+        <!-- copy y pie -->
+        <section class="footerText d-flex justify-content-center align-items-center">
+            <img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="footerText__img">
+            <p class="footerText__copy">&copy;2021 Dreamed Day.com</p>
+        </section>
+    </footer>
+    <!--fontawesome-->
     <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
-    
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="../js/navegador.js"></script>
-        <script src="../js/agendaListaDeTareas.js"></script>
-        <script src="../js/animaciones.js"></script>
-        <!-- sweetalert2 -->
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        
-    </body>
-</html>    
 
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/navegador.js"></script>
+    <script src="../js/agendaListaDeTareas.js"></script>
+    <script src="../js/animaciones.js"></script>
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

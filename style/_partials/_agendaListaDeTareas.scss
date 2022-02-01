@@ -1,5 +1,15 @@
 @import "../_partials/mixies";
 
+.listTasksContainer{
+    .tasksHr1 {
+        margin-top: 2em;
+        @include hr;
+    }
+    .task__title{
+        font-size: 1.7em;
+        padding-left: .5em;
+    }
+}
 // contador
 .tasksAccountant {
     h3 {
@@ -9,6 +19,12 @@
     p {
         @include pAcconuntant;
     }
+    img {
+        width: 15em;
+        margin: 2em 0;
+        clip-path: circle(50% at 50% 50%);
+    }
+    
 
 }
 
@@ -23,20 +39,15 @@
     .btntask {
         margin-top: 2em;
         text-align: center;
-        width: auto;
         border-radius: 0.25em;
         text-decoration: none;
-        color: $shadowGrey;
+        color: #fff;
         font-weight: 600;
         cursor: pointer;
-        transition: color 0.25s 0.0833333333s;
-        transition: color 0.25s 0.0833333333s;
-        position: relative;
-        background: #fec5bb57;
-        @include btn;
+        background: $darkGreen;
 
         @include breakpoint(mobile) {
-            width: 100%;
+            width: 98%;
             padding: .2em .5em;
         }
 
@@ -51,8 +62,8 @@
         }
 
         &:hover {
-            background: #fff;
-            color: $darkSalmon;
+            background: $salmon;
+            color: #fff;
         }
     }
 
@@ -62,30 +73,43 @@
     }
 }
 
-// formulario para agregar tareas - modal
+// formulario para agregar tareas - acordeon
 
 .taskAddInfo {
-    margin-top: 3em;
+    padding-top: 3em;
+    background-image: url(../../imagenes/fondoAcuarelaAzul.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: .25em;
     input{
         padding-left: .5em;
         width: 30%;
         margin-bottom: 1.5em;
         border-radius: .25em;
         border: 1px solid transparent;
-        outline: solid 2px $shadowGrey;
+        outline: solid 1px $salmon;
         &:focus {
             border: none;
             outline: solid 2px $salmon;
         }
     }
     .btntask {
-        background: #fff;
-        outline: solid 2px $green;
-        width: 20em;
-        margin-top: 1.5em;
-        padding: .5em 2em;
-        &:hover{
-            outline: solid 2px $darkSalmon;
+        width: 10em;
+        margin: 1em 2em;
+        border: none;
+        outline: none;
+        background: $darkGreen;
+        padding: .5em 1em;
+        border-radius: 3em;
+        text-decoration: none;
+        color: $white;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            background: #fff;
+            color: $darkSalmon;
+            border: solid 1px $salmon;
         }
         
     }
@@ -95,7 +119,8 @@
         height: 20vh;
         border-radius: .25em;
         resize: none;
-        outline: solid 2px $shadowGrey;
+        border: none;
+        outline: solid 1px $salmon;
         &:focus {
             border: none;
             outline: solid 2px $salmon;
@@ -105,53 +130,49 @@
 
 
 // tabla
-
 .taskListTable {
     margin-bottom: 5em;
-    display: flex;
-    justify-content: space-around;
-    margin: 2px;
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: separate;
-    white-space: nowrap;
+    @include table;
 
-    .tableTask {
-        align-self: start;
-        max-height: 50%;
-    }
-    
-    .taskListTAble__title{
-        font-size: 1.2em;
-        width: 3em;
-    }
+}
+.tableTask {
+    margin-bottom: 3em;
+    padding: 1em;
+    align-self: start;
+    max-height: 50%;
+
 
     th {
         font-size: .8em;
         text-align: center;
+        border-bottom: solid 3px $shadowGrey;
+        padding-bottom: .5em;
+        color: $shadowGrey;
     }
 
     td {
         font-size: .7em;
         text-align: center;
+        border-bottom: solid 2px $shadowGrey;
     }
 
 
     //th 
     th:nth-child(1) {
         width: 20%;
-        padding: 0;
     }
 
     th:nth-child(2) {
         width: 20%;
         padding-right: 20px;
     }
+
     th:nth-child(3) {
         width: 25%;
         padding-right: 20px;
 
     }
+
     th:nth-child(4) {
         width: 15%;
         padding-right: 20px;
@@ -185,35 +206,29 @@
     td:nth-child(4) {
         width: 10%;
     }
-
-    .tableTask {
-        border: solid 1px $salmon;
-        
-    }
 }
 
 // aside date
 
 .taskSlopesDate{
-    display: flex;
-    justify-content: center;
     background-image: url(../imagenes/listaDeTareas.png);
     background-size: cover;
     max-height: 22em;
+    min-width: 20em;
+    margin-left: 3em;
+    margin-bottom: 3em;
 
     .taskSlopes {
         background: rgba(255, 255, 255, 0.705);
         margin: 1em;
-    }
-    .taskSlopes {
         width: 20em;
         height: 16em;
         border: 2px solid $grey;
         &__title{
+            text-align: center;
             font-weight: 600;
             font-size: .9em;
-            padding-top: 2em;
-            padding-bottom: 2em;
+            padding: 2em;
             background: $green;
         }
         &__text{

@@ -9,18 +9,21 @@
 //acceder - login
 .loginSingUp {
     margin: 5em 0;
-    
-    .login, .singUp {
+    .login,
+    .singUp {
         background: $darkGreen;
         color: $white;
-        box-shadow: -1px 9px 86px -34px rgba(0, 0, 0, 0.75);box-shadow: -1px 9px 86px -34px rgba(0, 0, 0, 0.75);
         box-shadow: -1px 9px 86px -34px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 9px 86px -34px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 9px 86px -34px rgba(0, 0, 0, 0.75);
+
         &__title {
             font-family: $fontLogo;
             font-size: 2.5em;
             padding: .5em 0;
             font-weight: 400;
         }
+
         &__subtitle {
             font-size: 1em;
             font-weight: 400;
@@ -33,8 +36,10 @@
             padding: 0 .5em 1em .5em;
             line-height: 1.8em;
         }
+
         &__button {
             margin: 2em 0;
+
             .btn {
                 background: $salmon;
                 padding: .5em 1em;
@@ -56,18 +61,22 @@
             }
         }
     }
+
     //index
     //registrarse -singUp
     .singUp {
         background: $salmon;
         color: $grey;
+
         &__subtitle {
             padding-bottom: 2em;
         }
+
         &__button {
             .btn {
                 background: $darkGreen;
                 color: $white;
+
                 &:hover {
                     background: $darkGreen;
                     color: $white;
@@ -98,6 +107,7 @@
     width: 400px;
     margin: 0 auto;
     padding: 30px 0;
+
     @include breakpoint(mobile) {
         width: 300px;
     }
@@ -109,6 +119,7 @@
     @include breakpoint(desktop) {
         width: 400px;
     }
+
     .formLogin,
     .formSingUP {
         color: $grey;
@@ -121,7 +132,7 @@
         padding: 30px;
         color: $grey;
     }
-    
+
     .h2 {
         color: $grey;
         font-weight: bold;
@@ -146,6 +157,7 @@
             padding-left: 1em;
             color: #fff;
             font-weight: 400;
+
             @include breakpoint(mobile) {
                 font-size: .8em;
             }
@@ -164,6 +176,7 @@
             height: auto;
             cursor: pointer;
             padding: .5em;
+
             @include breakpoint(mobile) {
                 width: 2.5;
             }
@@ -187,7 +200,8 @@
     }
 }
 
-.show, .show2 {
+.show,
+.show2 {
     color: $red;
 }
 
@@ -209,9 +223,10 @@
     border-color: #e1e1e1;
     z-index: 1;
 }
+
 .form-control,
 .btn {
-    border-radius: 3px;    
+    border-radius: 3px;
 }
 
 .signup-form .form-group {
@@ -287,89 +302,157 @@
 
 //////////////////////MODAL INICIO DE USUARIO///////////////////
 
-.modalLoginForm {
-    position: absolute;
-    // top: 0;
-    // left: 28%;
-    overflow: hidden;
+.modalLogin {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
     border: 1px solid $grey;
-    background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
-        url(../imagenes/fondoAcuarelaAzul.jpg);
-    background-position: center;
-    background-size: cover;
-    // visibility: 0;
-    // display: none;
-    transition: all 0.25s 0.083;
+    background: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease .5s;
+    z-index: 1000;
 
-    @include breakpoint(mobile) {
-        width: 90%;
-        height: 80vh;
-        padding: 1em;
+    .modalLoginForm {
 
-    }
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
+            url(../imagenes/fondoAcuarelaAzul.jpg);
+        background-position: center;
+        background-size: cover;
+        transition: transform 1s;
 
-    @include breakpoint(laptop) {
-        width: 90%;
-        height: 80vh;
-        padding: 1em;
-    }
 
-    @include breakpoint(desktop) {
-        width: 30vw;
-        height: 90vh;
-        padding: 2em;
-    }
+        @include breakpoint(mobile) {
+            width: 90%;
+            height: 60vh;
+            padding: 1em;
 
-    &__title {
-        font-size: 1.2em;
-        padding: .5em;
-        background: $green;
-        text-align: center;
-    }
-    &__subtitle {
-        text-align: center;
-        font-weight: 600;
-    }
-    label {
-        margin-left: 2px;
-        font-weight: 600;
-    }
-    input {
-        margin: 1em .5em 2em 0;
-        border: none;
-        border-bottom: solid 2px $salmon;
-        outline: none;
-        width: 90%;
+        }
 
-        &::placeholder {
-            color: $darkSalmon;
+        @include breakpoint(laptop) {
+            width: 90%;
+            height: 80vh;
             padding: 1em;
         }
 
-        &:focus {
-            border-radius: .20em;
+        @include breakpoint(desktop) {
+            width: 48vw;
+            height: 80vh;
+            padding: 2em;
+        }
+
+        // cerrar modal
+        .modalClose {
+            transform: translateY(-200%);
+        }
+
+        .modalOpen {
+            transform: translateY(0%);
+        }
+
+        .imgClose {
+            margin-left: 95%;
+            margin-top: 0;
+            padding-bottom: .5em;
+            cursor: pointer;
+        }
+
+
+        input {
+            margin: 1em 1em 1em 0;
             border: none;
-            outline: solid 2px $salmon;
+            border-bottom: solid 2px $salmon;
+            outline: none;
+
+            @include breakpoint(mobile) {
+                width: 90%;
+            }
+
+            @include breakpoint(laptop) {
+                width: 90%;
+            }
+
+            @include breakpoint(desktop) {
+                width: 15em;
+            }
+
+            &::placeholder {
+                color: $darkSalmon;
+                padding: 1em;
+            }
+
+            &:focus {
+                border-radius: .20em;
+                border: none;
+                outline: solid 2px $salmon;
+            }
+        }
+
+
+        &__title {
+            font-size: 1.2em;
+            padding: .5em;
+            background: $green;
+            text-align: center;
+        }
+
+        &__subtitle {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        label {
+            margin-left: 2px;
+            font-weight: 600;
+        }
+
+        input {
+            margin: 1em .5em 2em 0;
+            border: none;
+            border-bottom: solid 2px $salmon;
+            outline: none;
+            width: 90%;
+
+            &::placeholder {
+                color: $darkSalmon;
+                padding: 1em;
+            }
+
+            &:focus {
+                border-radius: .20em;
+                border: none;
+                outline: solid 2px $salmon;
+            }
+        }
+
+        .weddingButton {
+            width: 7em;
+            background: $darkGreen;
+            padding: .5em 1em;
+            border-radius: 3em;
+            text-decoration: none;
+            color: $white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.25s 0.0833333333s;
+            transition: color 0.25s 0.0833333333s;
+            position: relative;
+            @include btn;
+
+            &:hover {
+                background: #fff;
+                color: $darkSalmon;
+            }
+
         }
     }
-    .weddingButton {
-        width: 7em;
-        background: $darkGreen;
-        padding: .5em 1em;
-        border-radius: 3em;
-        text-decoration: none;
-        color: $white;
-        font-weight: 600;
-        cursor: pointer;
-        transition: color 0.25s 0.0833333333s;
-        transition: color 0.25s 0.0833333333s;
-        position: relative;
-        @include btn;
 
-        &:hover {
-            background: #fff;
-            color: $darkSalmon;
-        }
 
-    }
 }

@@ -23,8 +23,8 @@
                 <i class="fas fa-bars"></i>
             </label>
             <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
-                <li class="nav__li"><a href="#">Servicios</a></li>
-                <li class="nav__li"><a href="#">Mi casamiento</a></li>
+                <li class="nav__li"><a href="../index.html#detailsSections">Servicios</a></li>
+                <li class="nav__li"><a href="../index.html#myWeddingSections">Mi casamiento</a></li>
                 <li class="nav__li"><a href="#">Accedé</a></li>
                 <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
                 <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
@@ -95,12 +95,13 @@
 
         <!---------------------------------------- MODAL inicio de usuario------------------------------------------------------  ----------------------------------------------------------------->
 
-        <!-- <section class="modalLogin">
-            <form action="" class="modalLoginForm ">
+        <section class="modalLogin">
+            <form action="" class="modalLoginForm " id="modalLoginForm">
+                <img class="imgClose" src="https://img.icons8.com/ios-glyphs/30/000000/macos-close.png"/>
                 <h3 class="modalLoginForm__title">Queremos saber más sobre tu gran día</h3>
                 <p class="modalLoginForm__subtitle">Completa el formulario</p>
                 <p id="modalLoginError"></p>
-                <!-- datos de la boda 
+                <!-- datos de la boda --->
                 <label class="modalLoginForm__text">Nombre de los novios</label>
                 <input type="text" id="weddingBoyfriend" id="weddingBoyfriend" required placeholder="Novio/a">
                 <input type="text" id="weddingGirlfriend" id="weddingGirlfriend" required placeholder="Novio/a">
@@ -111,7 +112,7 @@
                 <input type="text" class="weddingLocation" id="weddingLocation"  required placeholder="Ciudad">
                 <input type="submit" class="weddingButton">
             </form>
-        </section> -->
+        </section>
 
     </main>
     <!-- footer -->
@@ -149,7 +150,9 @@
     </footer>
     <!--  Entregas de desafios: -->
     <script src="../js/login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/navegador.js"></script>
+    <script src="../js/animaciones.js"></script>
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
 </body>

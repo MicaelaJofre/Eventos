@@ -22,7 +22,7 @@ class Guest {
     }
 }
 
-// carga los datos guardados en el local storage
+
 window.addEventListener("load", () => {
     list();
 });
@@ -114,7 +114,7 @@ function openModal(e) {
                             const newGuests = new Guest(guestsName, guestsLastname, guestsAge, guestsMenu, guestsGroup, guestsAssistance, guestsTel, guestsEmail, guestsAddress, guestsLocation, guestsCountry, guestsPostcard);
                             newGuests.saveGuests();
                             list();
-                            modalHiddenGuest();
+                            closeFormGuest();
                             modalGuests.reset();
                             errorName.remove()
                             errorLastname.remove();
@@ -152,15 +152,30 @@ function list() {
     // Cargo en la variable guest los invitados guardados en el local storage
     guests = localStorage.getItem("invitado") == null ? [] : JSON.parse(localStorage.getItem("invitado"));
 
+    //borra todo el contenido
     personsGuestsConfirmed.innerHTML = ``;
     personsGuestsSlopes.innerHTML = ``;
     personsGuestsCanceled.innerHTML = ``;
+    personsGuestsAdults.innerHTML = ``;
+    personsGuestsKids.innerHTML = ``;
+    personsGuestsVegetarian.innerHTML = ``;
+    personsGuestsBoyfriends.innerHTML = ``;
+    personsGuestsFamily.innerHTML = ``;
+    personsGuestsFriends.innerHTML = ``;
+    personsGuestsCoworkers.innerHTML = ``;
 
 
     // Musetra "No hay invitados" en todas las secciones
     textNoGuestsConfirmed.style.display = "block";
     textNoGuestsSlopes.style.display = "block";
     textNoGuestsCanceled.style.display = "block";
+    textNoGuestsAdults.style.display = "block";
+    textNoGuestsKids.style.display = "block";
+    textNoGuestsVegetarian.style.display = "block";
+    textNoGuestsBoyfriends.style.display = "block";
+    textNoGuestsFamily.style.display = "block";
+    textNoGuestsFriends.style.display = "block";
+    textNoGuestsCoworkers.style.display = "block";
 
     for (let guest of guests) {
 
@@ -260,25 +275,34 @@ function list() {
 
 // creamos funcion para borrar elementos del html y del local storage
 function deleteGuests(id) { 
-    
-    guests = guests.filter((element) => {
-        if (element.id != id) {
-            return element;
+
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminarlo!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Borrado!',
+                'Su archivo ha sido eliminado',
+                'success'
+            )
+            guests = guests.filter((element) => {
+                if (element.id != id) {
+                    return element;
+                }
+            });
+
+            localStorage.setItem("invitado", JSON.stringify(guests));
+            list();
         }
     });
     
-    // borramos de las otras dos secciones
-    switch (guestsAddMenu.value) {
-        
-        case "Menú":
-            this.event.target.parentElement.parentElement.remove();
-        
-        case "Grupo":
-            this.event.target.parentElement.parentElement.remove();
-    }
-
-    localStorage.setItem("invitado", JSON.stringify(guests));
-    list();
+    
 }
 
 function choise(id) { 

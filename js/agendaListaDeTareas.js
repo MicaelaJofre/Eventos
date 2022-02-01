@@ -4,7 +4,20 @@ let listTask = localStorage.getItem("listaTareas") == null ? [] : JSON.parse(loc
 let listSlopes = [];
 
 $(document).ready(() => {
+
+    //fecha
+    let date = new Date();
     
+    // agregar ceros a la izquierda
+    function zeroFill(number, width) { 
+        width -= number.toString().length;
+        if (width > 0) {
+            return new Array(width + (/\./.test(number) ? 2 : 1)).join('0') + number;
+        }
+        return number + ""; // siempre devuelve tipo cadena
+    }
+
+    $('.taskDate').attr("min", `${date.getFullYear()}-${zeroFill(date.getMonth()+1, 2)}-${zeroFill(date.getDate(), 2)}`)
 
     list(listTask);
 
@@ -38,15 +51,7 @@ $(document).ready(() => {
 
         //fecha
 
-        let date = Date.now();
-        if (taskDate > date) {
-            validate = false;
-
-            $("<p>Elije una fecha mayor a la fecha actual</p>").insertAfter('.taskDate');
-            $('.taskDate').css("border-color", "red");
-        } else {
-            $('.taskDate').css("border-color", "");
-        }
+        
 
         //observaciones
         if ((taskObservations === "") || !(/^[a-zA-ZÀ-ÿ\s]{1,30}$/.test(taskObservations))) {
@@ -73,7 +78,7 @@ $(document).ready(() => {
             list(listTask);
             $('#taskAddInfo').trigger("reset");
         }
-        // funcion para cerrar el modal
+        // cerrarmos el modal con la funcion que esta en animaciones.js
         closeForm(validate);
     });
 
@@ -81,11 +86,12 @@ $(document).ready(() => {
 });
 
 
-
+let listComplete = [];
 
 // insertamos al html los datos ingresados por el usuario
 
 function list(listTask) {
+
 
     $('.tableTask tbody').empty();
 
@@ -98,10 +104,11 @@ function list(listTask) {
                 return x;
             }
         });
-        
+
         // controla si la lista tiene pendientes
         if (listSlopes.length != 0) dateNext(listSlopes);
         else $('.taskSlopes__text').empty();
+        
 
 
     } else $('.taskSlopes__text').empty();
@@ -115,7 +122,7 @@ function list(listTask) {
 
             $('.tableTask tbody').append(`
 
-                <tr id="${task.taskId}">
+                <tr  id="${task.taskId}">
                     <td>${task.taskName}</td>
                     <td>${task.taskDate}</td>
                     <td>${task.taskObservations}</td>
@@ -131,6 +138,10 @@ function list(listTask) {
 
 
             `);
+
+            // tachar las tareas completadas
+            task.taskCondition == 'Completado' ? $('.taskBody tr').css("text-decoration", "line-through") : "";
+
         }
     } else {
         $('.tableTask tbody').append("<p class ='texNoProviders'>No hay tareas</p>");
@@ -146,6 +157,8 @@ function list(listTask) {
     let total = listTask.filter(totals => totals.taskCondition === 'Completado');
     $('#totalcomplete').append(total.length);
 
+
+    
     $('.taskCondition').on("change", (e) => {
 
         let id = this.event.target.parentElement.parentElement.id;
@@ -156,6 +169,7 @@ function list(listTask) {
             }
             return x;
         });
+        
         localStorage.setItem('listaTareas', JSON.stringify(listTask));
         list(listTask);
     });
@@ -207,20 +221,3 @@ function dateNext(listSlopes) {
     $('.taskSlopes__text').empty();
     $('.taskSlopes__text').append(`${last}`);
 }
-
-
-// función para cambiar la selección del selest en Pendiente o Completado
-
-/* //llamamos a la función para sacar la fecha más próxima a vencer
-if (listTask.length != 0) {
-
-    listSlopes = listTask.map((x) => {
-        if (x.taskCondition === "Pendiente") {
-            return x;
-        }
-    }); 
-    dateNext(listSlopes)
-    
-} else {
-    $('.taskSlopes__text').empty();
-} */

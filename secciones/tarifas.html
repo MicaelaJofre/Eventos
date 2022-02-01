@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,73 +9,163 @@
     <!--  logo redes -->
     <link href="https://icons8.com/icon/118497/facebook-nuevo">
     <!--  bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- styles -->
     <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
     <header class="container-fluid headerWelcome">
         <!-- nav -->
         <nav class="nav d-flex justify-content-around flex-wrap">
             <div class="nav__logo d-flex justify-content-center align-items-center">
-                <a href="../index.html"class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="nav__img"><h1>Dreamed Day</h1></a>
+                <a href="../index.html" class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png"
+                        alt="logo Dreamed Day" class="nav__img">
+                    <h1>Dreamed Day</h1>
+                </a>
             </div>
             <label id="icon" class="icon">
                 <i class="fas fa-bars"></i>
             </label>
             <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
-                <li class="nav__li"><a href="#">Servicios</a></li>
-                <li class="nav__li"><a href="#">Mi casamiento</a></li>
+                <li class="nav__li"><a href="../index.html#detailsSections">Servicios</a></li>
+                <li class="nav__li"><a href="../index.html#myWeddingSections">Mi casamiento</a></li>
                 <li class="nav__li"><a href="../secciones/login.html">Accedé</a></li>
                 <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
                 <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
             </ul>
-        </nav>              
+        </nav>
     </header>
-    <main class="tariff container">
-
+    <main class="tariff container d-flex justify-content-center">
         <!-- cards tarifas -->
-        <div class="row row-cols-1 row-cols-md-3 d-flex justify-content-around g-4">
-            <div class="col cardTarif p-0">
-                <div class="card h-100">
-                <img src="../imagenes/ramo.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Web gratis</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque repudiandae enim suscipit amet aut velit minus, labore ullam non! Sint sequi tempore praesentium facilis, impedit eaque porro vero eveniet voluptate atque nesciunt consequatur nostrum et nobis maiores, mollitia ad, repudiandae nam. Error dolores fuga cum, quam rem culpa sed autem!.</p>
+        <ul>
+            <li class="booking-card" style="background-image: url('../imagenes/fondoContacto.png');background-position:left;background-size:
+            cover; object-fit:
+            cover;">
+                <div class="book-container">
+                    <div class="content">
+                        <button class="btn">Empieza</button>
+                    </div>
                 </div>
-                <div class="card-footer text-center pb-5">
-                    <small class="text-muted">Crea 100% Gratis!</small>
-                    <button>Empezá ahora</button>
+                <div class="informations-container">
+                    <h2 class="title">Web gratis</h2>
+                    <p class="sub-title">Crea tu web de forma gratuita</p>
+                    <p class="price"><svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M3,6H21V18H3V6M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M7,8A2,2 0 0,1 5,10V14A2,2 0 0,1 7,16H17A2,2 0 0,1 19,14V10A2,2 0 0,1 17,8H7Z" />
+                        </svg>De $0</p>
+                    <div class="more-information">
+                        <div class="info-and-date-container">
+                            <div class="box info">
+                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                                </svg>
+                                <p>Lorem, ipsum dolor sit amet </p>
+                            </div>
+                            <div class="box date">
+                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                </svg>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+                        <p class="disclaimer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint maxime at
+                            praesentium nisi, quos, voluptate error eligendi, expedita aliquid laudantium sit atque
+                            earum dolor. Incidunt odit harum odio vitae quod, inventore atque molestiae, accusantium,
+                            amet totam provident accusamus? Vitae, adipisci animi ea expedita in veritatis laudantium
+                            aliquam necessitatibus magnam enim unde architecto cumque molestias eos voluptatum, nulla
+                            saepe corporis a sed accusantium exercitationem. Similique, ea soluta animi praesentium
+                            inventore dolorum!</p>
+                    </div>
                 </div>
+            </li>
+            <li class="booking-card" style="background-image: url('../imagenes/fondoAnillos.jpg'); background-position:center; object-fit:
+                cover;">
+                <div class="book-container">
+                    <div class="content">
+                        <button class="btn payBtn" id="promocional">Comprar</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col cardTarif p-0">
-                <div class="card cardTarif-active h-100 ">
-                <img src="../imagenes/fondoAnillos.jpg" class="card-img-top" alt="...">
-                <div class="card-body cardTarif--promo">
-                    <h5 class="card-title">Plan Promocional</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui aut, exercitationem assumenda aspernatur unde facere eum architecto laudantium modi explicabo iusto ipsam similique eius impedit. Voluptate fugiat optio quaerat? Incidunt aspernatur est accusamus quo ex libero deserunt? Non vel cum nobis reprehenderit alias dignissimos, expedita omnis et harum quae..</p>
+                <div class="informations-container">
+                    <h2 class="title">Plan Promocional</h2>
+                    <p class="sub-title">Obtén más beneficios en tu web por poco dinero</p>
+                    <p class="price"><svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M3,6H21V18H3V6M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M7,8A2,2 0 0,1 5,10V14A2,2 0 0,1 7,16H17A2,2 0 0,1 19,14V10A2,2 0 0,1 17,8H7Z" />
+                        </svg>De $3000</p>
+                    <div class="more-information">
+                        <div class="info-and-date-container">
+                            <div class="box info">
+                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                                </svg>
+                                <p>Lorem ipsum dolor sit amet </p>
+                            </div>
+                            <div class="box date">
+                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                </svg>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+                        <p class="disclaimer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                            aspernatur odio nulla est explicabo optio possimus. Omnis minus beatae dolore ad repudiandae
+                            modi rerum assumenda doloremque porro autem quaerat voluptatum ipsum quis debitis iste, nisi
+                            libero voluptate ipsam quia numquam iure officia quibusdam. Eveniet corporis aspernatur
+                            assumenda maiores excepturi minus iste dignissimos beatae magni? Doloremque, repellat
+                            repellendus. Consequuntur, voluptas possimus, qui magni exercitationem distinctio ullam
+                            voluptatum odio, illo nostrum asperiores.</p>
+                    </div>
                 </div>
-                <div class="card-footer  text-center pb-5">
-                    <small class="text-muted">Aprovecha la promo!</small>
-                    <button class="payBtn" id="promocional">Comprar</button>
+            </li>
+            <li class="booking-card" style="background-image: url('../imagenes/noviosAnillo.jpg'); background-position:right; object-fit:
+                cover;">
+                <div class="book-container">
+                    <div class="content">
+                        <button class="btn payBtn" id="premium">Comprar</button>
+                    </div>
                 </div>
+                <div class="informations-container">
+                    <h2 class="title">Plan Premium</h2>
+                    <p class="sub-title">Excelentes beneficios</p>
+                    <p class="price"><svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M3,6H21V18H3V6M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M7,8A2,2 0 0,1 5,10V14A2,2 0 0,1 7,16H17A2,2 0 0,1 19,14V10A2,2 0 0,1 17,8H7Z" />
+                        </svg>$5000</p>
+                    <div class="more-information">
+                        <div class="info-and-date-container">
+                            <div class="box info">
+                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                                </svg>
+                                <p>Lorem ipsum dolor.</p>
+                            </div>
+                            <div class="box date">
+                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                </svg>
+                                <p>Lorem, ipsum dolor.</p>
+                            </div>
+                        </div>
+                        <p class="disclaimer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+                            repellendus molestiae rem voluptate temporibus eum nam qui reprehenderit commodi non
+                            exercitationem tempore, ducimus fuga perferendis. Amet, aut porro omnis natus sunt facere
+                            aspernatur? Maxime aliquid, sint soluta similique quasi laboriosam dicta corporis distinctio
+                            nulla ullam optio magni rem cumque illo ipsum odio, dolores eius veniam eos vel! Odit,
+                            consectetur atque numquam excepturi cum aperiam delectus quae illo, eveniet architecto
+                            aliquam? Possimus culpa rem, maiores nobis modi fuga. Commodi, laudantium! Velit enim
+                            adipisci perspiciatis deleniti voluptatum explicabo fugit deserunt ea? Animi!.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col cardTarif p-0">
-                <div class="card h-100">
-                <img src="../imagenes/ubicaiones.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Plan Premium</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque error temporibus voluptates, magni dolorum in totam ipsum odio consequatur repudiandae. Dolore, dignissimos! Et quod eveniet neque dicta, ab perferendis omnis impedit aperiam labore possimus optio perspiciatis excepturi, ipsam recusandae cum vero quos mollitia nulla, sint nihil. Adipisci temporibus odio aspernatur.</p>
-                </div>
-                <div class="card-footer  text-center pb-5">
-                    <small class="text-muted">Excelentes beneficios!</small>
-                    <button class="payBtn" id="premium">Comprar</button>
-                </div>
-            </div>
-        </div>
-        </div>
+            </li>
+        </ul>
     </main>
 
     <!-- footer -->
@@ -83,25 +174,33 @@
             <!-- informacion -->
             <article class="info">
                 <p class="info__p text-center text-md-start">Información</p>
-                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
-                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Tarifas</p></a>
-                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de cookies</p></a>
-                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Condiciones legales</p></a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Política de privacidad</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Tarifas</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Política de cookies</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Condiciones legales</p>
+                </a>
             </article>
             <!-- redes -->
             <article class="networks text-center">
                 <p class="networks__p">Redes sociales</p>
-                <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png"/>
-                <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png"/>
-                <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png"/>
-                <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" />
             </article>
             <!-- formas de pago -->
             <article class="payments text-center">
                 <p class="payments__p">Formas de pago</p>
-                <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png"/>
-                <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png"/>
-                <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png"/>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png" />
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png" />
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png" />
             </article>
         </section>
         <!-- copy y pie -->
@@ -112,9 +211,10 @@
     </footer>
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/tarifas.js"></script>
     <script src="../js/navegador.js"></script>
 </body>
-</html>    
+
+</html>

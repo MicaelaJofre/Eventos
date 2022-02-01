@@ -1,0 +1,251 @@
+@import "../_partials/mixies";
+
+// grafico circular
+.budgetGraphic {
+    text-align: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint(mobile) {
+        width: 200px;
+        
+    }
+
+    @include breakpoint(laptop) {
+        width: 400px;
+    }
+
+    @include breakpoint(desktop) {
+        width: 700px;
+    }
+}
+
+// cards
+.budgetcards{
+    margin-bottom: 3em;
+    .card{
+        border: solid 3px rgba(0, 0, 0, 0.2);
+        margin: 0 4px 2px 4px;
+        -webkit-box-shadow: 0px 0px 52px -35px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 52px -35px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 52px -35px rgba(0, 0, 0, 0.75);
+        @include breakpoint(mobile) {
+            width: 19em;
+            height: 16em;
+            text-align: center;
+        }
+
+        @include breakpoint(laptop) {
+            width: 25em;
+            height: 14em;
+        }
+
+        @include breakpoint(desktop) {
+            width: 22em;
+            height: 12em;
+        }
+        
+    }
+    .imgLogo{
+        width: 2em;
+    }
+
+    .card-title{
+        font-weight: 600;
+        color: $shadowGrey;
+        font-size: 1.3em;
+    }
+
+    .cardInputContainer {
+        margin-left: 3.5em;
+        display: flex;
+        input {
+            width: 10em;
+            height: 2em;
+            outline: none;
+            border: none;
+            border-radius: .25em;
+            margin-bottom: .5em;
+        }
+        .budgetBtn{
+            width: 2em;
+            padding: 0 3px;
+            height: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            .far {
+                font-size: 2em;
+                margin-left: .5em;
+                color: $shadowGrey;
+            }
+        }
+    }
+    .payLabel{
+        text-align: start;
+        border: solid 2px $shadowGrey;
+        border-radius: .25em;
+        width: auto;
+        padding: .5em;
+        background: rgba(255, 255, 255, 0.466);
+        color: $shadowGrey;
+        -webkit-box-shadow: 0px 0px 52px -14px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 52px -14px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 52px -14px rgba(0, 0, 0, 0.75);
+
+    }
+    .card-text {
+        height: 10px;
+        width: 5em;
+        margin-left: .5em;
+        font-weight: 600;
+        @include breakpoint(mobile) {
+            height: 12px;
+            width: 3.5em;
+
+        }
+
+        @include breakpoint(laptop) {
+            height: 12px;
+            width: 3.5em;
+        }
+
+        @include breakpoint(desktop) {
+            height: 10px;
+            width: 4em;
+        }
+    }
+    .switchText{
+        width: 5em;
+        font-weight: 600;
+        
+        @include breakpoint(mobile) {
+            margin-left: 4em;
+        }
+
+        @include breakpoint(laptop) {
+            margin-left: 6em;
+        }
+
+        @include breakpoint(desktop) {
+            margin-left: 7em;
+        }
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 3em;
+    }
+
+    .switch-input {
+        display: none;
+    }
+
+    .switch-label {
+        display: block;
+        width: 48px;
+        height: 24px;
+        text-indent: -150%;
+        clip: rect(0 0 0 0);
+        color: transparent;
+        user-select: none;
+    }
+
+    .switch-label::before,
+    .switch-label::after {
+        content: "";
+        display: block;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .switch-label::before {
+        width: 100%;
+        height: 100%;
+        background-color: #dedede;
+        border-radius: 9999em;
+        -webkit-transition: background-color 0.25s ease;
+        transition: background-color 0.25s ease;
+    }
+
+    .switch-label::after {
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+        -webkit-transition: left 0.25s ease;
+        transition: left 0.25s ease;
+    }
+
+    .switch-input:checked+.switch-label::before {
+        background-color: #89c12d;
+    }
+
+    .switch-input:checked+.switch-label::after {
+        left: 24px;
+    }
+
+}
+
+
+.accountant{
+    .accTotal {
+        border: solid 3px $salmon;
+        outline: none;
+        border-radius: .25em;
+        margin-bottom: .5em;
+        text-align: end;
+        min-height: 2.2em;
+        padding: .5em;
+    }
+}
+    
+.budgetDinner{
+    background: $cena;
+}
+.budgetCeremony{
+    background: $ceremonia;
+}
+.budgetCake{
+    background: $pastel;
+}
+.budgetDecoration{
+    background: $decoracion;
+}
+.budgetSouvenirs{
+    background: $souveniers;
+}
+.budgetCar{
+    background: $auto;
+}
+.budgetBeauty{
+    background: $belleza;
+}
+.budgetAccessories{
+    background: $accesorios;
+}
+.budgetMusic{
+    background: $musica;
+}
+.budgetPhoto{
+    background: $foto;
+}
+.budgetInvitations{
+    background: $invitaciones;
+}
+.budgetHoneymoon{
+    background: $lunaMiel;
+}
+.budgetComplement{
+    background: $complementos;
+}
+.budgetParty{
+    background: $fiest;
+}
+.budgetOthers {
+    background: $otros;
+}

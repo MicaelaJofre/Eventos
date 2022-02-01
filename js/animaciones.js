@@ -1,78 +1,32 @@
-////////////////modal proveedores///////////////////////////
+////////////animación en la seccion lista de invitados - formulario acordeon//////////////
 
-//llamamos al evento click al boton de agregar proveedores
-$('.providersAdd').on('click', (e) => {
-    $('.modalProvidersSection')
-    .css({
-        "visibility": "visible",
-        "opacity": "1"
-    })
+
+
+$(document).ready(function () {
+
+    //abrir formulario
+    $('.modalGuests__form').hide();
+
+    $('.guestsAdd__btn').click(function () {
+
+        $('.modalGuests__form').slideToggle(600);
+    });
+
+});
+
+
+//cerrar formulario
+$('.modalGuestsBtn').on("click", () => {
+    openModal(e);
+});
     
-    $('modalProviders').toggleClass("modalOpen");
-});
+function closeFormGuest() {
 
-//boton de cerrar el modal
-$('.imgClose').on("click", () => {
-    $('.modalProvidersSection').css({
-        "visibility": "hidden",
-        "opacity": "0"
-    });
-    $('modalProviders').toggleClass("closeModal");
-});
-
-// boton para guardar y cerrar el modal
-$('.providersBtnModal').on("click", () => {
-    list(providers);
-});
-
-// funcion para cerrar una vez que verifique los datos del modal
-function modalHidden() {
-    $('.modalProvidersSection').css({
-            "visibility": "hidden",
-            "opacity": "0"
-    })
-        $('modalProviders').toggleClass("closeModal");
-};
+    $('.modalGuests__form').slideToggle(600);
+}
 
 
-
-///////////////////modal invitados/////////////////////////////
-
-//llamamos al evento click al boton de agregar proveedores
-$('#guestsAdd__btn').on('click', () => {
-    $('.modalGuestsSection').css({
-        "visibility": "visible",
-        "opacity": "1",
-    });
-    $('#modalGuests').toggleClass("modalOpen");
-}); 
-
-//boton de cerrar el modal
-$('.imgClose').on("click", () => {
-    $('.modalGuestsSection').css({
-        "visibility": "hidden",
-        "opacity": "0"
-    });
-    $('#modalGuests').toggleClass("closeModal");
-}); 
-
-// boton para guardar y cerrar el modal
-$('.providersBtnModal').on("click", () => {
-    openModal();
-}); 
-
-// funcion para cerrar una vez que verifique los datos del modal
-function modalHiddenGuest() {
-    $('.modalGuestsSection').css({
-            "visibility": "hidden",
-            "opacity": "0"
-    });
-    $('#modalGuests').toggleClass("closeModal");
-};  
-
-
-
-////////////animación en la seccion lista de tereas//////////////
+////////////animación en la seccion lista de tereas - formulario acordeon//////////////
 
 
 
@@ -95,4 +49,61 @@ function closeForm(validate) {
     if (validate) {
         $('.taskAddInfo').slideToggle(600);
     }
+}
+
+
+
+
+////////////animación en la seccion proveedores - formulario acordeon//////////////
+
+
+
+$(document).ready(function () {
+
+    //abrir formulario
+    $('.modalProviders').hide();
+
+    $('.providersAdd').click(function () {
+
+        $('.modalProviders').slideToggle(600);
+    });
+
+});
+
+
+//cerrar formulario
+function closeForm(validate) {
+
+    if (validate) {
+        $('.modalProviders').slideToggle(600);
+    }
+}
+
+
+//////////////////////// MODAL LOGIN ////////////////////////////////////
+
+function modalOpenLogin() {
+
+  
+    $('.modalLogin')
+        .css({
+            "visibility": "visible",
+            "opacity": "1"
+        });
+
+    $('.modalLoginForm ').toggleClass("modalOpen");
+
+    //boton de cerrar el modal
+    $('.imgClose').on("click", () => {
+        $('.modalLogin').css({
+            "visibility": "hidden",
+            "opacity": "0"
+        });
+        $('modalLoginForm').toggleClass("closeModal");
+    });
+
+    // boton para guardar y cerrar el modal
+    $('.weddingButton').on("click", () => {
+        validate();
+    });
 }

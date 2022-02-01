@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  logo redes -->
+    <link href="https://icons8.com/icon/118497/facebook-nuevo">
+    <!--  bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- styles -->
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body>
+    <header class="container-fluid headerSchedule">
+        <!-- nav -->
+        <nav class="nav d-flex justify-content-around flex-wrap">
+            <div class="nav__logo d-flex justify-content-center align-items-center">
+                <a href="../index.html" class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png"
+                        alt="logo Dreamed Day" class="nav__img">
+                    <h1>Dreamed Day</h1>
+                </a>
+            </div>
+            <label id="icon" class="icon">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav__ul d-flex flex-wrap align-items-center justify-content-between">
+                <li class="nav__li"><a href="../index.html#detailsSections">Servicios</a></li>
+                <li class="nav__li"><a href="../index.html#myWeddingSections">Mi casamiento</a></li>
+                <li class="nav__li"><a href="../secciones/login.html">Accedé</a></li>
+                <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
+                <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- bar -->
+        <section class="row light d-flex justify-content-center align-items-end scheduleBar">
+
+            <article class="col-12 col-md-3 bar">
+
+                <a href="../secciones/agendaInvitados.html" class="bar__link"><img class="bar__img"
+                        src="https://img.icons8.com/wired/50/000000/family.png" />
+                    <p class="bar__text">Invitados</p>
+                </a>
+            </article>
+
+            <article class="col-12 col-md-3 bar">
+
+                <a href="#" class="bar__link"><img class="bar__img"
+                        src="https://img.icons8.com/ios/50/000000/cost.png" />
+                    <p class="bar__text">Presupuesto</p>
+                </a>
+
+            </article>
+
+            <article class="col-12 col-md-3 bar">
+
+                <a href="./agendaListaDeTareas.html" class="bar__link"><img class="bar__img"
+                        src="https://img.icons8.com/dotty/50/000000/dating-website.png" />
+                    <p class="bar__text">Tareas</p>
+                </a>
+
+            </article>
+
+            <article class="col-12 col-md-3 bar">
+
+                <a href="./agendaProveedores.html" class="bar__link"><img class="bar__img"
+                        src="https://img.icons8.com/ios/50/000000/supplier.png" />
+                    <p class="bar__text">Proveedores</p>
+                </a>
+
+            </article>
+        </section>
+    </header>
+
+    <main class="container budget">
+        <!-- gráfico -->
+        <section class="budgetGraphic  container">
+            <canvas class="budgetGraphic__img d-lg-block d-none" id="grafica"></canvas>
+            <article class="budgetGraphic__accountant text-lg-end ms-5">
+                <h2 class="pb-2">Proveedores</h2>
+                <div class="accountant" id="accountantForm">
+                    <h3>Presupuesto</h3>
+                    <p class="accTotal" id="totalBudget"></p>
+                    <h3>Servicios Pagados</h3>
+                    <p class="accTotal" id="totalHired"></p>
+                </div>
+            </article>
+        </section>
+
+        <!--  cards -->
+        <form class="budgetcards d-flex align-items-center justify-content-center row" id="budgetForm">
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetDinner" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Cena</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input"min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text" ></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-1" type="checkbox" class="switch-input" />
+                            <label for="switch-1" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetCeremony" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Ceremonia</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-2" type="checkbox" class="switch-input" />
+                            <label for="switch-2" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetCake" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Pastel de boda</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-3" type="checkbox" class="switch-input" />
+                            <label for="switch-3" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetDecoration" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Decoración</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-4" type="checkbox" class="switch-input" />
+                            <label for="switch-4" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetSouvenirs" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Souvenirs</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-5" type="checkbox" class="switch-input" />
+                            <label for="switch-5" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetCar" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Auto</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-6" type="checkbox" class="switch-input" />
+                            <label for="switch-6" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetBeauty" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Belleza</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-7" type="checkbox" class="switch-input" />
+                            <label for="switch-7" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetAccessories" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Accesorios</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-8" type="checkbox" class="switch-input" />
+                            <label for="switch-8" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetMusic" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Música</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-9" type="checkbox" class="switch-input" />
+                            <label for="switch-9" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetPhoto" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Foto y Video</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-10" type="checkbox" class="switch-input" />
+                            <label for="switch-10" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetInvitations" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Invitaciones</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-11"  type="checkbox" class="switch-input" />
+                            <label for="switch-11" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetHoneymoon" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Luna de miel</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-12" type="checkbox" class="switch-input" />
+                            <label for="switch-12" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetComplement" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Complementos</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-13" type="checkbox" class="switch-input" />
+                            <label for="switch-13" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetParty" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Fiesta</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-14" type="checkbox" class="switch-input" />
+                            <label for="switch-14" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3 col-12 col-md-4 p-3 budgetOthers" style="max-width: 540px;">
+                <div class="row g-0 ">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="card-body text-center">
+                            <h5 class="card-title ">Otros</h5>
+                            <div class="cardInputContainer">
+                                <input type="number" class="card-input" min="1">
+                                <button class="budgetBtn"><i class="far fa-check-circle"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payLabel d-flex ">
+                        <p class="card-text"></p>
+                        <span class="switchText">Pagar</span>
+                        <div class="switch">
+                            <input id="switch-15" type="checkbox" class="switch-input" />
+                            <label for="switch-15" class="switch-label">Switch</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="container-fluid mt-0 footer">
+        <section class="infoNetworksPayments d-flex justify-content-around flex-wrap">
+            <!-- informacion -->
+            <article class="info">
+                <p class="info__p text-center text-md-start">Información</p>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Política de privacidad</p>
+                </a>
+                <a href="../secciones/tarifas.html" class="info__text">
+                    <p class="info__link text-center text-md-start">Tarifas</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Política de cookies</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Condiciones legales</p>
+                </a>
+            </article>
+            <!-- redes -->
+            <article class="networks text-center">
+                <p class="networks__p">Redes sociales</p>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" />
+            </article>
+            <!-- formas de pago -->
+            <article class="payments text-center">
+                <p class="payments__p">Formas de pago</p>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png" />
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png" />
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png" />
+            </article>
+        </section>
+        <!-- copy y pie -->
+        <section class="footerText d-flex justify-content-center align-items-center">
+            <img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="footerText__img">
+            <p class="footerText__copy">&copy;2021 Dreamed Day.com</p>
+        </section>
+    </footer>
+    <!-- gráfico -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/agendaPresupuesto.js"></script>
+    <script src="../js/animaciones.js"></script>
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>

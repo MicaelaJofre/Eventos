@@ -158,7 +158,7 @@ $(document).ready(() => {
             );
             localStorage.setItem("proveedores", JSON.stringify(providers));
             list(providers);
-            modalHidden(validate);
+            closeForm(validate)
             $('#modalProviders').trigger("reset");
         }
     });

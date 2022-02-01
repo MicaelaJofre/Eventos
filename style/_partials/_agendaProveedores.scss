@@ -1,6 +1,17 @@
 @import "../_partials/mixies";
 @import "../_partials/variables";
 
+.scheduleVendors{
+    .providersHr1 {
+        margin-top: 2em;
+        @include hr;
+    }
+    .providers__title{
+        font-size: 1.8em;
+        padding-left: .5em;
+    }
+}
+
 // contador de proveedores
 
 .accountant {
@@ -10,6 +21,11 @@
 
     p {
         @include pAcconuntant;
+    }
+    img {
+        width: 10em;
+        margin: 2em 0;
+        clip-path: circle(50% at 50% 50%);
     }
 
 }
@@ -23,32 +39,34 @@
         margin-top: 2em;
         text-align: center;
         width: auto;
-        background: $darkGreen;
-        border-radius: 3em;
+        border-radius: 0.25em;
         text-decoration: none;
-        color: $white;
+        color: #fff;
         font-weight: 600;
         cursor: pointer;
         transition: color 0.25s 0.0833333333s;
         transition: color 0.25s 0.0833333333s;
         position: relative;
-        @include btn;
+        background: $darkGreen;
 
         @include breakpoint(mobile) {
+            width: 98%;
             padding: .2em .5em;
         }
 
         @include breakpoint(laptop) {
+            width: 100%;
             padding: .5em 1em;
         }
 
         @include breakpoint(desktop) {
+            width: 100%;
             padding: .5em 1em;
         }
 
         &:hover {
-            background: #fff;
-            color: $darkSalmon;
+            background: $salmon;
+            color: #fff;
         }
     }
     .providersHr {
@@ -62,208 +80,174 @@
 }
 
 
-// agregar proveedores
+// agregar proveedores --- tabla ---
 
-
-.table {
+.providersTable{
     @include table;
-    text-align: center;
     margin-bottom: 5em;
-
-    th  {
-        font-size: .8em;
+    .table {
         text-align: center;
-    }
-    td {
-        font-size: .7em;
-        text-align: center;
-    }
-
-
-    //th 
-    th:nth-child(1) {
-        width: 10%;
-        padding-right: 20px;
-
-    }
-
-    th:nth-child(2) {
-        width: 10%;
-        padding-right: 20px;
-    }
-
-
-    th:nth-child(3) {
-        width: 20%;
-        padding-right: 20px;
-    }
-
-    th:nth-child(4) {
-        width: 10%;
-        padding-right: 20px;
-    }
-
-    th:nth-child(5) {
-        width: 10%;
-    }
-
-    th:nth-child(6) {
-        width: 20%;
-        padding-right: 20px;
-    }
-
-    th:nth-child(7) {
-        width: 10%;
-    }
-
-    th:nth-child(8) {
-        width: 10%;
-    }
-
-    //td
-    td:nth-child(1) {
-        width: 10%;
-        padding-right: 20px;
-
-
-    }
-
-    td:nth-child(2) {
-        width: 10%;
-        padding-right: 20px;
-    }
-
-
-    td:nth-child(3) {
-        width: 20%;
-        padding-right: 20px;
-    }
-
-    td:nth-child(4) {
-        width: 10%;
-        padding-right: 20px;
-    }
-
-    td:nth-child(5) {
-        width: 10%;
-    }
-
-    td:nth-child(6) {
-        width: 20%;
-        padding-right: 20px;
-    }
-
-    td:nth-child(7) {
-        width: 10%;
-    }
-
-    td:nth-child(8) {
-        width: 10%;
-        cursor: pointer;
+        color: $shadowGrey;
+    
+        th  {
+            font-size: .8em;
+            text-align: center;
+        }
+        td {
+            font-size: .7em;
+            text-align: center;
+            border-bottom: solid 2px $shadowGrey;
+        }
+    
+    
+        //th 
+        th:nth-child(1) {
+            width: 10%;
+            padding-right: 20px;
+    
+        }
+    
+        th:nth-child(2) {
+            width: 10%;
+            padding-right: 20px;
+        }
+    
+    
+        th:nth-child(3) {
+            width: 20%;
+            padding-right: 20px;
+        }
+    
+        th:nth-child(4) {
+            width: 10%;
+            padding-right: 20px;
+        }
+    
+        th:nth-child(5) {
+            width: 10%;
+        }
+    
+        th:nth-child(6) {
+            width: 20%;
+            padding-right: 20px;
+        }
+    
+        th:nth-child(7) {
+            width: 10%;
+        }
+    
+        th:nth-child(8) {
+            width: 10%;
+        }
+    
+        //td
+        td:nth-child(1) {
+            width: 10%;
+            padding-right: 20px;
+    
+    
+        }
+    
+        td:nth-child(2) {
+            width: 10%;
+            padding-right: 20px;
+        }
+    
+    
+        td:nth-child(3) {
+            width: 20%;
+            padding-right: 20px;
+        }
+    
+        td:nth-child(4) {
+            width: 10%;
+            padding-right: 20px;
+        }
+    
+        td:nth-child(5) {
+            width: 10%;
+        }
+    
+        td:nth-child(6) {
+            width: 20%;
+            padding-right: 20px;
+        }
+    
+        td:nth-child(7) {
+            width: 10%;
+        }
+    
+        td:nth-child(8) {
+            width: 10%;
+            cursor: pointer;
+        }
     }
 }
 
-//////////////////// modal proveedores //////////////////////////
+//////////////////// formulario acordeon proveedores //////////////////////////
 
-.modalProvidersSection {
-    position: fixed;
+.modalProviders {
+    padding-top: 3em;
+    background-image: url(../../imagenes/fondoAcuarelaAzul.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: .25em;
     width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    border: 1px solid $grey;
-    background: rgba($color: #000000, $alpha: 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: all ease .5s;
-    
-
-    .modalProviders{
-        overflow-y: scroll;
-        overflow-x: hidden;
-        background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
-        url(../imagenes/fondoAcuarelaAzul.jpg);
-        background-position: center;
-        background-size: cover;
-        transition: transform 1s;
-
-        @include breakpoint(mobile) {
-            width: 90%;
-            height: 80vh;
-            padding: 1em;
-    
-        }
-    
-        @include breakpoint(laptop) {
-            width: 90%;
-            height: 80vh;
-            padding: 1em;
-        }
-    
-        @include breakpoint(desktop) {
-            width: 48vw;
-            height: 80vh;
-            padding: 2em;
-        }
-        &__title {
-            padding: .5em;
-            background: $green;
-        }
-    }
-    // cerrar modal
-    .modalClose {
-        transform: translateY(-200%);
-    }
-    .modalOpen{
-        transform: translateY(0%);
-    }
-    
-    .imgClose{
-        margin-left: 95%;
-        cursor: pointer;
+    height: 90vh;
+    padding: 1em;
+    margin: 2em;   
+    @include breakpoint(mobile) {
+        height: 150vh;
     }
 
+    @include breakpoint(laptop) {
+        height: 90vh;
+    }
+
+    @include breakpoint(desktop) {
+        height: 90vh;
+    }
 
     input {
         margin: 1em 1em 1em 0;
         border: none;
-        border-bottom: solid 2px $salmon;
+        border: solid 1px $salmon;
+        border-radius: .25em;
         outline: none;
         width: 100%;
 
         &::placeholder {
-            color: $darkSalmon;
+            color: $shadowGrey;
             padding: 1em;
         }
 
-        &:focus {
-            border-radius: .20em;
-            border: none;
-            outline: solid 2px $salmon;
-        }
     }
 
     .modalProvidersDiv {
-        width: 100%;
         label {
             width: 7em;
             font-weight: 600;
+            color: $shadowGrey;
         }
-
+    
         &__select {
-            color: $darkSalmon;
-            padding: 0 1em;
-            outline: none;
-            border: solid 1px $salmon;
-            width: 15em;
+            select{
+                margin-top: 2em;
+                color: $darkSalmon;
+                padding: 0 1em;
+                outline: none;
+                border: solid 1px $salmon;
+                width: 15em;
+            }
         }
         &__radio{
+            margin-top: 2em;
+            display: flex;
+            flex-wrap: wrap;
             p{
                 font-weight: 600;
                 padding: 1em 0;
+                color: $shadowGrey;
             }
             label{
                 font-weight: 400;
@@ -272,7 +256,8 @@
         }
     }
     .providersBtnModal {
-        width: 7em;
+        width: 10em;
+        border: none;
         background: $darkGreen;
         padding: .5em 1em;
         border-radius: 3em;
@@ -280,16 +265,17 @@
         color: $white;
         font-weight: 600;
         cursor: pointer;
-        transition: color 0.25s 0.0833333333s;
-        transition: color 0.25s 0.0833333333s;
-        position: relative;
-        @include btn;
-
+    
         &:hover {
             background: #fff;
             color: $darkSalmon;
+            border: solid 1px $salmon;
         }
-
+    
     }
+}
+.providersHr {
+    margin-top: 2em;
+    @include hr;
 }
 
