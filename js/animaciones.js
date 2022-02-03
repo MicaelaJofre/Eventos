@@ -44,7 +44,7 @@ $(document).ready(function(){
 
 
 //cerrar formulario
-function closeForm(validate) {
+function closeFormGuest(validate) {
         
     if (validate) {
         $('.taskAddInfo').slideToggle(600);

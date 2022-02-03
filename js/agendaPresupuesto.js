@@ -70,16 +70,18 @@ let totalDisposable = document.getElementById("totalDisposable");
 //llamamos al formulario de las cards
 let budgetForm = document.getElementById("budgetForm");
 
-// funcion list() al iniciar la página
-window.addEventListener('load', list);
-
+// funcion listener() y list() al iniciar la página
+window.onload = () => {
+    listeners();
+    list();
+}
 
 //función para cargar todo
 function list() {
 
     //grafico
     new Chart($grafica, {
-        type: 'pie', 
+        type: 'pie',
         data: {
             labels: etiquetas,
             datasets: [
@@ -88,7 +90,7 @@ function list() {
             ]
         },
     });
-    
+
     showCardMoney(); //función para mostrar los montos en cada tarjeta
     counter(); // contador total presupuesto
     getChecked(); // actualiza los check 
@@ -139,10 +141,7 @@ let checkTotal = 0;
 
 // accedemos a los eventos check por separado para colocar pagado
 function getChecked() {
-
-    for (let i in inputCheck) {
-        
-        if (i == "length") break; // ignoramos el último elemento
+    for (let i in etiquetas) {
         document.getElementsByClassName("switchText")[i].innerHTML = "Pagar"; // cambiamos el texto del checkbox
 
         //el checkbox esta seleccionado cambiamos el presupuesto
@@ -152,22 +151,24 @@ function getChecked() {
             document.getElementsByClassName("switchText")[i].innerHTML = "PAGADO"; // cambiamos el texto del checkbox
         }
         totalHired.textContent = checkTotal;
-
-        // cambia el valor entre 0 y 1 en el local storage
-        inputCheck[i].addEventListener("click", (e) => {
-            
-            if (inputCheck[i].checked === true) totalChecked[i] = 1;
-            else totalChecked[i] = 0;
-            
-            localStorage.setItem("serviciosPagados", JSON.stringify(totalChecked));
-            list();
-
-        });
     };
     checkTotal = 0;
-
 }
 
+// Añade los eventlistener a los check
+function listeners() {
+    for (let i in etiquetas) {
+        // cambia el valor entre 0 y 1 en el local storage
+        inputCheck[i].addEventListener("click", (e) => {
+            if (inputCheck[i].checked === true) totalChecked[i] = 1;
+            else totalChecked[i] = 0;
+
+            localStorage.setItem("serviciosPagados", JSON.stringify(totalChecked));
+            list();
+        });
+
+    };
+}
 
 // contador
 function counter() {

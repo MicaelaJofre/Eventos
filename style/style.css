@@ -1509,6 +1509,8 @@ body {
 .modalLogin .modalLoginForm {
   overflow-y: scroll;
   overflow-x: hidden;
+  border-radius: .25em;
+  padding: 1.5em;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7))), url(../imagenes/fondoAcuarelaAzul.jpg);
   background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(../imagenes/fondoAcuarelaAzul.jpg);
   background-position: center;
@@ -2664,6 +2666,12 @@ body {
 
 .guestsAdd {
   margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .guestsAdd__btn {
@@ -2679,7 +2687,7 @@ body {
 
 @media screen and (min-width: 320px) {
   .guestsAdd__btn {
-    width: 98%;
+    width: 95%;
     padding: .2em .5em;
   }
 }
@@ -2915,37 +2923,18 @@ body {
 }
 
 .modalGuests__form {
-  padding: 0 3em;
-  background-image: url(../../imagenes/fondoAcuarelaAzul.jpg);
+  background-image: url(../imagenes/fondoAcuarelaAzul.jpg);
   background-position: center;
   background-size: cover;
-  border-radius: .25em;
+  border-radius: .5em;
   width: 100%;
-}
-
-@media screen and (min-width: 320px) {
-  .modalGuests__form {
-    padding: 1em;
-    height: 200vh;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .modalGuests__form {
-    padding: 1em;
-    height: 180vh;
-  }
-}
-
-@media screen and (min-width: 994px) {
-  .modalGuests__form {
-    padding: 2em;
-    height: 130vh;
-  }
+  height: auto;
+  -webkit-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
 }
 
 .modalGuests__form input {
-  margin: 1em;
+  margin-bottom: 1em;
   border: none;
   border: solid 1px #FEC5BB;
   outline: none;
@@ -2954,13 +2943,13 @@ body {
 
 @media screen and (min-width: 320px) {
   .modalGuests__form input {
-    width: 90%;
+    width: 98%;
   }
 }
 
 @media screen and (min-width: 768px) {
   .modalGuests__form input {
-    width: 90%;
+    width: 98%;
   }
 }
 
@@ -2997,21 +2986,12 @@ body {
 }
 
 .modalGuests__form .modalGuestsSections label {
-  width: 5em;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (min-width: 320px) {
-  .modalGuests__form .modalGuestsSections label {
-    margin: 1em;
-    width: 3em;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .modalGuests__form .modalGuestsSections label {
-    margin: 1em;
     width: 5em;
   }
 }
@@ -3031,15 +3011,15 @@ body {
 
 @media screen and (min-width: 320px) {
   .modalGuests__form .modalGuestsSections__select {
-    margin: .5em 0 0 .5em;
-    width: 6em;
+    margin: .5em;
+    width: 7em;
   }
 }
 
 @media screen and (min-width: 768px) {
   .modalGuests__form .modalGuestsSections__select {
     margin: .5em 0 0 .5em;
-    width: 6em;
+    width: 7em;
   }
 }
 
@@ -3053,11 +3033,19 @@ body {
 .modalGuests__form .countryLabel {
   font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 1em;
 }
 
 .modalGuests__form .pais {
-  width: 15em;
-  margin: 2em 1em 0 1em;
+  width: 13em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: .5em 0 1em 0;
   color: #E29578;
   outline: none;
   border: solid 1px #FEC5BB;
@@ -3065,19 +3053,19 @@ body {
 
 @media screen and (min-width: 320px) {
   .modalGuests__form .pais {
-    margin-top: .5em;
+    margin-left: .5em;
   }
 }
 
 @media screen and (min-width: 768px) {
   .modalGuests__form .pais {
-    margin-top: .5em;
+    margin-left: .5em;
   }
 }
 
 @media screen and (min-width: 994px) {
   .modalGuests__form .pais {
-    margin-top: 0;
+    margin-left: 0;
   }
 }
 
@@ -3325,33 +3313,18 @@ body {
 }
 
 .modalProviders {
-  padding-top: 3em;
-  background-image: url(../../imagenes/fondoAcuarelaAzul.jpg);
+  background-image: url(../imagenes/fondoAcuarelaAzul.jpg);
   background-position: center;
   background-size: cover;
-  border-radius: .25em;
+  border-radius: .5em;
   width: 100%;
   height: 90vh;
-  padding: 1em;
+  padding: 3em;
   margin: 2em;
-}
-
-@media screen and (min-width: 320px) {
-  .modalProviders {
-    height: 150vh;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .modalProviders {
-    height: 90vh;
-  }
-}
-
-@media screen and (min-width: 994px) {
-  .modalProviders {
-    height: 90vh;
-  }
+  margin-top: 0;
+  -webkit-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+  height: auto;
 }
 
 .modalProviders input {
@@ -3531,11 +3504,13 @@ body {
 }
 
 .taskAddInfo {
-  padding-top: 3em;
-  background-image: url(../../imagenes/fondoAcuarelaAzul.jpg);
+  padding: 3em;
+  background-image: url(../imagenes/fondoAcuarelaAzul.jpg);
   background-position: center;
   background-size: cover;
-  border-radius: .25em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
 }
 
 .taskAddInfo input {
@@ -3578,7 +3553,7 @@ body {
   height: 20vh;
   border-radius: .25em;
   resize: none;
-  border: none;
+  border: 1px solid transparent;
   outline: solid 1px #FEC5BB;
 }
 
@@ -3693,6 +3668,8 @@ body {
   min-width: 20em;
   margin-left: 3em;
   margin-bottom: 3em;
+  -webkit-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
 }
 
 .taskSlopesDate .taskSlopes {

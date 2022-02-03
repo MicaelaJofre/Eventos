@@ -79,7 +79,7 @@ $(document).ready(() => {
             $('#taskAddInfo').trigger("reset");
         }
         // cerrarmos el modal con la funcion que esta en animaciones.js
-        closeForm(validate);
+        closeFormGuest(validate);
     });
 
 
@@ -139,9 +139,7 @@ function list(listTask) {
 
             `);
 
-            // tachar las tareas completadas
-            task.taskCondition == 'Completado' ? $('.taskBody tr').css("text-decoration", "line-through") : "";
-
+            task.taskCondition == 'Completado' ? $(`#${task.taskId}`).css("text-decoration", "line-through") : "";
         }
     } else {
         $('.tableTask tbody').append("<p class ='texNoProviders'>No hay tareas</p>");
@@ -158,7 +156,7 @@ function list(listTask) {
     $('#totalcomplete').append(total.length);
 
 
-    
+    // función para cambiar el estado del select 
     $('.taskCondition').on("change", (e) => {
 
         let id = this.event.target.parentElement.parentElement.id;
@@ -173,7 +171,11 @@ function list(listTask) {
         localStorage.setItem('listaTareas', JSON.stringify(listTask));
         list(listTask);
     });
-
+     // tachar las tareas completadas
+    /* for (let i = 0; i < listTask.length; i++) {
+        console.log(listTask[i].taskCondition)
+        
+    } */ 
 
 }
 

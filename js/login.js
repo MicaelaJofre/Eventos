@@ -23,17 +23,35 @@ formLogin.addEventListener("submit", (e) => {
     e.preventDefault();
 
     for (person of user) {
-        if ((newUsername.value === person.username) && (newPassword.value === person.password)) {
+        if (person.length != 0) {
 
-            // abrimos el modal con la funcion que esta en animaciones.js
-            if (wedding.length === 0) modalOpenLogin();
-            else window.location.href = "../secciones/bienvenidos.html";
+            if ((newUsername.value === person.username) && (newPassword.value === person.password)) {
+                let exist = false;
+                
+                localStorage.setItem("id", person.username);
 
+                if (wedding.length != 0) {
+                    for (let w of wedding) {
+                        if (w.user == person.username) {
+                            exist = true;
+                        }
+                    }
+                    console.log("exist")
+                    if (exist == true) window.location.href = "../secciones/bienvenidos.html";
+                    else modalOpenLogin();
+                        // abrimos el modal con la funcion que esta en animaciones.js
+                        
+                }
+                else modalOpenLogin();
+
+            } else {
+                document.getElementById("show2").textContent = `Usuario o contraseña incorrectos`;
+            }
         } else {
-            document.getElementById("show2").textContent = `Usuario o contraseña incorrectos`;
+            document.getElementById("show2").textContent = `Debe registrarse primero`;
         }
-    }
 
+    }
 });
 
 
@@ -44,11 +62,12 @@ formLogin.addEventListener("submit", (e) => {
 
 
 class WeddingData {
-    constructor(boyfriend, girlfriend, date, location) {
+    constructor(boyfriend, girlfriend, date, location, user) {
         this.boyfriend = boyfriend;
         this.girlfriend = girlfriend;
         this.date = date;
         this.location = location;
+        this.user = user;
     }
     //guardamos en el local storage
     saveDateWedding() {
@@ -87,10 +106,11 @@ function validate(e) {
     const girlfriend = document.getElementById("weddingGirlfriend").value;
     const date = document.getElementById("weddingDate").value;
     const location = document.getElementById("weddingLocation").value;
+    const user = newUsername.value;
 
     /*validaciones*/
     if ((boyfriend != "" && /^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(boyfriend)) && (girlfriend != "" && /^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(girlfriend)) && (location != "" && /^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(girlfriend))) {
-        const newWedding = new WeddingData(boyfriend.toUpperCase(), girlfriend.toUpperCase(), date.toUpperCase(), location.toUpperCase());
+        const newWedding = new WeddingData(boyfriend.toUpperCase(), girlfriend.toUpperCase(), date.toUpperCase(), location.toUpperCase(), user);
         newWedding.saveDateWedding();
         //redireccionamos a la seccion de Bienvenidos
         window.location.href = "../secciones/bienvenidos.html";

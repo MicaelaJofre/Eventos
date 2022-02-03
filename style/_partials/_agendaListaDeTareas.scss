@@ -76,11 +76,14 @@
 // formulario para agregar tareas - acordeon
 
 .taskAddInfo {
-    padding-top: 3em;
-    background-image: url(../../imagenes/fondoAcuarelaAzul.jpg);
+    padding: 3em;
+    background-image: url(../imagenes/fondoAcuarelaAzul.jpg);
     background-position: center;
     background-size: cover;
-    border-radius: .25em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
     input{
         padding-left: .5em;
         width: 30%;
@@ -119,7 +122,7 @@
         height: 20vh;
         border-radius: .25em;
         resize: none;
-        border: none;
+        border: 1px solid transparent;
         outline: solid 1px $salmon;
         &:focus {
             border: none;
@@ -217,6 +220,9 @@
     min-width: 20em;
     margin-left: 3em;
     margin-bottom: 3em;
+    -webkit-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
 
     .taskSlopes {
         background: rgba(255, 255, 255, 0.705);

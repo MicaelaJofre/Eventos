@@ -1,5 +1,12 @@
 let wedding = localStorage.getItem("DatosBoda") == null ? [] : JSON.parse(localStorage.getItem("DatosBoda"));
-wedding = wedding[0];
+const id = localStorage.getItem("id");
+
+for (let w of wedding) {
+    if (w.user === id) {
+        wedding = w;
+        break;
+    }
+}
 document.getElementById("weddingBoyfriendsWelcome").innerHTML = `<span>${wedding.boyfriend}</span> & <span>${wedding.girlfriend}</span>`;
 
 
