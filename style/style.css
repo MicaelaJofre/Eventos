@@ -1790,7 +1790,8 @@ body {
   color: #34312d;
 }
 
-.form > input, .form textarea {
+.form > input,
+.form textarea {
   border: none;
   outline: none;
   border-radius: .20em;
@@ -1800,23 +1801,28 @@ body {
   resize: none;
 }
 
-.form > input::-webkit-input-placeholder, .form textarea::-webkit-input-placeholder {
+.form > input::-webkit-input-placeholder,
+.form textarea::-webkit-input-placeholder {
   color: #FEC5BB;
 }
 
-.form > input:-ms-input-placeholder, .form textarea:-ms-input-placeholder {
+.form > input:-ms-input-placeholder,
+.form textarea:-ms-input-placeholder {
   color: #FEC5BB;
 }
 
-.form > input::-ms-input-placeholder, .form textarea::-ms-input-placeholder {
+.form > input::-ms-input-placeholder,
+.form textarea::-ms-input-placeholder {
   color: #FEC5BB;
 }
 
-.form > input::placeholder, .form textarea::placeholder {
+.form > input::placeholder,
+.form textarea::placeholder {
   color: #FEC5BB;
 }
 
-.form > input:focus, .form textarea:focus {
+.form > input:focus,
+.form textarea:focus {
   outline: solid 2px #FEC5BB;
 }
 
@@ -1913,11 +1919,13 @@ body {
   font-size: .8em;
 }
 
-.networks, .payments {
+.networks,
+.payments {
   margin-bottom: 3em;
 }
 
-.networks__img, .payments__img {
+.networks__img,
+.payments__img {
   width: 2em;
 }
 
@@ -2929,6 +2937,7 @@ body {
   border-radius: .5em;
   width: 100%;
   height: auto;
+  padding: 3em;
   -webkit-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
 }

@@ -16,12 +16,12 @@ $(document).ready(function () {
 
 
 //cerrar formulario
-$('.modalGuestsBtn').on("click", () => {
+$('#modalGuestsBtn').on("click", (e) => {
     openModal(e);
 });
 
-function closeFormGuest() {
-
+function closeFormPersons() {
+    console.log("hola")
     $('.modalGuests__form').slideToggle(600);
 }
 

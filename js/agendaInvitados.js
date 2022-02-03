@@ -34,7 +34,7 @@ openCheckbox.style.display = "none";
 
 
 //checkbox seleccionar a todos 
-checkboxSelectionTotalGuest.addEventListener("click", () => {
+checkboxSelectionTotalGuest.addEventListener("click", (guest) => {
 
     const checkboxes = document.getElementsByTagName('input');
     for (i = 0; i < checkboxes.length; i++) {
@@ -48,11 +48,15 @@ checkboxSelectionTotalGuest.addEventListener("click", () => {
                 openCheckbox.style.display = "none";
             }
         }
+        
     }
     //si se deselecciona el bton selecionar todos se transforma en un array vacio
     if (!this.event.target.checked) {
         checkSelected = [];
+    } else {
+        checkSelected = JSON.parse(localStorage.getItem("invitado"));
     }
+    
 });
 
 
@@ -72,12 +76,41 @@ function checkboxDelet(id) {
 // borrar los checkbox seleccionados
 openCheckbox.addEventListener("click", (e) => {
     e.preventDefault();
+    let total = JSON.parse(localStorage.getItem("invitado"));
     for (let id of checkSelected) {
-        deleteGuests(id);
-    }
+        if (checkSelected.length === total.length) {
+            deleteTotal(id);
+        } else {
+            deleteGuests(id)
+        }
+        
+    }  
     openCheckbox.style.display = "none";
 });
 
+//función para borrar todos los checkbox
+function deleteTotal(checkSelected) {
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminarlos a todos!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Borrado!',
+                'Su archivo ha sido eliminado',
+                'success'
+            )
+            localStorage.removeItem("invitado");
+            list();
+            
+        }
+    });
+}
 
 // llamamos al evento para comenzar con la carga de datos
 modalGuests.addEventListener("submit", openModal);
@@ -114,7 +147,7 @@ function openModal(e) {
                             const newGuests = new Guest(guestsName, guestsLastname, guestsAge, guestsMenu, guestsGroup, guestsAssistance, guestsTel, guestsEmail, guestsAddress, guestsLocation, guestsCountry, guestsPostcard);
                             newGuests.saveGuests();
                             list();
-                            closeFormGuest();
+                            closeFormPersons();
                             modalGuests.reset();
                             errorName.remove()
                             errorLastname.remove();
