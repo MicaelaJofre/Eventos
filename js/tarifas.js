@@ -1,13 +1,12 @@
 let payBtn = document.getElementsByClassName('payBtn');
 
-for( btn of payBtn) {
+for (btn of payBtn) {
     btn.addEventListener("click", (e) => {
         pay();
     });
 }
 
-const listOptions = [
-    {
+const listOptions = [{
         "nombre": "promocional",
         "descripcion": "servicio",
         "img": "../imagenes/fondoAnillos.jpg",
@@ -28,18 +27,18 @@ const listOptions = [
 const pay = () => {
     let weddingWebsite = listOptions.filter(x => x.nombre == this.event.target.id);
     weddingWebsite = weddingWebsite.map((element) => {
-            let newweddingWebsite = {
-                title: element.nombre,
-                description: element.descripcion,
-                picture_url: element.img,
-                category_id: element.id,
-                quantity: element.cantidad,
-                currency_id: "ARS",
-                unit_price: element.precio,
-            };
-            return newweddingWebsite;
+        let newweddingWebsite = {
+            title: element.nombre,
+            description: element.descripcion,
+            picture_url: element.img,
+            category_id: element.id,
+            quantity: element.cantidad,
+            currency_id: "ARS",
+            unit_price: element.precio,
+        };
+        return newweddingWebsite;
     });
-    
+
     $.ajax({
         method: "POST",
         url: "https://api.mercadopago.com/checkout/preferences",
@@ -52,9 +51,9 @@ const pay = () => {
         }),
         success: function (response) {
             const data = response;
-            
+
             window.open(data.init_point, "_blank");
-            
+
         }
     })
 }

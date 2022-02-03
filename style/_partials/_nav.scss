@@ -1,6 +1,7 @@
 .header {
     width: 100%;
     padding: 0;
+
     @include breakpoint(mobile) {
         height: 10vh;
     }
@@ -20,14 +21,15 @@
         width: 100%;
         z-index: -10;
         visibility: visible;
+
         @include breakpoint(mobile) {
             display: none;
         }
-        
+
         @include breakpoint(laptop) {
             display: block;
         }
-        
+
         @include breakpoint(desktop) {
             display: block;
         }
@@ -38,7 +40,7 @@
 
 .nav {
     padding: 1em;
-    
+
     @include breakpoint(mobile) {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -77,35 +79,38 @@
 
     &__img {
         padding-right: .5em;
+
         @include breakpoint(mobile) {
             width: 2.5em;
             height: 2em;
         }
-        
+
         @include breakpoint(laptop) {
             width: 3.5em;
             height: 3em;
         }
-        
+
         @include breakpoint(desktop) {
             width: 3.5em;
             height: 3em;
         }
     }
+
     &__textLogo {
         font-family: "Caveat", cursive;
         font-size: 600;
         text-decoration: none;
         color: #EDF6F9;
         cursor: pointer;
+
         @include breakpoint(mobile) {
             padding: 1em 0;
         }
-        
+
         @include breakpoint(laptop) {
             padding: 0;
         }
-        
+
         @include breakpoint(desktop) {
             padding: 0;
         }
@@ -117,6 +122,7 @@
 
     &__ul {
         list-style: none;
+
         @include breakpoint(mobile) {
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
@@ -142,6 +148,7 @@
             margin: 1em;
         }
     }
+
     &__li {
         cursor: pointer;
         border: 1px solid transparent;
@@ -177,6 +184,7 @@
             width: auto;
             display: block;
         }
+
         >a {
             text-decoration: none;
             color: #EDF6F9;
@@ -185,8 +193,9 @@
                 color: #FEC5BB;
             }
         }
-        
+
     }
+
     .activado {
         display: block;
     }
@@ -213,20 +222,3 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

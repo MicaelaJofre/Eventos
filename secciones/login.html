@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,21 @@
     <!--  logo redes -->
     <link href="https://icons8.com/icon/118497/facebook-nuevo">
     <!--  bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- styles -->
     <link rel="stylesheet" href="../style/style.css">
 </head>
+
 <body>
     <header class="container-fluid headerLogin">
         <!-- nav -->
         <nav class="nav d-flex justify-content-around flex-wrap">
             <div class="nav__logo d-flex justify-content-center align-items-center">
-                <a href="../index.html"class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png" alt="logo Dreamed Day" class="nav__img"><h1>Dreamed Day</h1></a>
+                <a href="../index.html" class="nav__textLogo d-flex"><img src="../imagenes/logoCasamientoSin.png"
+                        alt="logo Dreamed Day" class="nav__img">
+                    <h1>Dreamed Day</h1>
+                </a>
             </div>
             <label id="icon" class="icon">
                 <i class="fas fa-bars"></i>
@@ -29,29 +35,36 @@
                 <li class="nav__li"><a href="../secciones/signUp.html">Registrarse</a></li>
                 <li class="nav__li"><a href="../index.html#contactoSections">Contacto</a></li>
             </ul>
-        </nav>              
+        </nav>
     </header>
 
     <main class="signupMain">
         <section class="signup-form container">
             <!-- formulario -->
-            <form class="formLogin"id="formLogin" action="/user/signup" method="POST">
+            <form class="formLogin" id="formLogin" action="/user/signup" method="POST">
                 <h2>Accedé</h2>
                 <hr>
                 <p class="text-center">Ingresá por</p>
 
                 <!-- img redes -->
                 <div class="d-flex justify-content-start align-items-center">
-                    <a class="imgLogin  imgLogin--F" href="#"><img class="img" src="https://img.icons8.com/color/48/000000/facebook-new.png"/><span>Ingresá con facebook</span></a>                    
-                </div>                
+                    <a class="imgLogin  imgLogin--F" href="#"><img class="img"
+                            src="https://img.icons8.com/color/48/000000/facebook-new.png" /><span>Ingresá con
+                            facebook</span></a>
+                </div>
 
                 <div class="d-flex justify-content-start align-items-center">
-                    <a class="imgLogin imgLogin--G" href="#"><img class="img" src="https://img.icons8.com/fluency/48/000000/google-plus.png"/><span>Ingresá con google</span></a>                    
+                    <a class="imgLogin imgLogin--G" href="#"><img class="img"
+                            src="https://img.icons8.com/fluency/48/000000/google-plus.png" /><span>Ingresá con
+                            google</span></a>
                 </div>
 
                 <!-- hr y ó -->
                 <div class="d-flex justify-content-center align-items-center m-3 mb-4 hr">
-                    <p class="text-center"><hr class="hr__o"> ó <hr class="hr__o"></p>
+                    <p class="text-center">
+                        <hr class="hr__o"> ó
+                        <hr class="hr__o">
+                    </p>
                 </div>
                 <!-- show js -->
                 <p class="show2" id="show2"></p>
@@ -63,8 +76,8 @@
                                 <span class="fa fa-user"></span>
                             </span>
                         </div>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de usuario"
-                            required="required">
+                        <input type="text" class="form-control" id="username" name="username"
+                            placeholder="Nombre de usuario" required="required">
                     </div>
                 </article>
                 <article class="form-group">
@@ -74,8 +87,8 @@
                                 <i class="fa fa-lock"></i>
                             </span>
                         </div>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"
-                            required="required">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Contraseña" required="required">
                     </div>
                 </article>
                 <!-- checkbox -->
@@ -87,7 +100,7 @@
                 <article class="form-group">
                     <button type="submit" id="button" class="btn btn-primary btn-lg">Accedé</button>
                 </article>
-                
+
                 <!-- olvido su contraseña -->
                 <a class="form-group fw-light" href="#">Olvidaste tu contraseña</a>
             </form>
@@ -97,7 +110,7 @@
 
         <section class="modalLogin">
             <form action="" class="modalLoginForm " id="modalLoginForm">
-                <img class="imgClose" src="https://img.icons8.com/ios-glyphs/30/000000/macos-close.png"/>
+                <img class="imgClose" src="https://img.icons8.com/ios-glyphs/30/000000/macos-close.png" />
                 <h3 class="modalLoginForm__title">Queremos saber más sobre tu gran día</h3>
                 <p class="modalLoginForm__subtitle">Completa el formulario</p>
                 <p id="modalLoginError"></p>
@@ -109,7 +122,7 @@
                 <label for="" class="modalLoginForm__text">Fecha de la boda</label>
                 <input type="date" class="weddingDate" id="weddingDate" required>
                 <label for="" class="modalLoginForm__text">Lugar de la boda</label>
-                <input type="text" class="weddingLocation" id="weddingLocation"  required placeholder="Ciudad">
+                <input type="text" class="weddingLocation" id="weddingLocation" required placeholder="Ciudad">
                 <input type="submit" class="weddingButton">
             </form>
         </section>
@@ -118,28 +131,36 @@
     <!-- footer -->
     <footer class="container-fluid mt-0 footer">
         <section class="infoNetworksPayments d-flex justify-content-around flex-wrap">
-                <!-- nav -->
+            <!-- nav -->
             <article class="info">
                 <p class="info__p text-center text-md-start">Información</p>
-                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de privacidad</p></a>
-                <a href="../secciones/tarifas.html" class="info__text"><p class="info__link text-center text-md-start">Tarifas</p></a>
-                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Política de cookies</p></a>
-                <a href="#" class="info__text"><p class="info__link text-center text-md-start">Condiciones legales</p></a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Política de privacidad</p>
+                </a>
+                <a href="../secciones/tarifas.html" class="info__text">
+                    <p class="info__link text-center text-md-start">Tarifas</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Política de cookies</p>
+                </a>
+                <a href="#" class="info__text">
+                    <p class="info__link text-center text-md-start">Condiciones legales</p>
+                </a>
             </article>
             <!-- redes -->
             <article class="networks text-center">
                 <p class="networks__p">Redes sociales</p>
-                <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png"/>
-                <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png"/>
-                <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png"/>
-                <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/>
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/facebook-new.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/twitter-circled.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/pinterest--v1.png" />
+                <img class="networks__img" src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" />
             </article>
             <!-- formas de pago -->
             <article class="payments text-center">
                 <p class="payments__p">Formas de pago</p>
-                <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png"/>
-                <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png"/>
-                <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png"/>
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/cash-app.png" />
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/visa.png" />
+                <img class="payments__img" src="https://img.icons8.com/color/48/000000/mercado-pago.png" />
             </article>
         </section>
         <!-- copy y pie -->
@@ -156,4 +177,5 @@
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/50ed5235e7.js" crossorigin="anonymous"></script>
 </body>
-</html>    
+
+</html>

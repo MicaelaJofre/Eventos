@@ -1,6 +1,8 @@
 @import "../_partials/mixies";
-.contact {    
+
+.contact {
     padding: 1em;
+
     @include breakpoint(mobile) {
         background: $greyGreen;
     }
@@ -16,31 +18,38 @@
         object-fit: cover;
     }
 }
+
 .form {
-    padding: 1em;    
+    padding: 1em;
     @include logo;
+
     &__logo {
         font-family: $fontLogo;
         font-size: 600;
         text-decoration: none;
         color: $grey;
     }
-    > input , textarea {
+
+    >input,
+    textarea {
         border: none;
-        outline:none;
+        outline: none;
         border-radius: .20em;
         padding: .5em;
         margin-top: .5em;
         width: 100%;
         resize: none;
+
         &::placeholder {
-            color:$salmon;            
+            color: $salmon;
         }
+
         &:focus {
             outline: solid 2px $salmon;
         }
     }
-    &__button{
+
+    &__button {
         margin: 2em;
         background: $salmon;
         border-radius: 3em;
@@ -48,15 +57,17 @@
         transition: color 0.25s 0.0833333333s;
         position: relative;
         @include btn;
+
         &:hover {
             background: transparent;
         }
+
         .btn {
             font-weight: 600;
             text-transform: uppercase;
             padding: .5em 3em;
             color: $grey;
-            cursor: pointer;            
+            cursor: pointer;
         }
     }
 }

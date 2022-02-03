@@ -1,15 +1,17 @@
 @import "../_partials/mixies";
 
-.listTasksContainer{
+.listTasksContainer {
     .tasksHr1 {
         margin-top: 2em;
         @include hr;
     }
-    .task__title{
+
+    .task__title {
         font-size: 1.7em;
         padding-left: .5em;
     }
 }
+
 // contador
 .tasksAccountant {
     h3 {
@@ -19,12 +21,13 @@
     p {
         @include pAcconuntant;
     }
+
     img {
         width: 15em;
         margin: 2em 0;
         clip-path: circle(50% at 50% 50%);
     }
-    
+
 
 }
 
@@ -33,7 +36,7 @@
 .tasksAddBtn {
     display: flex;
     justify-content: center;
-    
+
 
     .tasksAdd,
     .btntask {
@@ -84,18 +87,21 @@
     -webkit-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 52px -20px rgba(0, 0, 0, 0.75);
-    input{
+
+    input {
         padding-left: .5em;
         width: 30%;
         margin-bottom: 1.5em;
         border-radius: .25em;
         border: 1px solid transparent;
         outline: solid 1px $salmon;
+
         &:focus {
             border: none;
             outline: solid 2px $salmon;
         }
     }
+
     .btntask {
         width: 10em;
         margin: 1em 2em;
@@ -114,9 +120,10 @@
             color: $darkSalmon;
             border: solid 1px $salmon;
         }
-        
+
     }
-    textarea{
+
+    textarea {
         padding-left: .5em;
         width: 80%;
         height: 20vh;
@@ -124,6 +131,7 @@
         resize: none;
         border: 1px solid transparent;
         outline: solid 1px $salmon;
+
         &:focus {
             border: none;
             outline: solid 2px $salmon;
@@ -138,6 +146,7 @@
     @include table;
 
 }
+
 .tableTask {
     margin-bottom: 3em;
     padding: 1em;
@@ -213,7 +222,7 @@
 
 // aside date
 
-.taskSlopesDate{
+.taskSlopesDate {
     background-image: url(../imagenes/listaDeTareas.png);
     background-size: cover;
     max-height: 22em;
@@ -230,14 +239,16 @@
         width: 20em;
         height: 16em;
         border: 2px solid $grey;
-        &__title{
+
+        &__title {
             text-align: center;
             font-weight: 600;
             font-size: .9em;
             padding: 2em;
             background: $green;
         }
-        &__text{
+
+        &__text {
             text-align: center;
             padding-top: 2em;
         }
@@ -246,9 +257,10 @@
 
 // btn de eliminar
 
-.deleteTask{
+.deleteTask {
     padding-top: 1.5em;
-    .material-icons{
+
+    .material-icons {
         text-align: center;
         cursor: pointer;
     }

@@ -1,5 +1,5 @@
-class Guest { 
-    constructor(name, lastname,age, menu, group, assistance,tel,email,address,location, country,postcard,id) { 
+class Guest {
+    constructor(name, lastname, age, menu, group, assistance, tel, email, address, location, country, postcard, id) {
         this.name = name;
         this.lastname = lastname;
         this.age = age;
@@ -16,7 +16,7 @@ class Guest {
     }
 
     //guardamos en el local storage
-    saveGuests() { 
+    saveGuests() {
         guests.push(this);
         localStorage.setItem("invitado", JSON.stringify(guests));
     }
@@ -35,9 +35,9 @@ openCheckbox.style.display = "none";
 
 //checkbox seleccionar a todos 
 checkboxSelectionTotalGuest.addEventListener("click", () => {
-    
+
     const checkboxes = document.getElementsByTagName('input');
-    for(i=0; i < checkboxes.length; i++){
+    for (i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].type == "checkbox") {
             //cambia el estado de los checkbox al estado de del checkbox selecionar todos
             checkboxes[i].checked = checkboxSelectionTotalGuest.checked;
@@ -47,7 +47,7 @@ checkboxSelectionTotalGuest.addEventListener("click", () => {
             } else {
                 openCheckbox.style.display = "none";
             }
-		}
+        }
     }
     //si se deselecciona el bton selecionar todos se transforma en un array vacio
     if (!this.event.target.checked) {
@@ -87,7 +87,7 @@ modalGuests.addEventListener("submit", openModal);
 // validamos los datos ingresado por el modal
 function openModal(e) {
     e.preventDefault();
-    
+
     let guestsName = document.getElementById("guestsName").value;
     let guestsLastname = document.getElementById("guestsLastname").value;
 
@@ -138,8 +138,8 @@ function openModal(e) {
         } else {
             errorLastname.textContent = ("El apellido no puede contener números.");
         }
-    
-    } else { 
+
+    } else {
         errorName.textContent = ("El nombre no puede contener números.");
     }
 
@@ -148,7 +148,7 @@ function openModal(e) {
 
 // creamos la ficha de cada uno de los invitados
 function list() {
-    
+
     // Cargo en la variable guest los invitados guardados en el local storage
     guests = localStorage.getItem("invitado") == null ? [] : JSON.parse(localStorage.getItem("invitado"));
 
@@ -202,12 +202,12 @@ function list() {
             <td>
             <span class="material-icons" Id = ${guest.id} onClick="deleteGuests(${guest.id})">delete</span><br><br>
             </td>`;
-        
-        
+
+
         // ubicación según el orden del selector asistencia, menu o grupo
 
         switch (guestsAddMenu.value) {
-    
+
             case "Asistencia":
                 localStorage.setItem("invitado", JSON.stringify(guests));
                 // ubicación confirmado, pendiente y cancelado    
@@ -224,7 +224,7 @@ function list() {
                     textNoGuestsCanceled.style.display = "none";
                 }
                 break;
-        
+
             case "Menú":
                 localStorage.setItem("invitado", JSON.stringify(guests));
                 // ubicación adulto, niño y vegetariano    
@@ -241,7 +241,7 @@ function list() {
                     textNoGuestsVegetarian.style.display = "none";
                 }
                 break;
-        
+
             case "Grupo":
                 localStorage.setItem("invitado", JSON.stringify(guests));
                 // ubicación novios, familia, amigos, compañeros de trabajo    
@@ -262,11 +262,11 @@ function list() {
                     textNoGuestsCoworkers.style.display = "none";
                 }
                 break;
-            }
-    
-    };   
+        }
+
+    };
     // Mostramos la cantidad de invitados y confirmados
-    let total = guests.filter( totals => totals.assistance === 'Confirmado');
+    let total = guests.filter(totals => totals.assistance === 'Confirmado');
     totalConfirmed.textContent = total.length;
     totalGuest.textContent = guests.length;
 }
@@ -274,7 +274,7 @@ function list() {
 
 
 // creamos funcion para borrar elementos del html y del local storage
-function deleteGuests(id) { 
+function deleteGuests(id) {
 
     Swal.fire({
         title: 'Estas seguro?',
@@ -301,27 +301,25 @@ function deleteGuests(id) {
             list();
         }
     });
-    
-    
+
+
 }
 
-function choise(id) { 
+function choise(id) {
 
     let guestSelect = guests.filter(guest => guest.id == id);
-    
+
     if (this.event.target.value === 'Confirmado') {
         this.event.target.parentElement.parentElement.remove();
         textNoGuestsConfirmed.style.display = "none";
         guestSelect[0].assistance = "Confirmado";
-    }
-    else if (this.event.target.value === 'Pendiente') {
+    } else if (this.event.target.value === 'Pendiente') {
         personsGuestsSlopes.appendChild(this.event.target.parentElement.parentElement);
         this.event.target.parentElement.parentElement.remove();
         textNoGuestsSlopes.style.display = "none";
         guestSelect[0].assistance = "Pendiente";
 
-    }
-    else if (this.event.target.value === 'Cancelado') {
+    } else if (this.event.target.value === 'Cancelado') {
         personsGuestsCanceled.appendChild(this.event.target.parentElement.parentElement);
         this.event.target.parentElement.parentElement.remove();
         textNoGuestsCanceled.style.display = "none";
@@ -349,13 +347,13 @@ guestsAddMenu.addEventListener("change", (e) => {
             containerMenu.className = 'hidden';
             containerGroup.className = 'hidden';
             break;
-        
+
         case "Menú":
             containerMenu.className = 'visible';
             containerAssistance.className = 'hidden';
             containerGroup.className = 'hidden';
             break;
-        
+
         case "Grupo":
             containerGroup.className = 'visible';
             containerAssistance.className = 'hidden';
@@ -364,4 +362,3 @@ guestsAddMenu.addEventListener("change", (e) => {
     }
     list();
 });
-

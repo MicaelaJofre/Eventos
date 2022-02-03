@@ -6,12 +6,13 @@
 
 .welcomeMain {
     background-image: url(../../imagenes/fondoTexturado.png);
+
     .title {
         padding: .5em;
         padding-bottom: 0;
         font-weight: 600;
         font-family: $fontLogo;
-        
+
         @include breakpoint(mobile) {
             font-size: 3em;
         }
@@ -24,22 +25,27 @@
             font-size: 10em;
         }
     }
+
     .novios {
         font-size: 1.2em;
-        span{
+
+        span {
             font-family: $fontLogo;
             font-size: 1.5em;
         }
-    } 
-    .novios--ext{
+    }
+
+    .novios--ext {
         font-size: 2em;
         font-family: $fontLogo;
         color: $darkGreen;
     }
+
     .text {
         padding-bottom: 3em;
-    }   
+    }
 }
+
 .welcome {
     &__img {
         width: 25em;
@@ -49,6 +55,7 @@
         border: 1px solid $salmon;
         position: relative;
     }
+
     &__link {
         margin: 2em 0 5em 1em;
         font-size: 1.2em;
@@ -66,7 +73,7 @@
         @include btn;
 
         &:hover {
-            background:transparent;
+            background: transparent;
             color: $darkSalmon;
         }
     }

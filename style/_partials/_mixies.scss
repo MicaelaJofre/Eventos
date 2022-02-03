@@ -22,7 +22,7 @@
 // efecto botones
 
 @mixin btn($z: 0) {
-    
+
     &::before,
     &::after {
         border: 0 solid transparent;
@@ -66,6 +66,7 @@
         transition-delay: 0s, 0.25s, 0s;
     }
 }
+
 @mixin logo {
     &__img {
         padding-right: .5em;
@@ -165,7 +166,7 @@
 
         &:hover {
             color: #FEC5BB;
-            
+
         }
     }
 
@@ -310,6 +311,7 @@
         overflow-x: hidden;
     }
 }
+
 //tarifa
 @mixin radius($val) {
     -webkit-border-radius: $val;

@@ -72,6 +72,7 @@
     margin-top: 1em;
     display: flex;
     justify-content: center;
+
     &__btn {
         margin-top: 2em;
         text-align: center;
@@ -159,7 +160,7 @@
     h4 {
         background: $green;
         padding: 5px 0;
-        
+
 
         img {
             width: 1.5em;
@@ -284,10 +285,11 @@
 
 
 /////////////////////////// acordeon formulario para agregar invitados///////////
-.modalGuests__title{
+.modalGuests__title {
     margin-top: 1em;
     color: $shadowGrey;
 }
+
 .modalGuests__form {
     background-image: url(../imagenes/fondoAcuarelaAzul.jpg);
     background-position: center;
@@ -337,8 +339,7 @@
             font-weight: 600;
             color: $shadowGrey;
 
-            @include breakpoint(mobile) {
-            }
+            @include breakpoint(mobile) {}
 
             @include breakpoint(laptop) {
                 width: 5em;
@@ -350,14 +351,14 @@
         }
 
         &__select {
-            
+
             color: $shadowGrey;
             padding: 0 1em;
             outline: none;
             border: solid 1px $salmon;
 
             @include breakpoint(mobile) {
-                margin: .5em ;
+                margin: .5em;
                 width: 7em;
             }
 
@@ -373,14 +374,15 @@
         }
 
     }
-    
-    .countryLabel{
+
+    .countryLabel {
         font-weight: 600;
         color: $shadowGrey;
         display: block;
         display: flex;
         margin-left: 1em;
     }
+
     .pais {
         width: 13em;
         display: flex;
@@ -398,7 +400,7 @@
         }
 
         @include breakpoint(desktop) {
-            margin-left: 0 ;
+            margin-left: 0;
         }
     }
 

@@ -27,7 +27,7 @@ formLogin.addEventListener("submit", (e) => {
 
             if ((newUsername.value === person.username) && (newPassword.value === person.password)) {
                 let exist = false;
-                
+
                 localStorage.setItem("id", person.username);
 
                 if (wedding.length != 0) {
@@ -39,10 +39,9 @@ formLogin.addEventListener("submit", (e) => {
                     console.log("exist")
                     if (exist == true) window.location.href = "../secciones/bienvenidos.html";
                     else modalOpenLogin();
-                        // abrimos el modal con la funcion que esta en animaciones.js
-                        
-                }
-                else modalOpenLogin();
+                    // abrimos el modal con la funcion que esta en animaciones.js
+
+                } else modalOpenLogin();
 
             } else {
                 document.getElementById("show2").textContent = `Usuario o contraseña incorrectos`;
@@ -118,4 +117,3 @@ function validate(e) {
         modalLoginError.textContent = ("Debes completar todos los datos.");
     }
 }
-

@@ -7,9 +7,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     @include breakpoint(mobile) {
         width: 200px;
-        
+
     }
 
     @include breakpoint(laptop) {
@@ -22,14 +23,16 @@
 }
 
 // cards
-.budgetcards{
+.budgetcards {
     margin-bottom: 3em;
-    .card{
+
+    .card {
         border: solid 3px rgba(0, 0, 0, 0.2);
         margin: 0 4px 2px 4px;
         -webkit-box-shadow: 0px 0px 52px -35px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 0px 0px 52px -35px rgba(0, 0, 0, 0.75);
         box-shadow: 0px 0px 52px -35px rgba(0, 0, 0, 0.75);
+
         @include breakpoint(mobile) {
             width: 19em;
             height: 16em;
@@ -45,13 +48,14 @@
             width: 22em;
             height: 12em;
         }
-        
+
     }
-    .imgLogo{
+
+    .imgLogo {
         width: 2em;
     }
 
-    .card-title{
+    .card-title {
         font-weight: 600;
         color: $shadowGrey;
         font-size: 1.3em;
@@ -60,6 +64,7 @@
     .cardInputContainer {
         margin-left: 3.5em;
         display: flex;
+
         input {
             width: 10em;
             height: 2em;
@@ -68,13 +73,15 @@
             border-radius: .25em;
             margin-bottom: .5em;
         }
-        .budgetBtn{
+
+        .budgetBtn {
             width: 2em;
             padding: 0 3px;
             height: 2em;
             background: none;
             border: none;
             cursor: pointer;
+
             .far {
                 font-size: 2em;
                 margin-left: .5em;
@@ -82,7 +89,8 @@
             }
         }
     }
-    .payLabel{
+
+    .payLabel {
         text-align: start;
         border: solid 2px $shadowGrey;
         border-radius: .25em;
@@ -95,11 +103,13 @@
         box-shadow: 0px 0px 52px -14px rgba(0, 0, 0, 0.75);
 
     }
+
     .card-text {
         height: 10px;
         width: 5em;
         margin-left: .5em;
         font-weight: 600;
+
         @include breakpoint(mobile) {
             height: 12px;
             width: 3.5em;
@@ -116,10 +126,11 @@
             width: 4em;
         }
     }
-    .switchText{
+
+    .switchText {
         width: 5em;
         font-weight: 600;
-        
+
         @include breakpoint(mobile) {
             margin-left: 4em;
         }
@@ -132,6 +143,7 @@
             margin-left: 7em;
         }
     }
+
     .switch {
         position: relative;
         display: inline-block;
@@ -192,7 +204,7 @@
 }
 
 
-.accountant{
+.accountant {
     .accTotal {
         border: solid 3px $salmon;
         outline: none;
@@ -203,49 +215,63 @@
         padding: .5em;
     }
 }
-    
-.budgetDinner{
+
+.budgetDinner {
     background: $cena;
 }
-.budgetCeremony{
+
+.budgetCeremony {
     background: $ceremonia;
 }
-.budgetCake{
+
+.budgetCake {
     background: $pastel;
 }
-.budgetDecoration{
+
+.budgetDecoration {
     background: $decoracion;
 }
-.budgetSouvenirs{
+
+.budgetSouvenirs {
     background: $souveniers;
 }
-.budgetCar{
+
+.budgetCar {
     background: $auto;
 }
-.budgetBeauty{
+
+.budgetBeauty {
     background: $belleza;
 }
-.budgetAccessories{
+
+.budgetAccessories {
     background: $accesorios;
 }
-.budgetMusic{
+
+.budgetMusic {
     background: $musica;
 }
-.budgetPhoto{
+
+.budgetPhoto {
     background: $foto;
 }
-.budgetInvitations{
+
+.budgetInvitations {
     background: $invitaciones;
 }
-.budgetHoneymoon{
+
+.budgetHoneymoon {
     background: $lunaMiel;
 }
-.budgetComplement{
+
+.budgetComplement {
     background: $complementos;
 }
-.budgetParty{
+
+.budgetParty {
     background: $fiest;
 }
+
 .budgetOthers {
     background: $otros;
 }

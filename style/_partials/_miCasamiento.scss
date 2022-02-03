@@ -1,10 +1,12 @@
 .myWedding {
-    background-image:linear-gradient(rgba(255, 255, 255, .5),rgba(255, 255, 255, .7)),
-    url(../imagenes/fondoAcuarelaAzul.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .7)),
+        url(../imagenes/fondoAcuarelaAzul.jpg);
     background-size: cover;
 }
+
 .wedding {
     margin: 5em 0;
+
     &__title {
         margin: 1em 0;
         padding: 1.5em 0;
@@ -12,7 +14,8 @@
         color: $white;
         font-weight: 400;
     }
-    &__img{
+
+    &__img {
         width: 300px;
         height: 200px;
         object-fit: cover;
@@ -20,8 +23,10 @@
         margin: .5em;
         border: 3px solid $darkGreen;
     }
+
     &__button {
         margin-top: 2em;
+
         .btn {
             background: $salmon;
             padding: .5em 1em;

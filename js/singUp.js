@@ -1,26 +1,26 @@
 class SingUp {
-    constructor(username,email, password) {
+    constructor(username, email, password) {
 
         this.username = username;
         this.email = email;
         this.password = password;
     }
     // ingresamos los datos al local storage
-    save() { 
+    save() {
         usuarios.push(this);
         return localStorage.setItem("persona", JSON.stringify(usuarios));
     }
-}  
+}
 
 // Guardamos los datos en una variable en el caso de estar vacio crea un array vacio.
-let usuarios =  localStorage.getItem("persona") == null ? [] : JSON.parse(localStorage.getItem("persona"));
+let usuarios = localStorage.getItem("persona") == null ? [] : JSON.parse(localStorage.getItem("persona"));
 
 persons = [];
 
 
 formSingUP.addEventListener("submit", (e) => {
     // pedimos al usuario el nombre de usuario y contraseña
-    
+
     const username = document.getElementById("username").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -28,9 +28,9 @@ formSingUP.addEventListener("submit", (e) => {
     const show = document.getElementById("show");
     const formSingUP = document.getElementById("formSingUP");
     const btnSingUP = document.getElementById("btnSingUP");
-    
+
     e.preventDefault();
-    
+
     if ((username != "") && (username.length >= 6)) {
         if ((password != "") && (password.length >= 8)) {
             repeated(username, email, password, confirmPassword);
@@ -43,15 +43,15 @@ formSingUP.addEventListener("submit", (e) => {
 });
 
 // confirmamos que el email no se repita   
-function repeated(username,email, password,confirmPassword) { 
+function repeated(username, email, password, confirmPassword) {
     if (usuarios.find(usuario => usuario.email == email) == undefined) {
-        
+
         if (usuarios.find(usuario => usuario.username == username) == undefined) {
             confirmPass(username, email, password, confirmPassword);
-            
-        } else { 
+
+        } else {
             show.textContent = ("El usuario ya fue registrado");
-        return false;
+            return false;
         }
     } else {
         show.textContent = ("El email ya fue registrado");
@@ -60,13 +60,13 @@ function repeated(username,email, password,confirmPassword) {
 }
 
 // confirmamos que la contraseña coinsida con la confirmacion de la contraseña
-function confirmPass(username,email, password,confirmPassword) {
+function confirmPass(username, email, password, confirmPassword) {
     if (password === confirmPassword) {
         persons = new SingUp(username, email, password, confirmPassword);
         persons.save();
         start();
-        
-    } else { 
+
+    } else {
         show.textContent = ("Las contraseñas no coinsiden.");
         return false;
     }

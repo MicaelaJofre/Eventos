@@ -19,7 +19,7 @@ $(document).ready(function () {
 $('.modalGuestsBtn').on("click", () => {
     openModal(e);
 });
-    
+
 function closeFormGuest() {
 
     $('.modalGuests__form').slideToggle(600);
@@ -30,8 +30,8 @@ function closeFormGuest() {
 
 
 
-$(document).ready(function(){
-    
+$(document).ready(function () {
+
     //abrir formulario
     $('.taskAddInfo').hide();
 
@@ -39,13 +39,13 @@ $(document).ready(function(){
 
         $('.taskAddInfo').slideToggle(600);
     });
-    
+
 });
 
 
 //cerrar formulario
 function closeFormGuest(validate) {
-        
+
     if (validate) {
         $('.taskAddInfo').slideToggle(600);
     }
@@ -84,7 +84,7 @@ function closeForm(validate) {
 
 function modalOpenLogin() {
 
-  
+
     $('.modalLogin')
         .css({
             "visibility": "visible",

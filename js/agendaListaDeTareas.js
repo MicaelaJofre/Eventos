@@ -7,9 +7,9 @@ $(document).ready(() => {
 
     //fecha
     let date = new Date();
-    
+
     // agregar ceros a la izquierda
-    function zeroFill(number, width) { 
+    function zeroFill(number, width) {
         width -= number.toString().length;
         if (width > 0) {
             return new Array(width + (/\./.test(number) ? 2 : 1)).join('0') + number;
@@ -51,7 +51,7 @@ $(document).ready(() => {
 
         //fecha
 
-        
+
 
         //observaciones
         if ((taskObservations === "") || !(/^[a-zA-ZÀ-ÿ\s]{1,30}$/.test(taskObservations))) {
@@ -108,11 +108,11 @@ function list(listTask) {
         // controla si la lista tiene pendientes
         if (listSlopes.length != 0) dateNext(listSlopes);
         else $('.taskSlopes__text').empty();
-        
+
 
 
     } else $('.taskSlopes__text').empty();
-    
+
 
 
     // creamos la tabla que se insertará en el html
@@ -167,15 +167,15 @@ function list(listTask) {
             }
             return x;
         });
-        
+
         localStorage.setItem('listaTareas', JSON.stringify(listTask));
         list(listTask);
     });
-     // tachar las tareas completadas
+    // tachar las tareas completadas
     /* for (let i = 0; i < listTask.length; i++) {
         console.log(listTask[i].taskCondition)
         
-    } */ 
+    } */
 
 }
 
@@ -206,7 +206,7 @@ function deleteTask(id) {
             list(listTask);
         }
     });
-    
+
 }
 
 // función para obtener las tareas proximas a vencer
